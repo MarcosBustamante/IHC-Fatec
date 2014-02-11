@@ -1,0 +1,49 @@
+<!doctype html>
+<html  ng-app ng-controller="MyCtr">
+	<head>
+		<title>
+			Fast Find
+		</title>
+		<meta charset="utf-8">
+		<script src="lib/angular/angular.js"></script>
+		<script src="scriptMenu.js"></script>
+		<link rel="stylesheet" type="text/css" href="menuStyle.css">
+		
+	</head>
+	
+	<body>
+		<!-- Menu de navegação -->
+		<div class="mainMenu mainMenuHome" ng-class="{opacityTotal:showMainMenu, left:0}">
+			Araujo
+		</div>
+
+		<!-- Meu de configurações -->
+		<div class="mainMenu mainMenuConfig" ng-class="{opacityTotal:showMenuConfig}">
+			Viadao
+		</div>
+		
+		<div>
+			<!-- Menu bar -->
+			<div class="main menu" ng-class="{openMainMenu:showMainMenu, openMenuConfig:showMenuConfig}">
+				<input type="button" value="Menu" ng-click="statusMainMenu()">
+
+				<div align="right">
+					<input type="button" value="Config" ng-click="statusMenuConfig()">
+				</div>
+
+			</div>
+
+			<!-- Corpo da pagina -->
+			<div class="main bodye" ng-class="{openMainMenu:showMainMenu, openMenuConfig:showMenuConfig}" align="center">
+				<table>
+					<tr ng-repeat="produto in list" ng-click="selectItem(produto)" ng-class="{selected: produto.is_selected}">
+						<td><img ng-src="{{produto.url}}" class="size"></td>
+						<td>{{produto.price+"\r\n\r\n"+produto.distance}}</td>
+						<td>{{produto.name+"\r\n\r\n"+produto.store}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</body>
+</html>
