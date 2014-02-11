@@ -13,8 +13,7 @@ function MyCtr($scope){
 
 
 	$scope.selectItem = function(produto){
-		produto.is_selected = !produto.is_selected;
-		alert(produto.is_selected +""+produto.name);	
+		produto.is_selected = !produto.is_selected;	
 	}
 
 	//isso ira ser um JSON

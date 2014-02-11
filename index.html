@@ -1,14 +1,13 @@
 <!doctype html>
 <html  ng-app ng-controller="MyCtr">
 	<head>
-		<title>
-			Fast Find
-		</title>
 		<meta charset="utf-8">
 		<script src="lib/angular/angular.js"></script>
 		<script src="scriptMenu.js"></script>
 		<link rel="stylesheet" type="text/css" href="menuStyle.css">
-		
+		<title>
+			Fast Find
+		</title>
 	</head>
 	
 	<body>
@@ -28,7 +27,18 @@
 				<input type="button" value="Menu" ng-click="statusMainMenu()">
 
 				<div align="right">
-					<input type="button" value="Config" ng-click="statusMenuConfig()">
+					<table>
+						<tr>
+							<td align="center" valign="center">
+								<div class="search">
+									<input type="text" value="Pesquisar" align="center">
+								</div>
+							</td>
+							<td>
+								<input type="button" value="Config" ng-click="statusMenuConfig()">
+							</td>
+						</tr>
+					</table>
 				</div>
 
 			</div>

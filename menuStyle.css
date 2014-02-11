@@ -6,6 +6,13 @@
 	bottom:10;
 }
 
+.search{
+	background-color: #fff;
+	width: 250px;
+	height: 80px;
+	top: 0;
+}
+
 .menu{
 	height: 15%;
 	top:0;
