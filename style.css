@@ -3,9 +3,12 @@
 	position: relative;
 	width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	height: 15%;
 	background-color: #093; 
 =======
+=======
+>>>>>>> f9949b1c62ee1b76ab7a2978f675b79a29430c00
 	height: 10%;
 	background-color: #093;
 }
@@ -17,6 +20,9 @@
 	width: 100%;
 	height: 100%;
 	background-color: #Fff;
+<<<<<<< HEAD
+>>>>>>> f9949b1c62ee1b76ab7a2978f675b79a29430c00
+=======
 >>>>>>> f9949b1c62ee1b76ab7a2978f675b79a29430c00
 }
 
@@ -28,6 +34,7 @@
 	background-color: #9F9;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #btn_menu{
 	border-style: hidden;
@@ -61,6 +68,8 @@
 	border-radius: 6px;
 	padding: 20px 40px 80px 5px;
 =======
+=======
+>>>>>>> f9949b1c62ee1b76ab7a2978f675b79a29430c00
 .table_produtos{
 	position: relative;
 	padding: 10px 10px 12px;
@@ -70,6 +79,9 @@
 	list-style: none;
 	background-color: #00f;
 	display: block;
+<<<<<<< HEAD
+>>>>>>> f9949b1c62ee1b76ab7a2978f675b79a29430c00
+=======
 >>>>>>> f9949b1c62ee1b76ab7a2978f675b79a29430c00
 }
 
