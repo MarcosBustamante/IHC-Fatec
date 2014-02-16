@@ -1,35 +1,56 @@
 <!DOCTYPE HTML>
-<html ng-app>
+<html ng-app ng-controller="index_ctr">
 	
 	<head>
 		<title>FastFind</title>
 		<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+		<script src="scriptIndex.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
 
 		<!-- Le styles -->
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
-    
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="animation.css">
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="animation.css">
 		</head>
 
-	<body ng-init="active_menu = [false,false]">
+	<body>
 
-		<div id="menu_bar" align="center">
-			<button ng-click="active_menu[0] = !active_menu[0]"> Home</button>
-			<button ng-click="active_menu[1] = !active_menu[1]"> Settings</button>
+		<!-- Div of home page -->
+		<div id="body_page">
+
+			<!-- Div of menu bar -->
+			<div id="menu_bar" align="center">
+				<button  class="btn" ng-click="active_menu[0] = !active_menu[0]"> Home</button>
+				<button  class="btn" ng-click="active_menu[1] = !active_menu[1]"> Settings</button>
+			</div>
+
+			<!--Tabela de produtos -->
+			<div>
+				<ul scrollbar>
+                    <li class="table_produtos" ng-repeat="item in teste">
+                        	{{'Aqui entra um produto '+item}}
+                    </li>
+                </ul>
+			</div>
+
 		</div>
-		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}"></div>
-		<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}"></div>
+
+		<!--Div of meu options animated, init on left -->
+		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+		</div>
+
+		<!--Div of menu settings, init on right-->
+		<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
+		</div>
 
 	</body>
 </html>
