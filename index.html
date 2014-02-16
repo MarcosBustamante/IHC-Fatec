@@ -1,59 +1,37 @@
-<!doctype html>
-<html  ng-app ng-controller="MyCtr">
-	<head>
-		<meta charset="utf-8">
-		<script src="lib/angular/angular.js"></script>
-		<script src="scriptMenu.js"></script>
-		<link rel="stylesheet" type="text/css" href="menuStyle.css">
-		<title>
-			Fast Find
-		</title>
-	</head>
+<!DOCTYPE HTML>
+<html ng-app>
 	
-	<body>
-		<!-- Menu de navegação -->
-		<div class="mainMenu mainMenuHome" ng-class="{opacityTotal:showMainMenu, left:0}">
-			Araujo
+	<head>
+		<title>FastFind</title>
+		<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Le styles -->
+		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    
+		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="animation.css">
+		</head>
+
+	<body ng-init="active_menu = [false,false]">
+
+		<div id="menu_bar" align="center">
+			<button ng-click="active_menu[0] = !active_menu[0]"> Home</button>
+			<button ng-click="active_menu[1] = !active_menu[1]"> Settings</button>
 		</div>
-
-		<!-- Meu de configurações -->
-		<div class="mainMenu mainMenuConfig" ng-class="{opacityTotal:showMenuConfig}">
-			Viadao
-		</div>
-		
-		<div>
-			<!-- Menu bar -->
-			<div class="main menu" ng-class="{openMainMenu:showMainMenu, openMenuConfig:showMenuConfig}">
-				<input type="button" value="Menu" ng-click="statusMainMenu()">
-
-				<div align="right">
-					<table>
-						<tr>
-							<td align="center" valign="center">
-								<div class="search">
-									<input type="text" value="Pesquisar" align="center">
-								</div>
-							</td>
-							<td>
-								<input type="button" value="Config" ng-click="statusMenuConfig()">
-							</td>
-						</tr>
-					</table>
-				</div>
-
-			</div>
-
-			<!-- Corpo da pagina -->
-			<div class="main bodye" ng-class="{openMainMenu:showMainMenu, openMenuConfig:showMenuConfig}" align="center">
-				<table>
-					<tr ng-repeat="produto in list" ng-click="selectItem(produto)" ng-class="{selected: produto.is_selected}">
-						<td><img ng-src="{{produto.url}}" class="size"></td>
-						<td>{{produto.price+"\r\n\r\n"+produto.distance}}</td>
-						<td>{{produto.name+"\r\n\r\n"+produto.store}}</td>
-					</tr>
-				</table>
-			</div>
-		</div>
+		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}"></div>
+		<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}"></div>
 
 	</body>
 </html>
+
+<!-- http://www.nganimate.org/angularjs/ng-repeat/3d-rotate para faze as pesquisas -->
