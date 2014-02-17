@@ -6,10 +6,12 @@
 		<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
 		<script src="scriptIndex.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="author" content="">
 
 		<!-- Le styles -->
+		<link rel="stylesheet" type="text/css" href="styleTable.css">
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -29,15 +31,23 @@
 
 			<!-- Div of menu bar -->
 			<div id="menu_bar" align="center">
-				<button  class="btn" ng-click="active_menu[0] = !active_menu[0]"> Home</button>
-				<button  class="btn" ng-click="active_menu[1] = !active_menu[1]"> Settings</button>
+				<div class="fsp"> </div>
+				<button  ng-click="active_menu[0] = !active_menu[0]">Menu</button>
+				<input type="text" id="txt" placeholder="Pesquisar"> </input>
+				<button id="btn_find"> </button>
+				<button  id="btn_set" ng-click="active_menu[1] = !active_menu[1]"></button>
 			</div>
 
+		
 			<!--Tabela de produtos -->
-			<div>
+			<div id="div_principal" align="center" scrolbar>
 				<ul scrollbar>
-                    <li class="table_produtos" ng-repeat="item in teste">
-                        	{{'Aqui entra um produto '+item}}
+                    <li class="li_produtos" ng-repeat="item in produtos">
+						<div id="div_produtos">
+							<label id="title_produto">{{item['name']}}</label>
+                        	<img src="{{item['img']}}" id="size_imgs">
+                        	<label id="information_produto">{{item['distance'] + " | " + item['price']}}</label>
+                    	</div>
                     </li>
                 </ul>
 			</div>
@@ -46,10 +56,26 @@
 
 		<!--Div of meu options animated, init on left -->
 		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+</div>
 		</div>
 
 		<!--Div of menu settings, init on right-->
 		<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
+				<div class="block" align=center> Filters </div>
+				<center> <input type="radio" name="group1" value="Milk"> Driving &nbsp; &nbsp;
+				<input type="radio" name="group1" value="Butter" checked> Walking<br>
+				<div class="fspace"> </div>
+				<hr>
+				<div class="fspace"> </div>
+				<input type="radio" name="group2" value="Water"> List &nbsp; &nbsp;
+				<input type="radio" name="group2" value="Beer"> One by One<br>
+				<div class="fspace"> </div>
+				<hr>
+				<div class="fspace"> </div>
+				<input type="radio" name="group3" value="Water"> Price &nbsp; &nbsp;
+				<input type="radio" name="group3" value="Beer"> Distance<br> </center>
+				
+				
 		</div>
 
 	</body>

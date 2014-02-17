@@ -1,0 +1,42 @@
+#div_principal{
+	top: 15%; left: 3%; right: 3%;
+	padding: 20px;
+	position: absolute;
+	background-color: #efe;
+}
+
+#div_produtos{
+	padding: 10px 10px 12px;
+	position: relative;;
+	width: 295px;
+	height: 300%;
+	text-align: center;
+	background-color: #ded;
+}
+
+.li_produtos{
+	position: relative;
+	padding: 10px 10px 12px;
+	float: left;
+	list-style: none;
+	display: block;
+}
+
+#size_imgs{
+	max-width: 240px;
+	max-height: 200px;
+}
+
+#title_produto{
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-family: monospace;
+	font-size: 30px;
+}
+
+#information_produto{
+	padding-top: 10px;
+	padding-bottom: 5px;
+	font-family: monospace;
+	font-size: 20px;
+}
