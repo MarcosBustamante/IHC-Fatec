@@ -40,16 +40,27 @@
 
 		
 			<!--Tabela de produtos -->
-			<div id="div_principal" align="center">
-				<ul>
-                    <li class="li_produtos" ng-repeat="item in produtos">
+			<div id="div_principal_blocks" align="left" ng-switch on="product_view_selected">
+				<ul ng-switch-when="block">
+                    <li class="li_produtos" ng-repeat="item in produtos" align="left">
 						<div id="div_produtos">
 							<label id="title_produto">{{item['name']}}</label>
-                        	<img src="{{item['img']}}" id="size_imgs">
+                        	<img src="{{item['img']}}" id="size_imgs_block">
                         	<label id="information_produto">{{item['distance'] + " | " + item['price']}}</label>
                     	</div>
                     </li>
                 </ul>
+
+                <ul ng-switch-when="list">
+                    <li class="div_principal_list" align="center">
+						<label id="title_produto">{{produtos[0]['name']}}</label>
+                    	<img src="{{produtos[0]['img']}}" id="size_big_img_list" />
+                    	<label id="information_produto">{{produtos[0]['distance'] + " | " + produtos[0]['price']}}</label>
+                    	<label id="information_produto">{{produtos[0]['shop'] + " | " + produtos[0]['street']}}</label>
+                    </li>
+                    <li class="div_principal_list">ng-switch-when</li>
+                </ul>
+
 			</div>
 
 		</div>
@@ -66,8 +77,8 @@
 				<div class="fspace"> </div>
 				<hr>
 				<div class="fspace"> </div>
-				<input type="radio" name="group2" value="Water"> List &nbsp; &nbsp;
-				<input type="radio" name="group2" value="Beer"> One by One<br>
+				<input type="radio" name="group2" value="Water" ng-click="change_product_view('list')"> List &nbsp; &nbsp;
+				<input type="radio" name="group2" value="Beer" ng-click="change_product_view('block')"> Block<br>
 				<div class="fspace"> </div>
 				<hr>
 				<div class="fspace"> </div>

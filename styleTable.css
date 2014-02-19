@@ -1,4 +1,4 @@
-#div_principal{
+#div_principal_blocks{
 	top: 15%; left: 3%; right: 3%;
 	padding: 20px;
 	position: absolute;
@@ -21,9 +21,15 @@
 	display: inline-block;
 }
 
-#size_imgs{
+#size_imgs_block{
 	max-width: 240px;
 	max-height: 200px;
+	display: inline-block;
+}
+
+#size_big_img_list{
+	max-width: 500px;
+	max-height: 500px;	
 }
 
 #title_produto{
@@ -38,4 +44,13 @@
 	padding-bottom: 5px;
 	font-family: monospace;
 	font-size: 20px;
+}
+
+.div_principal_list{
+	top: 2%; bottom: 2%;
+	width: 48.5%;
+	position: relative;
+	list-style: none;
+	background-color: red;
+	display: inline-block;
 }
