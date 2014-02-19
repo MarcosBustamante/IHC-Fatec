@@ -8,7 +8,7 @@
 #div_produtos{
 	padding: 10px 10px 12px;
 	position: relative;;
-	width: 295px;
+	width: 90%;
 	height: 300%;
 	text-align: center;
 	background-color: #ded;
@@ -17,9 +17,8 @@
 .li_produtos{
 	position: relative;
 	padding: 10px 10px 12px;
-	float: left;
 	list-style: none;
-	display: block;
+	display: inline-block;
 }
 
 #size_imgs{
