@@ -1,6 +1,6 @@
 #div_principal_blocks{
 	top: 15%; left: 3%; right: 3%;
-	padding: 20px;
+	padding: 20px 20px 0px 20px;
 	position: absolute;
 	background-color: #efe;
 }
@@ -28,22 +28,24 @@
 	display: inline-block;
 }
 
+/* Product in list */
 #size_big_img_list{
-	max-width: 500px;
-	max-height: 400px;	
+	max-width: 400px;
+	max-height: 300px;	
 }
 
 #size_big_img_list_div{
-	width: 500px;
-	height: 400px;
+	width: 100%;
+	height: 300px;
+	margin-bottom: 2%;
 	position: relative;
 }
 
 #title_produto{
-	padding-top: 5px;
-	padding-bottom: 10px;
-	font-family: monospace;
-	font-size: 30px;
+	padding: 10px 0px 0px 70px;
+	margin: 10px;
+	font-family: "david";
+	font-size: 40px;
 }
 
 #information_produto{
@@ -54,12 +56,13 @@
 }
 
 .div_principal_list{
-	top: 2%; bottom: 2%;
+	top: 20%; bottom: 2%;
+	margin-bottom: 30px;
+	padding: 10px 0px 30px 0px;
 	width: 48.5%;
 	position: relative;
 	background-color: #ded;
-	border-radius: 10%;
-	display: block;
+	border-radius: 5%;
 }
 
 #size_imgs_list{
@@ -69,7 +72,7 @@
 
 #circles_of_slide{
 	border-radius: 50%;
-	border: 2px solid green;
+	border: 2px solid black;
 	margin: 5px;
 	width: 10px;
 	height: 10px;
@@ -83,9 +86,9 @@
 }
 
 .color_others_options{
-	background-color: #efe;
+	background-color: black;
 }
 
 .change_color{
-	background-color: black;
+	background-color: white;
 }
