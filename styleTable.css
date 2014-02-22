@@ -7,7 +7,8 @@
 
 #div_produtos{
 	padding: 10px 10px 12px;
-	position: relative;;
+	position: relative;
+	border-radius: 10%;
 	width: 90%;
 	height: 300%;
 	text-align: center;
@@ -29,7 +30,13 @@
 
 #size_big_img_list{
 	max-width: 500px;
-	max-height: 500px;	
+	max-height: 400px;	
+}
+
+#size_big_img_list_div{
+	width: 500px;
+	height: 400px;
+	position: relative;
 }
 
 #title_produto{
@@ -50,12 +57,35 @@
 	top: 2%; bottom: 2%;
 	width: 48.5%;
 	position: relative;
-	list-style: none;
-	background-color: red;
-	display: inline-block;
+	background-color: #ded;
+	border-radius: 10%;
+	display: block;
 }
 
 #size_imgs_list{
-	max-width: 100px;
-	max-height: 100px;
+	max-width: 110px;
+	max-height: 110px;
+}
+
+#circles_of_slide{
+	border-radius: 50%;
+	border: 2px solid green;
+	margin: 5px;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+}
+
+#config_li {
+	list-style: none;
+}
+
+.color_others_options{
+	background-color: #efe;
+}
+
+.change_color{
+	background-color: black;
 }

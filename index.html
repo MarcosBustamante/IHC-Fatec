@@ -43,9 +43,9 @@
 			<div id="div_principal_blocks" align="left" ng-switch on="product_view_selected">
 				<ul ng-switch-when="block">
                     <li class="li_produtos" ng-repeat="item in produtos" align="left">
-						<div id="div_produtos">
+						<div id="div_produtos" align="center">
 							<label id="title_produto">{{item['name']}}</label>
-                        	<img src="{{item['img']}}" id="size_imgs_block">
+                        	<img src="{{item['img'][0]}}" id="size_imgs_block">
                         	<label id="information_produto">{{item['distance'] + " | " + item['price']}}</label>
                     	</div>
                     </li>
@@ -53,14 +53,19 @@
 
                 <div ng-switch-when="list">
                     <div class="div_principal_list" align="center">
-						<label id="title_produto">{{produtos[0]['name']}}</label>
-                    	<img src="{{produtos[0]['img']}}" id="size_big_img_list">
-                    	<label id="information_produto">{{produtos[0]['distance'] + " | " + produtos[0]['price']}}</label>
-                    	<label id="information_produto">{{produtos[0]['shop'] + " | " + produtos[0]['street']}}</label>
-                    	<input type="text" value="coment">
-                    	<button>Enviar</button>
+						<label id="title_produto">{{list_product_selected['name']}}</label>
+						<div id="size_big_img_list_div" valign="center">
+                    		<img src="{{product_selected}}" id="size_big_img_list">
+                    	</div>
+                    	<li id="config_li">
+                    		<div ng-repeat="circle in list_product_selected['img']"  id="circles_of_slide" 
+                    			 ng-class="{'change_color': circle == product_selected, 
+                    			 'color_others_options': circle != product_selected}"
+                    			 ng-mouseover="change_image_slide(circle)">
+                    		</div>
+                    	</li>
                     </div>
-
+<!-- 
                     <div class="div_principal_list">
                     	<li ng-repeat="item in produtos">
 	                    	<img src="{{item['img']}}" id="size_imgs_list">
@@ -73,7 +78,7 @@
 	                    		{{produtos[0]['price']}}
 	                    	</div>
                     	</li>
-                    </div>
+                    </div> -->
                 </div>
 
 			</div>
