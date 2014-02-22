@@ -55,7 +55,7 @@
                 <div ng-switch-when="list">
                 	<div>
 		                <div class="div_principal_list">
-							<label id="title_produto">{{list_product_selected['name']}}</label><hr>
+							<label id="text_title_product">{{list_product_selected['name']}}</label><hr>
 
 		                	<li id="config_li" align="center">
 		                		<div ng-repeat="circle in list_product_selected['img']"  id="circles_of_slide" 
@@ -70,7 +70,7 @@
 		                	</div>
 
 		                	<div align="center">
-		                    	<button>Mapa</button>
+		                    	<button id="glyphicon glyphicon-map-marker">Mapa</button>
 		                    	<button>Favo</button>
 		                    	<button>Comprado</button>
 		                    	<button ng-click="show_more_infermation = !show_more_infermation">+</button>
@@ -79,8 +79,11 @@
 		                	</div>
 		                </div>
 
-		                <div class="div_principal_list" ng-if="show_more_infermation">
-		                	
+		                <div class="div_principal_list" ng-if="show_more_infermation">		                	
+		                	<div align="right" id="div_text">
+		                		<label id="text_distance_price_product">{{"[img]"+ list_product_selected['distance'] + list_product_selected['price']}}</label>
+		                		<hr>
+		                	</div>
 		                </div>
 		            </div>
 <!-- 

@@ -41,11 +41,25 @@
 	position: relative;
 }
 
-#title_produto{
+#text_title_product{
 	padding: 10px 0px 0px 70px;
 	margin: 10px;
 	font-family: "david";
 	font-size: 40px;
+}
+
+#text_distance_price_product{
+	padding: 10px 0px 0px 70px;
+	margin: 10px;
+	font-family: "Centaur";
+	font-style: inherit;
+	font-size: 20px;
+}
+
+#div_text{
+	position: relative;
+	background-color: red;
+	width: 50%;
 }
 
 #information_produto{
