@@ -1,0 +1,28 @@
+.animate-enter-options, .animate-leave-options, .animate-enter-settings, .animate-leave-settings
+{ 
+    -webkit-transition: 500s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 825ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 825ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 825ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+} 
+
+.animate-enter-search, .animate-leave-search
+{
+	-webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -ms-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 1s linear all;
+}
+
+.animate-enter-options {left: -20%;}
+.animate-enter-options.animate-enter-options-active {left: 0;}
+.animate-leave-options {left: 0;}
+.animate-leave-options.animate-leave-options-active{left: -20%;}
+
+
+.animate-enter-settings {left: 100%;}
+.animate-enter-settings.animate-enter-settings-active {left: 80%;}
+.animate-leave-settings {left: 80%;}
+.animate-leave-settings.animate-leave-settings-active{left: 100%;}
