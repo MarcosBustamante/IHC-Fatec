@@ -1,5 +1,5 @@
 #div_principal_blocks{
-	top: 15%; left: 3%; right: 3%;
+	top: 14%; left: 2%; right: 2%;
 	padding: 20px 20px 0px 20px;
 	position: absolute;
 	background-color: #efe;
@@ -49,8 +49,8 @@
 }
 
 #text_distance_price_product{
-	padding: 10px 0px 0px 70px;
-	margin: 10px;
+	padding: 10px 10px 0px 10px;
+	margin: 4px;
 	font-family: "Centaur";
 	font-style: inherit;
 	font-size: 20px;
@@ -71,12 +71,14 @@
 
 .div_principal_list{
 	top: 20%; bottom: 2%;
-	margin-bottom: 30px;
-	padding: 10px 0px 30px 0px;
-	width: 48.5%;
+	margin: 20px 15px 30px 15px;
+	padding: 10px 30px 10px 30px;
 	position: relative;
 	background-color: #ded;
-	border-radius: 5%;
+}
+.lado{
+	width: 46.5%;
+	float: left;
 }
 
 #size_imgs_list{
@@ -86,10 +88,9 @@
 
 #circles_of_slide{
 	border-radius: 50%;
-	border: 2px solid black;
-	margin: 5px;
-	width: 10px;
-	height: 10px;
+	margin: 4px;
+	width: 7px;
+	height: 7px;
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
@@ -99,10 +100,26 @@
 	list-style: none;
 }
 
+.config_cursor{
+	cursor: pointer;
+}
+
+.config_margin{
+	margin: 10px 0px 10px 0px;
+}
+
 .color_others_options{
 	background-color: black;
 }
 
 .change_color{
-	background-color: white;
+	background-color: #2E8B57;
+}
+
+.product_selected{
+	background-color: red;
+}
+
+.product_houver{
+	background-color: blue;
 }
