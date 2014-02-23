@@ -53,7 +53,7 @@
                 </ul>
 
                 <div ng-switch-when="list">
-                	<div>
+                	<div class="lado">
 		                <div class="div_principal_list">
 							<label id="text_title_product">{{list_product_selected['name']}}</label><hr>
 
@@ -70,36 +70,59 @@
 		                	</div>
 
 		                	<div align="center">
-		                    	<button id="glyphicon glyphicon-map-marker">Mapa</button>
-		                    	<button>Favo</button>
+		                    	<button>Mapa</button>
+		                    	<button>Favorito</button>
 		                    	<button>Comprado</button>
-		                    	<button ng-click="show_more_infermation = !show_more_infermation">+</button>
+		                    	<button ng-click="show_more_information = !show_more_information">+</button>
 		                    	<button>Coment</button>
 		                    	<button>List</button>
 		                	</div>
 		                </div>
 
-		                <div class="div_principal_list" ng-if="show_more_infermation">		                	
-		                	<div align="right" id="div_text">
-		                		<label id="text_distance_price_product">{{"[img]"+ list_product_selected['distance'] + list_product_selected['price']}}</label>
-		                		<hr>
-		                	</div>
+		                <div class="div_principal_list" ng-if="show_more_information">
+		                	<table width="100%">
+		                		<tr align="center">
+		                			<td>
+		                				<label id="text_distance_price_product"><b>{{list_product_selected['price']}}</b></label>
+		                			</td>
+		                			<td>
+		                				<label id="text_distance_price_product"><b>{{list_product_selected['shop']}}</b></label>
+		                			</td>
+		                		</tr>
+		                		<tr align="center">
+		                			<td>
+		                				<label id="text_distance_price_product"><b>{{"[img]"+ list_product_selected['distance']}}</b></label>
+		                			</td>
+		                			<td>
+		                				<label id="text_distance_price_product"><b>{{list_product_selected['street']}}</b></label>
+		                			</td>
+		                		</tr>
+		                	</table>
 		                </div>
 		            </div>
-<!-- 
-                    <div class="div_principal_list">
-                    	<li ng-repeat="item in produtos">
-	                    	<img src="{{item['img']}}" id="size_imgs_list">
-	                    	<div align="center">
-	                    		<p>{{item['name']}}</p>
-	                    		<p>{{produtos[0]['distance']}}</p>
-	                    		<p>{{produtos[0]['shop'] + " | " + produtos[0]['street']}}</p>
-	                    	</div>
-	                    	<div align="right">
-	                    		{{produtos[0]['price']}}
-	                    	</div>
-                    	</li>
-                    </div> -->
+
+                    <div class="div_principal_list lado">
+                    	<div class = "config_cursor config_margin" ng-repeat="item in produtos" 
+                    	ng-click="selected_new_product(item)" ng-mouseover="houver_new_product(item)"
+                    	ng-class="{'product_selected': list_product_selected == item, 'product_houver': list_product_houver == item}">
+
+                    		<table width="100%">
+		                		<tr align="center">
+		                			<td width="20%">
+		                				<img src="{{item['img'][0]}}" id="size_imgs_list">
+		                			</td>
+		                			<td width="60%">
+			                    		<p>{{item['name']}}</p>
+			                    		<p>{{item['shop'] + " | " + item['street']}}</p>
+		                			</td>
+		                			<td width="20%">
+		                				<label id="text_distance_price_product"><b>{{item['price']}}</b></label>
+			                    		<p>{{item['distance']}}</p>
+		                			</td>
+		                		</tr>
+		                	</table>
+                    	</div>
+                    </div>
                 </div>
 
 			</div>
