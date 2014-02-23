@@ -19,9 +19,8 @@
 
 	<body>
 		<div id="body_page">
-
 			<!-- Navbar -->
-			<div id="menu_bar" align="center">
+			<div id="navbar" align="center">
 				<div class="fsp"> </div>
 				<button  ng-click="active_menu[0] = !active_menu[0]">Menu</button>
 				<input type="text" id="txt" placeholder="Pesquisar"> </input>
@@ -124,6 +123,15 @@
 
 		<!-- Menu de opções (esquerda) -->
 		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+		<div class="block" align=center> Menu </div>
+		<center> <div id="profile"> </div> </center>
+			<ul>
+				<li><a href="link1.htm">[ICO] &nbsp; Lista de Desejos</a></li>
+				<li><a href="link2.htm">[ICO] &nbsp; Quem somos nós</a></li>
+				<li><a href="link3.htm">[ICO] &nbsp; Esqueci esse item</a></li>
+				<li><a href="link4.htm">[ICO] &nbsp; Esse também</a></li>
+				<li><a href="link5.htm">[ICO] &nbsp; E mais esse outro</a></li>
+	  </ul>
 		</div>
 
 		<!-- Menu de configurações (direita) -->
