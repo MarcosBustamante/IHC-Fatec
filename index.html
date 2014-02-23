@@ -3,28 +3,33 @@
 
 	<head>
 		<title>FastFind</title>
-		
+		<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+		<script src="scriptIndex.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="keywords" content="produtos localização lugar lojas compra ">
 		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-		<!-- CSS -->
+		<!-- Le styles -->
 		<link rel="stylesheet" type="text/css" href="styleTable.css">
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="animation.css">
-		
-		
-		<!-- js -->
-		<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
-		<script src="scriptIndex.js"></script>
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
 		</head>
 
 	<body>
+
+		<!-- Div of home page -->
 		<div id="body_page">
 
-			<!-- Navbar -->
+			<!-- Div of menu bar -->
 			<div id="menu_bar" align="center">
 				<div class="fsp"> </div>
 				<button  ng-click="active_menu[0] = !active_menu[0]">Menu</button>
@@ -34,7 +39,7 @@
 			</div>
 
 		
-			<!-- Tabela de produtos -->
+			<!--Tabela de produtos -->
 			<div id="div_principal_blocks" align="left" ng-switch on="product_view_selected">
 
 				<ul ng-switch-when="block">
@@ -47,7 +52,7 @@
                     </li>
                 </ul>
 
-                <div ng-switch-when="list">
+                <div ng-switch-when="list" align="center">
                 	<div class="lado">
 		                <div class="div_principal_list">
 							<label id="text_title_product">{{list_product_selected['name']}}</label><hr>
@@ -101,12 +106,12 @@
                     	ng-click="selected_new_product(item)" ng-mouseover="houver_new_product(item)"
                     	ng-class="{'product_selected': list_product_selected == item, 'product_houver': list_product_houver == item}">
 
-                    		<table width="100%">
+                    		<table width="80%">
 		                		<tr align="center">
 		                			<td width="20%">
 		                				<img src="{{item['img'][0]}}" id="size_imgs_list">
 		                			</td>
-		                			<td width="60%">
+		                			<td width="50%">
 			                    		<p>{{item['name']}}</p>
 			                    		<p>{{item['shop'] + " | " + item['street']}}</p>
 		                			</td>
@@ -124,34 +129,36 @@
 
 		</div>
 
-		<!-- Menu de opções (esquerda) -->
+		<!--Div of meu options animated, init on left -->
 		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
 		</div>
 
-		<!-- Menu de configurações (direita) -->
+		<!--Div of menu settings, init on right-->
 		<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
 				<div class="block" align=center> Filters </div>
-				<center>
-				Filtro 1
+				<center> <input type="radio" name="group1" value="Milk"> Driving &nbsp; &nbsp;
+				<input type="radio" name="group1" value="Butter" checked> Walking<br>
 				<div id="envolve">
-					<div class="quadro_esq"> <img src="volante.jpg"> </img>  </div>
-					<div class="quadro_dir">  </div>
+					<div class="quadro_esq"> Imagem Walking </div>
+					<div class="quadro_dir"> Imagem Driving </div>
 				</div>
 				<div class="fspace"> </div>
 				<div class="fspace"> </div>
 				<hr>
-				Filtro 2
+				<input type="radio" name="group2" value="Water" ng-click="change_product_view('list')"> List &nbsp; &nbsp;
+				<input type="radio" name="group2" value="Beer" ng-click="change_product_view('block')"> Block<br>
 				<div id="envolve">
-					<div class="quadro_esq" ng-click="change_type_view('list')">  </div>
-					<div class="quadro_dir" ng-click="change_type_view('block')">  </div>
+					<div class="quadro_esq"> Imagem Walking </div>
+					<div class="quadro_dir"> Imagem Driving </div>
 				</div>
 				<div class="fspace"> </div>
 				<div class="fspace"> </div>
 				<hr>
-				Filtro 3
+				<input type="radio" name="group3" value="Water"> Price &nbsp; &nbsp;
+				<input type="radio" name="group3" value="Beer"> Distance<br>
 				<div id="envolve">
-					<div class="quadro_esq">  </div>
-					<div class="quadro_dir"> </div>
+					<div class="quadro_esq"> Imagem Walking </div>
+					<div class="quadro_dir"> Imagem Driving </div>
 				</div>
 				</center>
 		</div>

@@ -1,8 +1,9 @@
 #div_principal_blocks{
-	top: 14%; left: 2%; right: 2%;
+	top: 70px; left: 0%; right: 0%;
 	padding: 20px 20px 0px 20px;
 	position: absolute;
 	background-color: #efe;
+	min-width: 1300px;
 }
 
 #div_produtos{
@@ -75,6 +76,7 @@
 	padding: 10px 30px 10px 30px;
 	position: relative;
 	background-color: #ded;
+	min-width: 470px;
 }
 .lado{
 	width: 46.5%;
@@ -113,7 +115,7 @@
 }
 
 .change_color{
-	background-color: #2E8B57;
+	background-color: #005600;
 }
 
 .product_selected{
