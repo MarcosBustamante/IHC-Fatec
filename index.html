@@ -2,31 +2,25 @@
 <html ng-app ng-controller="index_ctr">
 
 	<head>
-		<title>FastFind</title>
-		<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
-		<script src="scriptIndex.js"></script>
+		<title>FastFind - Your desires on a screen</title>
+		<meta name="keywords" content="produtos products produto product venda vendas sell loja shopping pesquisa" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
-		<!-- Le styles -->
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="styleTable.css">
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
 		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="animation.css">
-
-		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
+		<!-- js -->
+		<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+		<script src="scriptIndex.js"></script>
 		</head>
 
 	<body>
-
-		<!-- Div of home page -->
 		<div id="body_page">
 
-			<!-- Div of menu bar -->
+			<!-- Navbar -->
 			<div id="menu_bar" align="center">
 				<div class="fsp"> </div>
 				<button  ng-click="active_menu[0] = !active_menu[0]">Menu</button>
@@ -36,7 +30,7 @@
 			</div>
 
 		
-			<!--Tabela de produtos -->
+			<!-- Tabela de produtos -->
 			<div id="div_principal_blocks" align="left" ng-switch on="product_view_selected">
 
 				<ul ng-switch-when="block">
@@ -126,33 +120,31 @@
 
 		</div>
 
-		<!--Div of meu options animated, init on left -->
+		<!-- Menu de opções (esquerda) -->
 		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
 		</div>
 
-		<!--Div of menu settings, init on right-->
+		<!-- Menu de configurações (direita) -->
 		<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
 				<div class="block" align=center> Filters </div>
-				<center> <input type="radio" name="group1" value="Milk"> Driving &nbsp; &nbsp;
-				<input type="radio" name="group1" value="Butter" checked> Walking<br>
+				<center>
+				Filtro 1
 				<div id="envolve">
-					<div class="quadro_esq"> Imagem Walking </div>
+					<div class="quadro_esq"> <img src="img/volante.jpg"> </img> </div>
 					<div class="quadro_dir"> Imagem Driving </div>
 				</div>
 				<div class="fspace"> </div>
 				<div class="fspace"> </div>
 				<hr>
-				<input type="radio" name="group2" value="Water" ng-click="change_product_view('list')"> List &nbsp; &nbsp;
-				<input type="radio" name="group2" value="Beer" ng-click="change_product_view('block')"> Block<br>
+				Filtro 2
 				<div id="envolve">
-					<div class="quadro_esq"> Imagem Walking </div>
-					<div class="quadro_dir"> Imagem Driving </div>
+					<div class="quadro_esq" ng-click="change_type_view('list')"> Imagem Walking </div>
+					<div class="quadro_dir"  ng-click="change_type_view('block')"> Imagem Driving </div>
 				</div>
+				Filtro 3
 				<div class="fspace"> </div>
 				<div class="fspace"> </div>
 				<hr>
-				<input type="radio" name="group3" value="Water"> Price &nbsp; &nbsp;
-				<input type="radio" name="group3" value="Beer"> Distance<br>
 				<div id="envolve">
 					<div class="quadro_esq"> Imagem Walking </div>
 					<div class="quadro_dir"> Imagem Driving </div>

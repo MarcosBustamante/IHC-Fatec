@@ -33,8 +33,7 @@
 	background-image: url("img/find.png");
 }
 
-#txt {
-	position: relative;
+#navbar_txt {
 	top: 6px;
 }
 
@@ -83,6 +82,17 @@
 	
 }
 
+.menu_options{
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	right: 80%;
+	top: 0;
+	bottom: 0;
+}
+
 .quadro_esq {
   position: relative;
   border: 3px solid #fff;
@@ -110,20 +120,7 @@
   overflow: hidden;
   border-radius: 2px;
    
-  -webkit-box-shadow: 5px 5px 5px #111;
-          box-shadow: 5px 5px 5px #111; 
+  -webkit-box-shadow: 8px 8px 8px #111;
+          box-shadow: 8px 8px 8px #111; 
 }
 
-
-
-
-.menu_options{
-	color: #fff;
-	text-shadow: 0 1px 0 #000;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
-	right: 80%;
-	top: 0;
-	bottom: 0;
-}
