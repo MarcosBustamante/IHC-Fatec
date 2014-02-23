@@ -33,7 +33,7 @@
 			<!-- Tabela de produtos -->
 			<div id="div_principal_blocks" align="left" ng-switch on="product_view_selected">
 
-				<ul ng-switch-when="block">
+				<ul ng-switch-when="block" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
                     <li class="li_produtos" ng-repeat="item in produtos" align="left">
 						<div id="div_produtos" align="center">
 							<label id="title_produto">{{item['name']}}</label>
@@ -70,7 +70,9 @@
 		                	</div>
 		                </div>
 
-		                <div class="div_principal_list" ng-if="show_more_information">
+		                <div class="div_principal_list" ng-if="show_more_information" 
+		                	ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+
 		                	<table width="100%">
 		                		<tr align="center">
 		                			<td>
@@ -94,8 +96,8 @@
 
                     <div class="div_principal_list lado">
                     	<div class = "config_cursor config_margin" ng-repeat="item in produtos" 
-                    	ng-click="selected_new_product(item)" ng-mouseover="houver_new_product(item)"
-                    	ng-class="{'product_selected': list_product_selected == item, 'product_houver': list_product_houver == item}">
+                    		ng-click="selected_new_product(item)" ng-mouseover="houver_new_product(item)"
+                    		ng-class="{'product_selected': list_product_selected == item, 'product_houver': list_product_houver == item}">
 
                     		<table width="80%">
 		                		<tr align="center">
@@ -141,10 +143,11 @@
 					<div class="quadro_esq" ng-click="change_type_view('list')"> Imagem Walking </div>
 					<div class="quadro_dir"  ng-click="change_type_view('block')"> Imagem Driving </div>
 				</div>
-				Filtro 3
+				
 				<div class="fspace"> </div>
 				<div class="fspace"> </div>
 				<hr>
+				Filtro 3
 				<div id="envolve">
 					<div class="quadro_esq"> Imagem Walking </div>
 					<div class="quadro_dir"> Imagem Driving </div>
