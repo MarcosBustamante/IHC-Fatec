@@ -102,6 +102,11 @@
 	list-style: none;
 }
 
+.scrollbar {
+	bottom: 20%;
+	overflow: auto;
+}
+
 .config_cursor{
 	cursor: pointer;
 }
@@ -119,9 +124,9 @@
 }
 
 .product_selected{
-	background-color: red;
+	border: solid #2E8B57;
 }
 
 .product_houver{
-	background-color: blue;
+	border: solid #2E8B57;
 }

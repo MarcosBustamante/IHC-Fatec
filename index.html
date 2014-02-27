@@ -8,8 +8,6 @@
 		<meta charset="utf-8">
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="styleTable.css">
-		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
-		<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="animation.css">
 		<!-- js -->
@@ -22,7 +20,7 @@
 			<!-- Navbar -->
 			<div id="navbar" align="center">
 				<div class="fsp"> </div>
-				<button  ng-click="active_menu[0] = !active_menu[0]">Menu</button>
+				<div id="btn_menu" ng-click="active_menu[0] = !active_menu[0]"></div>
 				<input type="text" id="txt" placeholder="Pesquisar"> </input>
 				<button id="btn_find"> </button>
 				<button  id="btn_set" ng-click="active_menu[1] = !active_menu[1]"></button>
@@ -93,7 +91,7 @@
 		                </div>
 		            </div>
 
-                    <div class="div_principal_list lado">
+                    <div class="div_principal_list lado scrollbar">
                     	<div class = "config_cursor config_margin" ng-repeat="item in produtos" 
                     		ng-click="selected_new_product(item)" ng-mouseover="houver_new_product(item)"
                     		ng-class="{'product_selected': list_product_selected == item, 'product_houver': list_product_houver == item}">
@@ -123,15 +121,21 @@
 
 		<!-- Menu de opções (esquerda) -->
 		<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
-		<div class="block" align=center> Menu </div>
-		<center> <div id="profile"> </div> </center>
-			<ul>
-				<li><a href="link1.htm">[ICO] &nbsp; Lista de Desejos</a></li>
-				<li><a href="link2.htm">[ICO] &nbsp; Quem somos nós</a></li>
-				<li><a href="link3.htm">[ICO] &nbsp; Esqueci esse item</a></li>
-				<li><a href="link4.htm">[ICO] &nbsp; Esse também</a></li>
-				<li><a href="link5.htm">[ICO] &nbsp; E mais esse outro</a></li>
-	  </ul>
+			<div class="block" align=center> 
+				Menu 
+			</div>
+			<center> <div id="profile"> <img src="img/user.png" align=center> </img> </div> </center>
+				<ul>
+					<li><a href="link1.htm">[ICO] &nbsp; Home</a></li>
+					<hr>
+					<li><a href="link2.htm">[ICO] &nbsp; Lista de Desejos</a></li>
+					<hr>
+					<li><a href="link3.htm">[ICO] &nbsp; Produtos adquiridos</a></li>
+					<hr>
+					<li><a href="link4.htm"> [ICO]<!--<img src="img/sobre.png"> -->&nbsp; Quem somos nós </img></a></li>
+					<hr>
+					<li><a href="link5.htm">[ICO] &nbsp; E mais esse outro</a></li>
+				</ul>
 		</div>
 
 		<!-- Menu de configurações (direita) -->
@@ -140,16 +144,16 @@
 				<center>
 				Filtro 1
 				<div id="envolve">
-					<div class="quadro_esq"> <img src="img/volante.jpg"> </img> </div>
-					<div class="quadro_dir"> Imagem Driving </div>
+					<div class="quadro_esq"> Imagem Driving </div>
+					<div class="quadro_dir"> Imagem Walking </div>
 				</div>
 				<div class="fspace"> </div>
 				<div class="fspace"> </div>
 				<hr>
 				Filtro 2
 				<div id="envolve">
-					<div class="quadro_esq" ng-click="change_type_view('list')"> Imagem Walking </div>
-					<div class="quadro_dir"  ng-click="change_type_view('block')"> Imagem Driving </div>
+					<div class="quadro_esq" ng-click="change_type_view('list')"> <img src="img/lista.png" alt="Modo de exibição de produtos: lista"> </img> </div>
+					<div class="quadro_dir"  ng-click="change_type_view('block')"> <img src="img/bloco.png" alt="Modo de exibição de prodtuos: blocos"> </img> </div>
 				</div>
 				
 				<div class="fspace"> </div>

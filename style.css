@@ -7,6 +7,7 @@ html, body {overflow-x: hidden;}
 	height: 70px;
 	background-color: #2E8B57;
 	min-width: 1300px;
+	z-index: 10;
 }
 
 #menu {
@@ -35,6 +36,18 @@ html, body {overflow-x: hidden;}
 	background-image: url("img/find.png");
 }
 
+#btn_menu {
+  position: relative;	
+  /*border: 3px solid #fff;*/
+  float: left;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 2px;
+  background-image: url("img/menu.png");
+
+}
+
 #navbar_txt {
 	top: 6px;
 }
@@ -42,8 +55,8 @@ html, body {overflow-x: hidden;}
 #profile {
   position: relative;	
   border: 5px solid #fff;
-  height: 100px;
-  width: 100px;
+  height: 64px;
+  width: 64px;
   margin: 20px;
   overflow: hidden;
   border-radius: 50%;
@@ -67,16 +80,15 @@ html, body {overflow-x: hidden;}
 .menu{
 	font-family: "Verdana", sans-serif;
     font-size: 15px;
-	position: fixed;
+	position: absolute;
 	height: 100%;
 	width: 300px;
 	background-color: #1C1C1C;
-	z-index: 1;
 }
 
 .menu_options ul li {
-		margin: 0; padding: 0px;
-		border-bottom: 1px solid #CCC;
+		/*margin: 0; padding: 0px;*/
+		/*border: 1px solid #CCC;*/
 		text-align: left;
 		list-style-type: none;
 }
@@ -87,7 +99,6 @@ html, body {overflow-x: hidden;}
 		color: #fff;
 		text-decoration: none;
 		padding: 10px;
-		left: 0;
 		display: block;
 }
 
@@ -105,7 +116,8 @@ html, body {overflow-x: hidden;}
     box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
 	right: 0;
 	bottom: 0;
-	top: 0;
+	top: 70px;
+	z-index: 2;
 	
 }
 
@@ -115,8 +127,9 @@ html, body {overflow-x: hidden;}
     text-decoration: none;
     box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
 	right: 80%;
-	top: 0;
+	top: 70px;
 	bottom: 0;
+	z-index: 2px;
 }
 
 .table_produtos{
@@ -132,7 +145,7 @@ html, body {overflow-x: hidden;}
 
 .quadro_esq {
   position: relative;
-  border: 3px solid #fff;
+  /*border: 0px solid #fff*/
   float: left;  
   height: 100px;
   width: 100px;
@@ -147,7 +160,7 @@ html, body {overflow-x: hidden;}
 
 .quadro_dir {
   position: relative;
-  border: 3px solid #fff;
+  /*border: 3px solid #fff;*/
   float: right;  
   height: 100px;
   width: 100px;
