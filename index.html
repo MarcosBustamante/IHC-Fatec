@@ -15,109 +15,103 @@
 		<script src="scriptIndex.js"></script>
 		</head>
 
-	<body>
-		<div>
-			<!-- Navbar -->
-			<div id="navbar" align="center">
-				<div class="fsp"> </div>
-				<div id="btn_menu" ng-click="active_menu[0] = !active_menu[0]"></div>
-				<input type="text" id="txt" placeholder="Pesquisar"> </input>
-				<button id="btn_find"> </button>
-				<button  id="btn_set" ng-click="active_menu[1] = !active_menu[1]"></button>
-			</div>
+<body>
+		<!-- Navbar -->
+		<div id="navbar" align="center">
+			<div class="fsp"> </div>
+			<div id="btn_menu" ng-click="active_menu[0] = !active_menu[0]"></div>
+			<input type="text" id="txt" placeholder="Pesquisar"> </input>
+			<button id="btn_find"> </button>
+			<button  id="btn_set" ng-click="active_menu[1] = !active_menu[1]"></button>
+		</div>
 
-		
-			<!-- Tabela de produtos -->
-			<div id="products_view" align="left" ng-switch on="product_view_selected">
-				
-				<!--Product in block-->
-				<ul ng-switch-when="block" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
-                    <li class="list_product_block" ng-repeat="item in produtos" align="left">
-						<div id="show_product_block" align="center">
-							<label id="title_produto">{{item['name']}}</label>
-                        	<img src="{{item['img'][0]}}" id="image_block">
-                        	<label id="information_produto_block">{{item['distance'] + " | " + item['price']}}</label>
-                    	</div>
-                    </li>
-                </ul>
-				
-				<!--Product in list-->
-                <div ng-switch-when="list" align="center">
-                	<div class="align_list">
-		                <div class="view_product_list">
-							<label id="title_product_list">{{list_product_selected['name']}}</label><hr>
+	
+		<!-- Tabela de produtos -->
+		<div id="products_view" align="left" ng-switch on="product_view_selected">
+			
+			<!--Product in block-->
+			<ul ng-switch-when="block" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+                <li class="list_product_block" ng-repeat="item in produtos" align="left">
+					<div id="show_product_block" align="center">
+						<label id="title_produto">{{item['name']}}</label>
+                    	<img src="{{item['img'][0]}}" id="image_block">
+                    	<label id="information_produto_block">{{item['distance'] + " | " + item['price']}}</label>
+                	</div>
+                </li>
+            </ul>
+			
+			<!--Product in list-->
+            <div ng-switch-when="list" align="center" style="width:100%;">
+            	<div class="align_list">
+	                <div class="view_product_list">
+						<label id="title_product_list">{{list_product_selected['name']}}</label><hr>
 
-		                	<li style="list-style: none;" align="center">
-		                		<div ng-repeat="circle in list_product_selected['img']"  class="slid_circles" 
-		                			 ng-class="{'selected': circle != product_selected}"
-		                			 ng-mouseover="change_image_slide(circle)">
-		                		</div>
-		                	</li>
+	                	<li style="list-style: none;" align="center">
+	                		<div ng-repeat="circle in list_product_selected['img']"  class="slid_circles" 
+	                			 ng-class="{'selected': circle != product_selected}"
+	                			 ng-mouseover="change_image_slide(circle)">
+	                		</div>
+	                	</li>
 
-							<div id="view_slid_list" align="center">
-		                		<img src="{{product_selected}}" id="image_slid_list">
-		                	</div>
+						<div id="view_slid_list" align="center">
+	                		<img src="{{product_selected}}" id="image_slid_list">
+	                	</div>
 
-		                	<div align="center">
-		                    	<button>Mapa</button>
-		                    	<button>Favorito</button>
-		                    	<button>Comprado</button>
-		                    	<button ng-click="show_more_information = !show_more_information">+</button>
-		                    	<button>Coment</button>
-		                    	<button>List</button>
-		                	</div>
-		                </div>
+	                	<div align="center">
+	                    	<button>Mapa</button>
+	                    	<button ng-click="show_more_information = !show_more_information">+</button>
+	                    	<button ng-click="open_comment()" ng-if="show_comment">Coment</button>
+	                    	<button ng-click="open_comment()" ng-if="!show_comment">List</button>
+	                	</div>
+	                </div>
 
-		                <div class="view_product_list" ng-if="show_more_information" 
-		                	ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+	                <div class="view_product_list" ng-if="show_more_information" 
+	                	ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
 
-		                	<table width="100%">
-		                		<tr align="center">
-		                			<td>
-		                				<label id="information_product_list"><b>{{list_product_selected['price']}}</b></label>
-		                			</td>
-		                			<td>
-		                				<label id="information_product_list"><b>{{list_product_selected['shop']}}</b></label>
-		                			</td>
-		                		</tr>
-		                		<tr align="center">
-		                			<td>
-		                				<label id="information_product_list"><b>{{"[img]"+ list_product_selected['distance']}}</b></label>
-		                			</td>
-		                			<td>
-		                				<label id="information_product_list"><b>{{list_product_selected['street']}}</b></label>
-		                			</td>
-		                		</tr>
-		                	</table>
-		                </div>
-		            </div>
+	                	<table width="100%">
+	                		<tr align="center">
+	                			<td>
+	                				<label id="information_product_list"><b>{{list_product_selected['price']}}</b></label>
+	                			</td>
+	                			<td>
+	                				<label id="information_product_list"><b>{{list_product_selected['shop']}}</b></label>
+	                			</td>
+	                		</tr>
+	                		<tr align="center">
+	                			<td>
+	                				<label id="information_product_list"><b>{{"[img]"+ list_product_selected['distance']}}</b></label>
+	                			</td>
+	                			<td>
+	                				<label id="information_product_list"><b>{{list_product_selected['street']}}</b></label>
+	                			</td>
+	                		</tr>
+	                	</table>
+	                </div>
+	            </div>
 
-                    <div class="view_product_list align_list">
-                    	<div class = "config_list_with_product" ng-repeat="item in produtos" 
-                    		ng-click="selected_new_product(item)" ng-mouseover="houver_new_product(item)"
-                    		ng-class="{'selected': list_product_selected == item}">
+                <div class="view_product_list align_list comment_list"ng-if="show_comment">
+                	<div class = "config_list_with_product" ng-repeat="item in produtos" 
+                		ng-click="selected_new_product(item)" ng-mouseover="houver_new_product(item)"
+                		ng-class="{'selected': list_product_selected == item}" >
 
-                    		<table width="80%">
-		                		<tr align="center">
-		                			<td width="20%">
-		                				<img src="{{item['img'][0]}}" id="image_list">
-		                			</td>
-		                			<td width="50%">
-			                    		<p>{{item['name']}}</p>
-			                    		<p>{{item['shop'] + " | " + item['street']}}</p>
-		                			</td>
-		                			<td width="20%">
-		                				<label id="text_distance_price_product"><b>{{item['price']}}</b></label>
-			                    		<p>{{item['distance']}}</p>
-		                			</td>
-		                		</tr>
-		                	</table>
-                    	</div>
-                    </div>
+                		<table width="80%">
+	                		<tr align="center">
+	                			<td width="20%">
+	                				<img src="{{item['img'][0]}}" id="image_list">
+	                			</td>
+	                			<td width="50%">
+		                    		<p>{{item['name']}}</p>
+		                    		<p>{{item['shop'] + " | " + item['street']}}</p>
+	                			</td>
+	                			<td width="20%">
+	                				<label id="text_distance_price_product"><b>{{item['price']}}</b></label>
+		                    		<p>{{item['distance']}}</p>
+	                			</td>
+	                		</tr>
+	                	</table>
+                	</div>
                 </div>
-
-			</div>
-
+            </div>
 		</div>
 
 		<!-- Menu de opções (esquerda) -->

@@ -1,6 +1,7 @@
 #products_view{
-	top: 70px; left: 0%; right: 0%;
+	top: 70px;left: 0;right: 0;bottom: 0;
 	padding: 20px 20px 0px 20px;
+	width: 100%;
 	position: absolute;
 	background-color: #efe;
 	min-width: 1300px;
@@ -45,6 +46,10 @@
 	position: relative;
 	background-color: #cec;
 	min-width: 460px;
+}
+
+.view_product_list.comment_list{
+	max-height: 620px;
 }
 
 #image_slid_list{
