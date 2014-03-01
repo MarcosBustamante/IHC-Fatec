@@ -43,6 +43,7 @@
 			<!--Product in list-->
             <div ng-switch-when="list" align="center" style="width:100%;">
             	<div class="align_list">
+            		<!-- Product slide -->
 	                <div class="view_product_list">
 						<label id="title_product_list">{{list_product_selected.name}}</label><hr>
 
@@ -59,30 +60,40 @@
 
 	                	<div align="center">
 	                    	<button>Mapa</button>
+	                    	<button>s2</button>
 	                    	<button ng-click="show_more_information = !show_more_information">+</button>
-	                    	<button ng-click="open_comment()" ng-if="show_comment">List</button>
-	                    	<button ng-click="open_comment()" ng-if="!show_comment">Comment</button>
+	                    	<button ng-click="open_comment(list_product_selected)" ng-if="show_comment">List</button>
+	                    	<button ng-click="open_comment(list_product_selected)" ng-if="!show_comment">Comment</button>
 	                	</div>
 	                </div>
 
+	                <!-- Shop information -->
 	                <div class="view_product_list" ng-if="show_more_information" 
 	                	ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
-
 	                	<table width="100%">
-	                		<tr align="center">
-	                			<td>
-	                				<label id="information_product_list"><b>{{list_product_selected.price}}</b></label>
+	                		<tr>
+	                			<td width="15%" valign="center">
+	                				<img ng-src="{{list_product_selected.logo}}" class="img_more_info">
 	                			</td>
-	                			<td>
-	                				<label id="information_product_list"><b>{{list_product_selected.shop}}</b></label>
-	                			</td>
-	                		</tr>
-	                		<tr align="center">
-	                			<td>
-	                				<label id="information_product_list"><b>{{"[img]"+ list_product_selected.distance}}</b></label>
-	                			</td>
-	                			<td>
-	                				<label id="information_product_list"><b>{{list_product_selected.street}}</b></label>
+	                			<td width="90%">
+	                			<table width="100%">
+	                				<tr>
+	                					<td width="65%" valign="center">
+			                				<label id="information_product_list">{{list_product_selected.shop}}</label>
+			                			</td>
+			                			<td  align="center" width="35%">
+			                				<b><label id="information_product_list">{{list_product_selected.price}}<b></label>
+			                			</td>
+	                				</tr>
+	                				<tr>
+	                					<td>
+			                				<label id="information_product_list">{{list_product_selected.street}}</label>
+			                			</td>
+			                			<td align="center">
+			                				<label id="information_product_list">{{list_product_selected.distance}}</label>
+			                			</td>
+	                				</tr>
+	                				</table>
 	                			</td>
 	                		</tr>
 	                	</table>
@@ -102,7 +113,6 @@
 	                			</td>
 	                			<td width="50%">
 		                    		<p>{{item.name}}</p>
-		                    		<p>{{item.shop + " | " + item.street}}</p>
 	                			</td>
 	                			<td width="20%">
 	                				<label id="text_distance_price_product"><b>{{item.price}}</b></label>
@@ -113,8 +123,8 @@
                 	</div>
                 </div>
 
-                <!-- Div with comments -->
-                <div  class="write_comment align_list">
+                <!-- Div write comments -->
+                <div  class="write_comment align_list"  ng-if="show_comment">
 	                <table>
 	            		<tr>
 	            			<td align="center" width="90px">
@@ -131,7 +141,7 @@
 		            				<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
 		            					Apagar
 		            				</button>
-		            				<button ng-click="save_comment(comment); comment=''; show_buttons=false" 
+		            				<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
 		            				style="background-color:blue;">
 		            					Enviar
 		            				</button>
@@ -140,22 +150,27 @@
 	            		</tr>
             		</table>
             	</div>
-                <div class="write_comment color_comments align_list" ng-if="show_comment">
-                	<table ng-repeat="product in product_comment">
-	            		<tr>
-	            			<td align="center" width="90px">
-	            				<img ng-src="{{product.img}}" class="img_comment">
-	            				<label id="information_product_list">{{product.first_name}}</label>
-	            				<label id="information_product_list">{{product.last_name}}</label>
-	            			</td>
-	            			<td style="with:5px;background-color:#2E8B57;"></td><td></td>
-	            			<td valign="center" width="80%0%">
-	            				<label>
-	            					{{product.comment}}
-	            				</label>
-	            			</td>
-	            		</tr>
-            		</table>
+
+            	<!-- All comments -->
+            	<div class="align_list" ng-if="show_comment">
+	                <div class="write_comment color_comments align_comment" ng-repeat="product in list_product_selected.comment">
+	                	<table>
+	            			<tr>
+		            			<td align="center" width="90px">
+		            				<img ng-src="{{product.img}}" class="img_comment">
+		            				<label id="information_product_list">{{product.first_name}}</label>
+		            				<label id="information_product_list">{{product.last_name}}</label>
+		            			</td>
+		            			<td style="with:5px;background-color:#2E8B57;"></td><td></td>
+		            			<td valign="center" width="80%">
+		            				<label>
+		            					{{product.comment}}
+		            				</label>
+		            			</td>
+		            		</tr>
+	            		</table>
+	            		<label ng-if="product_comment_is_empty">Seja o primeiro a deixar um comentário</label>
+	                </div>
                 </div>
             </div>
 		</div>
