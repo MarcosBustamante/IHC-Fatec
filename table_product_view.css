@@ -1,8 +1,10 @@
 #products_view{
-	top: 70px;left: 0;right: 0;bottom: 0;
-	padding: 20px 20px 0px 20px;
+	left: 0; top: 70px; right: 0; bottom: 0;
+	position: fixed;
 	width: 100%;
-	position: absolute;
+	z-index: 10;
+	padding-top: 20px;
+	padding-left: 10px;
 	background-color: #efe;
 	min-width: 1300px;
 }
@@ -46,10 +48,6 @@
 	position: relative;
 	background-color: #cec;
 	min-width: 460px;
-}
-
-.view_product_list.comment_list{
-	max-height: 620px;
 }
 
 #image_slid_list{
@@ -110,9 +108,29 @@
 }
 
 .config_list_with_product:hover{
-	border: solid #2E8B57;
+	background-color: #efe;
 }
 
 .config_list_with_product.selected{
-	border: solid red;
+	background-color: #ada;
+}
+
+.write_comment{
+	top: 20%;
+	margin: 20px 0px 15px 0px;
+	padding: 10px 30px 10px 30px;
+	position: relative;
+	min-width: 460px;
+	background-color:#2E8B57;
+	list-style: none;
+}
+
+.write_comment.color_comments{background-color:#cec;}
+
+.img_comment {
+	top: 0;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
 }

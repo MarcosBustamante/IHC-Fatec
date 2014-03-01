@@ -1,5 +1,3 @@
-html, body {overflow-x: hidden;}
-
 #navbar{
 	left: 0; top: 0; right: 0;
 	position: fixed;
