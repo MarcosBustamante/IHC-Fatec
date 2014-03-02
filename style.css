@@ -1,65 +1,69 @@
-#navbar{
+* {
+	margin: 0; padding: 0;
+}
+
+
+#navbar {
+	position: absolute;
 	left: 0; top: 0; right: 0;
-	position: fixed;
 	width: 100%;
 	height: 70px;
 	background-color: #2E8B57;
-	min-width: 1300px;
-	z-index: 10;
+	z-index: 10px;
 }
 
-#menu {
-		width: 30%;
-		margin: 0; padding: 0;
-		float: left;
+input[type=text]{     
+	border-radius: 6px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	box-shadow: 1px 1px 2px #333333;    
+	-moz-box-shadow: 1px 1px 2px #333333;
+	-webkit-box-shadow: 1px 1px 2px #333333;
+	border: 1px solid #CFCFCF;
+	height: 25px;
 }
 
-#btn_set {
-	border-radius: 5px;
-	width: 32px;
-	height: 32px;
-	left: 80%;
+#settings_button {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	right: 2%;
+	top: 15%;
 	border-style: none;
-	background-image: url("img/down.png");
-
+	background-image: url("img/settings.png");
 }
 
-#btn_find {
-	position: relative;
-	border-radius: 5px;
-	margin-left: 2px;
-	width: 32px;
-	height: 32px;
-	border-style: none;
+#find_button {
+	position: absolute;
+	right: 30%;
+	top: 15%;
+	border-style: hidden;
+	width: 48px;
+	height: 48px;
 	background-image: url("img/find.png");
 }
 
-#btn_menu {
-  position: relative;	
-  /*border: 3px solid #fff;*/
-  float: left;
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  border-radius: 2px;
-  background-image: url("img/menu.png");
+#menu_button {
+	position: relative;
+	float: left;
+	border-style: hidden;
+	width: 48px;
+	height: 48px;
+	border-radius: 2px;
+	background-image: url("img/menu.png");
 
 }
 
-#navbar_txt {
-	top: 6px;
-}
-
-#profile {
-  position: relative;	
-  border: 5px solid #fff;
-  height: 64px;
-  width: 64px;
-  margin: 20px;
-  overflow: hidden;
-  border-radius: 50%;
-  -webkit-box-shadow: 5px 5px 5px #111;
-          box-shadow: 5px 5px 5px #111; 
+#profile_picture {
+	position: relative;	
+	border: 5px solid #fff;
+	height: 64px;
+	width: 64px;
+	margin: 20px;
+	overflow: hidden;
+	border-radius: 50%;
+	-webkit-box-shadow: 5px 5px 5px #111;
+	box-shadow: 5px 5px 5px #111; 
 
 }
 
@@ -75,43 +79,50 @@
 	height: 10px;
 }
 
+.menu_distance {
+	margin-left: 5%;
+	left: 5%;
+}
+
 .menu{
 	font-family: "Verdana", sans-serif;
-    font-size: 15px;
+	font-size: 15px;
 	position: absolute;
 	height: 100%;
 	width: 300px;
 	background-color: #1C1C1C;
+	z-index: 1;
 }
 
 .menu_options ul li {
-		/*margin: 0; padding: 0px;*/
-		/*border: 1px solid #CCC;*/
-		text-align: left;
-		list-style-type: none;
+	/*margin: 0; padding: 0px;*/
+	/*border: 1px solid #CCC;*/
+	text-align: left;
+	list-style-type: none;
 }
 
 
 .menu_options a:link {
-		background: #1C1C1C;
-		color: #fff;
-		text-decoration: none;
-		padding: 10px;
-		display: block;
+	background: #1C1C1C;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	display: block;
 }
 
 
 .menu_options a:hover {
-		background: #fff;
-		color: #000;
+	background: #fff;
+	color: #000;
+	display: block;
 }
 
 
 .menu_settings{
 	color: #fff;
 	text-shadow: 0 1px 0 #000;
-    text-decoration: none;
-    box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
 	right: 0;
 	bottom: 0;
 	top: 70px;
@@ -122,8 +133,8 @@
 .menu_options{
 	color: #fff;
 	text-shadow: 0 1px 0 #000;
-    text-decoration: none;
-    box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
 	right: 80%;
 	top: 70px;
 	bottom: 0;
@@ -141,33 +152,33 @@
 	display: block;
 }
 
-.quadro_esq {
-  position: relative;
-  /*border: 0px solid #fff*/
-  float: left;  
-  height: 100px;
-  width: 100px;
-  left: 20px;
-  margin-top: 20px;
-  overflow: hidden;
-  border-radius: 2px;
-   
-  -webkit-box-shadow: 8px 8px 8px #111;
-          box-shadow: 8px 8px 8px #111; 
+.left_frame {
+	position: relative;
+	/*border: 0px solid #fff*/
+	float: left;  
+	height: 100px;
+	width: 100px;
+	left: 20px;
+	margin-top: 20px;
+	overflow: hidden;
+	border-radius: 2px;
+
+	-webkit-box-shadow: 8px 8px 8px #111;
+	box-shadow: 8px 8px 8px #111; 
 }
 
-.quadro_dir {
-  position: relative;
-  /*border: 3px solid #fff;*/
-  float: right;  
-  height: 100px;
-  width: 100px;
-  margin-top: 20px;
-  margin-right: 10px;
-  overflow: hidden;
-  border-radius: 2px;
-   
-  -webkit-box-shadow: 8px 8px 8px #111;
-          box-shadow: 8px 8px 8px #111; 
+.right_frame {
+	position: relative;
+	/*border: 3px solid #fff;*/
+	float: right;  
+	height: 100px;
+	width: 100px;
+	margin-top: 20px;
+	margin-right: 10px;
+	overflow: hidden;
+	border-radius: 2px;
+
+	-webkit-box-shadow: 8px 8px 8px #111;
+	box-shadow: 8px 8px 8px #111; 
 }
 
