@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link rel="stylesheet" type="text/css" href="animation.css"/>
 	<link rel="stylesheet" type="text/css" href="menu.css"/>
-	<!--<link rel="stylesheet" href="css/foundation.css" />-->
+	<link rel="stylesheet" href="css/foundation.css" />
 	<!--<script src="js/vendor/modernizr.js"></script>-->
 	<!-- js -->
 	<script src="angular.js"></script>
@@ -63,10 +63,10 @@
 
 				<div align="center">
 					<button>Mapa</button>
-					<button>s2</button>
+					<button>Curtir</button>
 					<button ng-click="show_more_information = !show_more_information">+</button>
-					<button ng-click="open_comment(list_product_selected)" ng-if="show_comment">List</button>
-					<button ng-click="open_comment(list_product_selected)" ng-if="!show_comment">Comment</button>
+					<button ng-click="open_comment(list_product_selected)" ng-if="show_comment">Lista</button>
+					<button ng-click="open_comment(list_product_selected)" ng-if="!show_comment">Comentários</button>
 				</div>
 			</div>
 
@@ -220,8 +220,13 @@
 			<div class="right_frame"> Imagem Driving </div>
 		</div>
 	</center>
-</div>
 
+</div>
+	<script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
 </body>
 </html>
 
