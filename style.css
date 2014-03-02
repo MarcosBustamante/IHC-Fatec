@@ -24,19 +24,19 @@ input[type=text]{
 }
 
 #settings_button {
-	position: absolute;
+	position: relative;
+	float: right;
 	width: 48px;
 	height: 48px;
-	right: 2%;
-	top: 15%;
-	border-style: none;
+	border-style: hidden;
 	background-image: url("img/settings.png");
+	z-index: 5;
 }
 
 #find_button {
 	position: absolute;
 	right: 30%;
-	top: 15%;
+	margin-right: 100px;
 	border-style: hidden;
 	width: 48px;
 	height: 48px;
@@ -49,8 +49,8 @@ input[type=text]{
 	border-style: hidden;
 	width: 48px;
 	height: 48px;
-	border-radius: 2px;
 	background-image: url("img/menu.png");
+	z-index: 5;
 
 }
 

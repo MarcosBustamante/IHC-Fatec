@@ -20,13 +20,13 @@
 <body>
 	<!-- Navbar -->
 	<div class="row">
-		<div class="large-12 columns" id="navbar" align="center">
+		<div class="large-12 columns" id="navbar">
 			<div class="fsp"> </div>
 			<div id="menu_button" ng-click="active_menu[0] = !active_menu[0]"></div>
-			<div id="find_button"> </div> 
+			<div id="find_button"> </div>
 			<div id="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
 		</div>
-	</div>
+		</div>
 
 	
 	<!-- Tabela de produtos -->
@@ -62,7 +62,7 @@
 				</div>
 
 				<div align="center">
-					<button>Mapa</button>
+					<button class="">Mapa</button>
 					<button>Curtir</button>
 					<button ng-click="show_more_information = !show_more_information">+</button>
 					<button ng-click="open_comment(list_product_selected)" ng-if="show_comment">Lista</button>
@@ -142,7 +142,7 @@
 					</li>
 					<li align="right" ng-show="show_buttons">
 						<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
-							Apagar
+						Apagar
 						</button>
 						<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
 						style="background-color:blue;">
@@ -181,7 +181,6 @@
 <!-- Menu de opções (esquerda) -->
 <div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
 	<div class="block" align=center> 
-		Menu 
 	</div>
 	<center> <div id="profile_picture"> <img ng-src="{{user.img}}" align=center> </img> </div> </center>
 	<ul>
@@ -220,7 +219,6 @@
 			<div class="right_frame"> Imagem Driving </div>
 		</div>
 	</center>
-
 </div>
 	<script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
