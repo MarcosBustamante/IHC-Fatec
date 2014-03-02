@@ -79,68 +79,6 @@ input[type=text]{
 	height: 10px;
 }
 
-.menu_distance {
-	margin-left: 5%;
-	left: 5%;
-}
-
-.menu{
-	font-family: "Verdana", sans-serif;
-	font-size: 15px;
-	position: absolute;
-	height: 100%;
-	width: 300px;
-	background-color: #1C1C1C;
-	z-index: 1;
-}
-
-.menu_options ul li {
-	/*margin: 0; padding: 0px;*/
-	/*border: 1px solid #CCC;*/
-	text-align: left;
-	list-style-type: none;
-}
-
-
-.menu_options a:link {
-	background: #1C1C1C;
-	color: #fff;
-	text-decoration: none;
-	padding: 20px;
-	display: block;
-}
-
-
-.menu_options a:hover {
-	background: #fff;
-	color: #000;
-	display: block;
-}
-
-
-.menu_settings{
-	color: #fff;
-	text-shadow: 0 1px 0 #000;
-	text-decoration: none;
-	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
-	right: 0;
-	bottom: 0;
-	top: 70px;
-	z-index: 2;
-	
-}
-
-.menu_options{
-	color: #fff;
-	text-shadow: 0 1px 0 #000;
-	text-decoration: none;
-	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
-	right: 80%;
-	top: 70px;
-	bottom: 0;
-	z-index: 2px;
-}
-
 .table_produtos{
 	position: relative;
 	padding: 10px 10px 12px;
@@ -150,35 +88,5 @@ input[type=text]{
 	list-style: none;
 	background-color: #00f;
 	display: block;
-}
-
-.left_frame {
-	position: relative;
-	/*border: 0px solid #fff*/
-	float: left;  
-	height: 100px;
-	width: 100px;
-	left: 20px;
-	margin-top: 20px;
-	overflow: hidden;
-	border-radius: 2px;
-
-	-webkit-box-shadow: 8px 8px 8px #111;
-	box-shadow: 8px 8px 8px #111; 
-}
-
-.right_frame {
-	position: relative;
-	/*border: 3px solid #fff;*/
-	float: right;  
-	height: 100px;
-	width: 100px;
-	margin-top: 20px;
-	margin-right: 10px;
-	overflow: hidden;
-	border-radius: 2px;
-
-	-webkit-box-shadow: 8px 8px 8px #111;
-	box-shadow: 8px 8px 8px #111; 
 }
 

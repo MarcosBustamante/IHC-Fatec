@@ -6,9 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="table_product_view.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="animation.css">
+	<link rel="stylesheet" type="text/css" href="table_product_view.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="animation.css"/>
+	<link rel="stylesheet" type="text/css" href="menu.css"/>
+	<!--<link rel="stylesheet" href="css/foundation.css" />-->
+	<!--<script src="js/vendor/modernizr.js"></script>-->
 	<!-- js -->
 	<script src="angular.js"></script>
 	<script src="scriptIndex.js"></script>
@@ -16,12 +19,13 @@
 
 <body>
 	<!-- Navbar -->
-	<div id="navbar" align="center">
-		<div class="fsp"> </div>
-		<div id="menu_button" ng-click="active_menu[0] = !active_menu[0]"></div>
-		<input type="text" placeholder="Pesquisar"> </input>
-		<div id="find_button"> </div> 
-		<div id="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
+	<div class="row">
+		<div class="large-12 columns" id="navbar" align="center">
+			<div class="fsp"> </div>
+			<div id="menu_button" ng-click="active_menu[0] = !active_menu[0]"></div>
+			<div id="find_button"> </div> 
+			<div id="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
+		</div>
 	</div>
 
 	
@@ -203,16 +207,13 @@
 		</div>
 		<div class="fspace"> </div>
 		<div class="fspace"> </div>
-		<hr>
 		Filtro 2
 		<div id="envolve">
 			<div class="left_frame" ng-click="change_type_view('list')"> <img src="img/lista.png" alt="Modo de exibição de produtos: lista"> </img> </div>
 			<div class="right_frame"  ng-click="change_type_view('block')"> <img src="img/bloco.png" alt="Modo de exibição de prodtuos: blocos"> </img> </div>
 		</div>
-
 		<div class="fspace"> </div>
 		<div class="fspace"> </div>
-		<hr>
 		Filtro 3
 		<div id="envolve">
 			<div class="left_frame"> Imagem Walking </div>
