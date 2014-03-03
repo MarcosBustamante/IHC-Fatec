@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html ng-app ng-controller="index_ctr">
 <head>
 	<title>FastFind - Your desires on a screen</title>
@@ -6,15 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="table_product_view.css"/>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<link rel="stylesheet" type="text/css" href="animation.css"/>
-	<link rel="stylesheet" type="text/css" href="menu.css"/>
-	<link rel="stylesheet" href="css/foundation.css" />
-	<!--<script src="js/vendor/modernizr.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="table_product_view.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="animation.css">
+	<link rel="stylesheet" type="text/css" href="menu.css">
+	<link rel="stylesheet" href="css/foundation.css" >
+	<!--<link rel="stylesheet" href="css/normalize.css" >-->
+	
+
 	<!-- js -->
 	<script src="angular.js"></script>
 	<script src="scriptIndex.js"></script>
+	<!--<script src="js/vendor/modernizr.js"></script>-->
 </head>
 
 <body>
@@ -23,10 +26,14 @@
 		<div class="large-12 columns" id="navbar">
 			<div class="fsp"> </div>
 			<div id="menu_button" ng-click="active_menu[0] = !active_menu[0]"></div>
-			<div id="find_button"> </div>
+			<div id="find_button" ng-click="open_find=!open_find"> </div>
+			<div ng-show="open_find">
+				<button>submit</button>
+				<input type="text"></input>
+			</div>
 			<div id="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
 		</div>
-		</div>
+	</div>
 
 	
 	<!-- Tabela de produtos -->
