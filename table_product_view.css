@@ -76,7 +76,7 @@
 }
 
 .align_list{
-	width: 46%;
+	width: 48.5%;
 	float: left;
 }
 
@@ -121,7 +121,7 @@
 
 .write_comment{
 	top: 20%;
-	margin: 20px 15px 30px 15px;
+	margin: 20px 15px 0px 15px;
 	padding: 10px 30px 10px 30px;
 	position: relative;
 	min-width: 460px;

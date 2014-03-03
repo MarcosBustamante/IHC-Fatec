@@ -41,18 +41,22 @@ function index_ctr($scope, $window){
 		$scope.product_comment_is_empty = $scope.produtos.comment.length == 0;
 	}
 
-	$scope.save_comment = function(comment, produto){
+	$scope.save_comment = function(comment, product){
 		if(comment){
-			$scope.product_comment_is_empty = false;
-			for (var i = produto.comment.length; i > 0; i--) {
-				produto.comment[i] = produto.comment[i-1];
+			for (var i = product.comment.length; i > 0; i--) {
+				product.comment[i] = product.comment[i-1];
 			}
-			produto.comment[0]={
+			product.comment[0]={
 				'img':$scope.user.img,
 				'first_name':$scope.user.first_name,
 				'last_name':$scope.user.last_name,
 				'comment': comment
 			}
 		}
+	}
+
+	$scope.delete_comment = function(list_comment, comment){
+		var index = list_comment.indexOf(comment);
+		list_comment.splice(index,1);
 	}
 }
