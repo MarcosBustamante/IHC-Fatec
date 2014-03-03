@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html ng-app ng-controller="index_ctr">
 <head>
 	<title>FastFind - Your desires on a screen</title>
@@ -6,15 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="table_product_view.css"/>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<link rel="stylesheet" type="text/css" href="animation.css"/>
-	<link rel="stylesheet" type="text/css" href="menu.css"/>
-	<link rel="stylesheet" href="css/foundation.css" />
-	<!--<script src="js/vendor/modernizr.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="table_product_view.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="animation.css">
+	<link rel="stylesheet" type="text/css" href="menu.css">
+	<link rel="stylesheet" href="css/foundation.css" >
+	<!--<link rel="stylesheet" href="css/normalize.css" >-->
+	
+
 	<!-- js -->
 	<script src="angular.js"></script>
 	<script src="scriptIndex.js"></script>
+	<!--<script src="js/vendor/modernizr.js"></script>-->
 </head>
 
 <body>
@@ -180,18 +183,13 @@
 
 <!-- Menu de opções (esquerda) -->
 <div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
-	<div class="block" align=center> 
-	</div>
-	<center> <div id="profile_picture"> <img ng-src="{{user.img}}" align=center> </img> </div> </center>
+	<div id="profile_picture"> <img ng-src="{{user.img}}" align=center> </img> </div> <p id="username"> Usuário X - (Logado) </p>
 	<ul>
-		<li> <a href="link1.htm"> <img src="img/about.png" style="margin-left: 8%; margin-bottom: 2px;"> </img> Home </a></li>
-		<hr>
-		<li><a href="link2.htm"> <img src="img/listadesejos.png" style="margin-left: 8%;"> Lista de Desejos</a></li>
-		<hr>
-		<li><a href="link3.htm"> <img src="img/menucomprados.png" style="margin-left: 8%;">  Produtos adquiridos </img> </a></li>
-		<hr>
-		<li><a href="link4.htm"> <img src="img/quemsomos.png" style="margin-left: 8%;">  Quem somos nós </img></a></li>
-		<hr>
+		<li><a href="link1.htm"> <img src="img/about.png"> </img> Home </a></li>
+		<li><a href="link2.htm"> <img src="img/listadesejos.png"> Lista de Desejos</a></li>
+		<li><a href="link3.htm"> <img src="img/menucomprados.png">  Produtos adquiridos </img> </a></li>
+		<li><a href="link4.htm"> <img src="img/quemsomos.png">  Quem somos nós </img></a></li>
+		<li><a href="link5.htm"> Conectar à Google account, Facebook </a> </li>
 	</ul>
 </div>
 
@@ -220,11 +218,11 @@
 		</div>
 	</center>
 </div>
-	<script src="js/vendor/jquery.js"></script>
+	<!--<script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
-    </script>
+    </script>-->
 </body>
 </html>
 

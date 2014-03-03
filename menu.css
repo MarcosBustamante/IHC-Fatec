@@ -4,9 +4,8 @@
 	font-size: 15px;
 	position: absolute;
 	height: 100%;
-	width: 300px;
+	width: 250px;
 	background-color: #1C1C1C;
-	z-index: 1;
 }
 
 .menu_options ul li {
@@ -17,16 +16,20 @@
 
 
 .menu_options a:link {
-	background: #1C1C1C;
-	color: #fff;
-	text-decoration: none;
-	padding: 20px;
 	display: block;
+    padding: 20px;
+    border-bottom: 1px solid #222;
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+    text-decoration: none;
+    box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+    background: -webkit-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
+    background: -moz-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
 }
 
 .menu_options a:hover {
-	background: #fff;
-	color: #000;
+	background: #336c95;
+	opacity: 3;
 	display: block;
 }
 
@@ -48,15 +51,13 @@
 	text-shadow: 0 1px 0 #000;
 	text-decoration: none;
 	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
-	right: 80%;
 	top: 70px;
 	bottom: 0;
-	z-index: 2px;
+	z-index: 2;
 }
 
 .left_frame {
 	position: relative;
-	/*border: 0px solid #fff*/
 	float: left;  
 	height: 100px;
 	width: 100px;
@@ -71,7 +72,6 @@
 
 .right_frame {
 	position: relative;
-	/*border: 3px solid #fff;*/
 	float: right;  
 	height: 100px;
 	width: 100px;
