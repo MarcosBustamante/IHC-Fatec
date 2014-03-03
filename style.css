@@ -1,5 +1,6 @@
 * {
 	margin: 0; padding: 0;
+	font-family: "Verdana", sans-serif;
 }
 
 html , body {
@@ -30,13 +31,19 @@ input[type=text]{
 	height: 25px;
 }
 
-#settings_button {
+.settings_button {
 	position: relative;
 	float: right;
+	border-radius: 6px;
+	border: 2px solid #d0d0d0;
 	width: 48px;
 	height: 48px;
-	border-style: hidden;
+	background-position: center;
 	background-image: url("img/settings.png");
+}
+
+.settings_button:active {
+	border-radius: 15px;
 }
 
 #find_button {
@@ -49,14 +56,20 @@ input[type=text]{
 	background-image: url("img/find.png");
 }
 
-#menu_button {
+.menu_button {
 	position: relative;
 	float: left;
-	border-style: hidden;
+	border: 2px solid #d0d0d0;
+	border-radius: 6px;
 	width: 48px;
 	height: 48px;
+	background-position: center;
 	background-image: url("img/menu.png");
+  	
+}
 
+.menu_button:active {
+	border-radius: 15px;
 }
 
 #profile_picture {
@@ -65,7 +78,7 @@ input[type=text]{
 	width: 64px;
 	overflow: hidden;
 	margin-top: 60px;
-	margin-left: 80px;
+	margin-left: 90px;
 	margin-bottom: 10px;
 	border-radius: 50%;
 	-webkit-box-shadow: 5px 5px 5px #111;

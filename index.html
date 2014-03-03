@@ -25,9 +25,9 @@
 	<div class="row">
 		<div class="large-12 columns" id="navbar">
 			<div class="fsp"> </div>
-			<div id="menu_button" ng-click="active_menu[0] = !active_menu[0]"></div>
+			<div class="menu_button" ng-click="active_menu[0] = !active_menu[0]"></div>
 			<div id="find_button"> </div>
-			<div id="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
+			<div class="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
 		</div>
 		</div>
 
@@ -185,20 +185,20 @@
 <div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
 	<div id="profile_picture"> <img ng-src="{{user.img}}" align=center> </img> </div> <p id="username"> Usuário X - (Logado) </p>
 	<ul>
-		<li><a href="link1.htm"> <img src="img/about.png"> </img> Home </a></li>
+		<li><a href="link1.htm"> <img src="img/hom.png"> </img> Home </a></li>
 		<li><a href="link2.htm"> <img src="img/listadesejos.png"> Lista de Desejos</a></li>
 		<li><a href="link3.htm"> <img src="img/menucomprados.png">  Produtos adquiridos </img> </a></li>
 		<li><a href="link4.htm"> <img src="img/quemsomos.png">  Quem somos nós </img></a></li>
-		<li><a href="link5.htm"> Conectar à Google account, Facebook </a> </li>
+		<li><a href="link5.htm"> [ICO] Conectar à Google account, Facebook </a> </li>
 	</ul>
 </div>
 
 <!-- Menu de configurações (direita) -->
 <div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
-	<div class="block" align=center> Filters </div>
+	
 	<center>
 		Filtro 1
-		<div id="envolve">
+		<div id="envolve" style="margin-top: 60px;">
 			<div class="left_frame"> Imagem Driving </div>
 			<div class="right_frame"> Imagem Walking </div>
 		</div>
