@@ -60,7 +60,8 @@
 
 .left_frame {
 	position: relative;
-	float: left;  
+	float: left;
+	cursor: pointer;  
 	height: 100px;
 	width: 100px;
 	left: 20px;
@@ -74,7 +75,8 @@
 
 .right_frame {
 	position: relative;
-	float: right;  
+	float: right;
+	cursor: text;  
 	height: 100px;
 	width: 100px;
 	margin-top: 20px;
@@ -98,6 +100,7 @@
 	border-radius: 5px;
 }
 .left_frame:active {
+	-ms-border-radius: 9px;
 	border-radius: 9px;
 }
 

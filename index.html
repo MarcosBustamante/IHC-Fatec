@@ -24,19 +24,20 @@
 	<div class="row">
 		<div class="large-12 columns" id="navbar">
 			<div class="fsp"> </div>
-			<div class="menu_button" ng-click="active_menu[0] = !active_menu[0]"></div>
-			<div id="find_button" ng-click="open_find=!open_find"> </div>
-			<div ng-show="open_find">
-				<button>submit</button>
-				<input type="text"></input>
-			</div>
+			<div class="menu_button" ng-click="active_menu[0] = !active_menu[0]"> </div>
 			<div class="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
+			<div id="navbartext" align="center"> FastFind </div>
+			<div id="find_button" ng-click="open_find =!open_find"> </div>
+			<div ng-if="open_find" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}" id="find_area" style="margin-left: 180px;"> 
+				<input type="text"></input>
+				<button class="pesquisa">Find</button>
+			</div>
 		</div>
 	</div>
 
 	
 	<!-- Tabela de produtos -->
-	<div id="products_view" align="left" ng-switch on="product_view_selected">
+	<div id="products_view" align="left" ng-switch on="product_view_selected" ng-click="active_menu=[false,false]">
 
 		<!--Product in block-->
 		<ul ng-switch-when="block" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
@@ -67,12 +68,13 @@
 					<img ng-src="{{product_selected}}" id="image_slid_list">
 				</div>
 
-				<div align="center">
-					<button class="">Mapa</button>
-					<button>Curtir</button>
-					<button ng-click="show_more_information = !show_more_information">+</button>
+				<div id="buttonbar">
+					<div class="map_button"></div>
+					<div class="fav_button"></div>
+					<div class="bad_button"></div>
+					<div ng-click="show_more_information = !show_more_information" class="more_button"></div>
 					<button ng-click="open_comment(list_product_selected)" ng-if="show_comment">Lista</button>
-					<button ng-click="open_comment(list_product_selected)" ng-if="!show_comment">Comentários</button>
+					<div ng-click="open_comment(list_product_selected)" ng-if="!show_comment" class="comment_button"></div>
 				</div>
 			</div>
 
@@ -152,39 +154,39 @@
 						</button>
 						<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
 						style="background-color:blue;">
-							Enviar
-						</button>
-					</li>
+						Enviar
+					</button>
+				</li>
+			</td>
+		</tr>
+	</table>
+</div>
+<!-- All comments -->
+<div class="align_list" ng-if="show_comment">
+	<div class="write_comment color_comments align_comment" ng-repeat="user in list_product_selected.comment">
+		<table>
+			<tr>
+				<td align="center" width="90px">
+					<img ng-src="{{user.img}}" class="img_comment">
+					<label id="information_product_list">{{user.first_name}}</label>
+					<label id="information_product_list">{{user.last_name}}</label>
 				</td>
-			</tr>
-		</table>
-	</div>
-	<!-- All comments -->
-	<div class="align_list" ng-if="show_comment">
-		<div class="write_comment color_comments align_comment" ng-repeat="user in list_product_selected.comment">
-			<table>
-				<tr>
-					<td align="center" width="90px">
-						<img ng-src="{{user.img}}" class="img_comment">
-						<label id="information_product_list">{{user.first_name}}</label>
-						<label id="information_product_list">{{user.last_name}}</label>
-					</td>
-					<td valign="center" width="80%">
-						<label ng-if="!edit_comment">
-							{{user.comment}}
-						</label>
-					</td>
-					<td>			
-						<li align="right">
-							<button style="background-color:red;" 
-									ng-click="delete_comment(list_product_selected.comment, user)">
-								Apagar
-							</button>
-						</li>
-					</td>
-				</tr>
-			</table>
-		</div>
+				<td valign="center" width="80%">
+					<label ng-if="!edit_comment">
+						{{user.comment}}
+					</label>
+				</td>
+				<td>			
+					<li align="right">
+						<button style="background-color:red;" 
+						ng-click="delete_comment(list_product_selected.comment, user)">
+						Apagar
+					</button>
+				</li>
+			</td>
+		</tr>
+	</table>
+</div>
 </div>
 </div>
 </div>
@@ -196,45 +198,43 @@
 		<li><a href="link1.htm"> <img src="img/hom.png"> </img> Home </a></li>
 		<li><a href="link2.htm"> <img src="img/listadesejos.png"> Lista de Desejos</a></li>
 		<li><a href="link3.htm"> <img src="img/menucomprados.png">  Produtos adquiridos </img> </a></li>
-		<li><a href="link4.htm"> <img src="img/quemsomos.png">  Quem somos nós </img></a></li>
-		<li><a href="link5.htm"> [ICO] Conectar à Google account, Facebook </a> </li>
+		<li><a href="link4.htm"> <img src="img/userset.png"> Dados pessoais </img> </a> </li>
+		<li><a href="link5.htm"> <img src="img/quemsomos.png">  Quem somos nós </img></a></li>
 	</ul>
 </div>
-	</div>
-	</div>
-	</div>
+</div>
+</div>
+</div>
 
-	<!-- Menu de configurações (direita) -->
-	<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
-		<div class="block" align=center> Filters </div>
-		<center>
-			Filtro 1
-			<div id="envolve">
-				<div class="left_frame"> Imagem Driving </div>
-				<div class="right_frame"> Imagem Walking </div>
-			</div>
-			<div class="fspace"> </div>
-			<div class="fspace"> </div>
-			Filtro 2
-			<div id="envolve">
-				<div class="left_frame" ng-click="change_type_view('list')"> <img src="img/lista.png" alt="Modo de exibição de produtos: lista"> </img> </div>
-				<div class="right_frame"  ng-click="change_type_view('block')"> <img src="img/bloco.png" alt="Modo de exibição de prodtuos: blocos"> </img> </div>
-			</div>
-			<div class="fspace"> </div>
-			<div class="fspace"> </div>
-			Filtro 3
-			<div id="envolve">
-				<div class="left_frame"> Imagem Walking </div>
-				<div class="right_frame"> Imagem Driving </div>
-			</div>
-		</center>
-	</div>
-		<script src="js/vendor/jquery.js"></script>
-	    <script src="js/foundation.min.js"></script>
-	    <script>
-	      $(document).foundation();
-	    </script>
-	</body>
+<!-- Menu de configurações (direita) -->
+<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
+	<center>
+		<div id="envolve" style="margin-top: 60px;">
+			<div class="left_frame"> Imagem Driving </div>
+			<div class="right_frame"> Imagem Walking </div>
+		</div>
+		<div class="fspace"> </div>
+		<div class="fspace"> </div>
+		Exibição
+		<div id="envolve">
+			<div class="left_frame" ng-click="change_type_view('list')"> <img src="img/lista.png" alt="Modo de exibição de produtos: lista"> </img> </div>
+			<div class="right_frame"  ng-click="change_type_view('block')"> <img src="img/bloco.png" alt="Modo de exibição de prodtuos: blocos"> </img> </div>
+		</div>
+		<div class="fspace"> </div>
+		<div class="fspace"> </div>
+		Filtro 3
+		<div id="envolve">
+			<div class="left_frame"> Imagem Walking </div>
+			<div class="right_frame"> Imagem Driving </div>
+		</div>
+	</center>
+</div>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+</body>
 </html>
 
 <!-- http://www.nganimate.org/angularjs/ng-repeat/3d-rotate para faze as pesquisas -->
