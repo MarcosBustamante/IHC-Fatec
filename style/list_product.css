@@ -1,43 +1,11 @@
 #products_view{
 	left: 0; top: 70px; right: 0; bottom: 0;
-	position: absolute;
-	width: 100%;
+	position: fixed;
 	padding-top: 20px;
 	padding-left: 10px;
 	background-color: #efe;
 }
 
-/*Product in block*/
-#show_product_block{
-	padding: 10px 10px 12px;
-	position: relative;
-	border-radius: 10%;
-	width: 90%;
-	height: 300%;
-	text-align: center;
-	background-color: #cec;
-}
-
-.list_product_block{
-	position: relative;
-	padding: 10px 10px 12px;
-	list-style: none;
-	display: inline-block;
-}
-
-#image_block{
-	max-width: 240px;
-	max-height: 200px;
-}
-
-#information_produto_block{
-	padding-top: 10px;
-	padding-bottom: 5px;
-	font-family: monospace;
-	font-size: 15px;
-}
-
-/* Product in list */
 /* Slide */
 .view_product_list{
 	top: 20%; bottom: 2%;

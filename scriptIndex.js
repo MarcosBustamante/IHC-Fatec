@@ -1,7 +1,7 @@
 function index_ctr($scope, $window){
 	$scope.active_menu = [false,false];
 	$scope.open_searchs = false;
-	$scope.product_view_selected = 'list';
+	$scope.product_view_selected = 'block';
 	$scope.product_comment = new Array();
 	$scope.user = {'img':'img/user.png','first_name':'Marcos','last_name':'Bustamante'};
 	$scope.produtos = [{'name':'X-box One 1','img':['imgsTabela/xbox1.jpg','imgsTabela/xbox2.jpg','imgsTabela/xbox3.jpg'],'logo':'imgsTabela/americanas.jpg','distance':'500m','price':'R$ 2.230,00','shop':'Loja do Jão','street':'Rua 1 - 158, Centro','comment':[]},

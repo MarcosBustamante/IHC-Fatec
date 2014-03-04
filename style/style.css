@@ -36,7 +36,7 @@ input[type=text]{
 	width: 48px;
 	height: 48px;
 	border-style: hidden;
-	background-image: url("img/settings.png");
+	background-image: url("../img/settings.png");
 }
 
 #find_button {
@@ -46,7 +46,7 @@ input[type=text]{
 	border-style: hidden;
 	width: 48px;
 	height: 48px;
-	background-image: url("img/find.png");
+	background-image: url("../img/find.png");
 }
 
 #menu_button {
@@ -55,7 +55,7 @@ input[type=text]{
 	border-style: hidden;
 	width: 48px;
 	height: 48px;
-	background-image: url("img/menu.png");
+	background-image: url("../img/menu.png");
 
 }
 
