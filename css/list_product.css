@@ -1,4 +1,4 @@
-#products_view{
+#products-view{
 	left: 0; top: 70px; right: 0; bottom: 0;
 	position: fixed;
 	padding-top: 20px;
@@ -7,7 +7,7 @@
 }
 
 /* Slide */
-.view_product_list{
+.view-product-list{
 	top: 20%; bottom: 2%;
 	margin: 20px 15px 30px 15px;
 	padding: 10px 30px 10px 30px;
@@ -16,26 +16,26 @@
 	min-width: 460px;
 }
 
-#image_slid_list{
+#image-slid{
 	max-width: 400px;
 	max-height: 400px;	
 }
 
-#view_slid_list{
+#view-slid{
 	width: 100%;
 	height: 300px;
 	margin-bottom: 2%;
 	position: relative;
 }
 
-#title_product_list{
+#title-product-list{
 	padding: 10px 0px 0px 70px;
 	margin: 10px;
 	font-family: "david";
 	font-size: 40px;
 }
 
-#information_product_list{
+#more-information{
 	padding: 10px 10px 0px 10px;
 	margin: 4px;
 	font-family: "Centaur";
@@ -43,22 +43,22 @@
 	font-size: 20px;
 }
 
-.align_list{
+.align-list{
 	width: 48.5%;
 	float: left;
 }
-
-.align_comment{
+-
+.align-comment{
 	width: 100%;
 	float: left;
 }
 
-#image_list{
+#image-list{
 	max-width: 110px;
 	max-height: 110px;
 }
 
-.slid_circles{
+.slid-circles{
 	background-color: #005600;
 	border-radius: 50%;
 	margin: 4px;
@@ -69,25 +69,24 @@
 	cursor: pointer;
 }
 
-.slid_circles.selected{
+.slid-circles.selected{
 	background-color: black;
 }
 
-.config_list_with_product{
+.product-list{
 	margin: 10px 0px 10px 0px;
 	cursor: pointer;
 }
 
-.config_list_with_product:hover{
-	background-color: #2E8B57;
-	border-top-right-color: white; 
-}
-
-.config_list_with_product.selected{
+.product-list:hover{
 	background-color: #2E8B57;
 }
 
-.write_comment{
+.product-list.selected{
+	background-color: #2E8B57;
+}
+
+.write-comment{
 	top: 20%;
 	margin: 20px 15px 0px 15px;
 	padding: 10px 30px 10px 30px;
@@ -97,20 +96,19 @@
 	list-style: none;
 }
 
-.write_comment.color_comments{
+.write-comment.comment-color{
 	background-color:#cec;
 	margin: 2px 15px 2px 15px;
 }
 
-.img_comment {
-	top: 0;
+.avatar-comment {
 	border: 3px solid #fff;
 	border-radius: 50%;
 	height: 40px;
 	width: 40px;
 }
 
-.img_more_info {
+.logo-shop {
 	border: 3px solid #2E8B57;
 	border-radius: 50%;
 	height: 60px;

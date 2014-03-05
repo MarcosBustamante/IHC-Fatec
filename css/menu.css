@@ -3,7 +3,7 @@
 	font-family: "Verdana", Helvetica;
 	width: 260px; height: 100%; 
 	position: absolute;
-	top: 70px; bottom: 0;
+	bottom: 0;
 	text-shadow: 0 1px 0 #000;
 	text-decoration: none;
 	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
@@ -18,7 +18,7 @@
 .filter-menu{ right: 0; }
 
 /*Menu do perfil (esquerda) */
-.profile-menu{ margin: 0; padding: 0; }
+.profile-menu{ margin: 0; padding: 0;}
 .profile-menu ul li { list-style-type: none; }
 
 .profile-menu a:link {

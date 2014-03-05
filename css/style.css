@@ -55,12 +55,7 @@ input[type="submit"] {
 	height: 100px;
 }
 
-#navbar-searchbut {
-	
-}
-
 #navbar-bottomspace { height: 10px; } /* Fim dos itens da navbar */
-
 
 /* Todos os botões */
 .button { /* Botão pai */
