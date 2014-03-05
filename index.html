@@ -6,12 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="style/block_product.css">
-	<link rel="stylesheet" type="text/css" href="style/list_product.css">
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<link rel="stylesheet" type="text/css" href="style/animation.css">
-	<link rel="stylesheet" type="text/css" href="style/menu.css">
-	<link rel="stylesheet" href="css/foundation.css" >
+	<link rel="stylesheet" type="text/css" href="css/block_product.css">
+	<link rel="stylesheet" type="text/css" href="css/list_product.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/animation.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" href="css/foundation.min.css" >
 	<!--<link rel="stylesheet" href="css/normalize.css" >-->
 	
 	<!-- js -->
@@ -24,14 +24,14 @@
 	<!-- Navbar -->
 	<div class="row">
 		<div class="large-12 columns" id="navbar">
-			<div class="fsp"> </div>
-			<div class="menu_button" ng-click="active_menu[0] = !active_menu[0]"> </div>
-			<div class="settings_button" ng-click="active_menu[1] = !active_menu[1]"></div>
-			<div id="navbartext" align="center"> FastFind </div>
-			<div id="find_button" ng-click="open_find =!open_find"> </div>
-			<div ng-if="open_find" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}" id="find_area" style="margin-left: 180px;"> 
+			<div id="navbar-bottomspace"> </div>
+			<div class="button profile-menu-button" ng-click="active_menu[0] = !active_menu[0]"> </div>
+			<div class="button filter-menu-button" ng-click="active_menu[1] = !active_menu[1]"></div>
+			<div id="navbar-text" align="center"> FastFind </div>
+			<div class="button find-button" ng-click="open_find =!open_find"> </div>
+			<div ng-if="open_find" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}" id="navbar-searcharea" style="margin-left: 120px;"> 
 				<input type="text"></input>
-				<button class="pesquisa">Find</button>
+				<input type="submit" value="BUSCAR"></button>
 			</div>
 		</div>
 	</div>
@@ -43,23 +43,18 @@
 		<!--Product in block-->
 		<ul ng-switch-when="block">
 			<li class="list_product_block" ng-repeat="item in produtos" align="center">
-				<ul class="list_style">
-					<li align="left">
+				<div>
+					<p align="left">
 						<label id="title_product_block">{{item.name}}</label>
 						<hr style="margin:10px">
-					</li>
-					<li>
+					</p>
+					<p>
 						<div style="height:160px;">
 							<img ng-src="{{item.img[0]}}" id="image_block">
 						</div>
-					</li>
-					<li>
+					</p>
+					<p>
 						<table width="100%">
-							<tr>
-								<td colspan="2">
-									<h1><b><p id="information_produto_block">{{item.price}}</p></b></h1>
-								</td>
-							</tr>
 							<tr align="left">
 								<td>
 									<p id="information_produto_block">{{item.shop}}</p>
@@ -73,9 +68,20 @@
 									<p id="information_produto_block">{{item.street}}</p>
 								</td>
 							</tr>
+							<tr>
+								<td colspan="2" height="40">
+									<b><p id="information_produto_block">{{item.price}}</p></b>
+								</td>
+							</tr>
 						</table>
-					</li>
-				</ul>
+					</p>
+					<p>
+						<button>Mapa</button>
+						<button ng-click="comment_block(item);">
+							Comentario ({{item.comment.length}})
+						</button>
+					</p>
+				</div>
 			</li>
 		</ul>
 
@@ -97,13 +103,13 @@
 					<img ng-src="{{product_selected}}" id="image_slid_list">
 				</div>
 
-				<div id="buttonbar">
-					<div class="map_button"></div>
-					<div class="fav_button"></div>
-					<div class="bad_button"></div>
-					<div ng-click="show_more_information = !show_more_information" class="more_button"></div>
+				<div style="margin-left: 25%;">
+					<div class="button buttonbar map-button"></div>
+					<div class="button buttonbar like-button"></div>
+					<div class="button buttonbar disapprove-button"></div>
+					<div class="button buttonbar more-button" ng-click="show_more_information = !show_more_information" ></div>
 					<div ng-click="open_comment(list_product_selected)" ng-if="show_comment">Lista</div>
-					<div ng-click="open_comment(list_product_selected)" ng-if="!show_comment" class="comment_button"></div>
+					<div  class="button buttonbar comment-button" ng-click="open_comment(list_product_selected)" ng-if="!show_comment"></div>
 				</div>
 			</div>
 
@@ -220,52 +226,111 @@
 </div>
 </div>
 
-<!-- Menu de opções (esquerda) -->
-<div class="menu menu_options" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
-	<div id="profile_picture"> 
-		<img ng-src="{{user.img}}" align=center/> 
-	</div> 
-	<p id="username">{{user.first_name}}&nbsp{{user.last_name}}</p>
-	<ul>
-		<li><a href="link1.htm"> <img src="img/hom.png"> </img> Home </a></li>
-		<li><a href="link2.htm"> <img src="img/listadesejos.png"> Lista de Desejos</a></li>
-		<li><a href="link3.htm"> <img src="img/menucomprados.png">  Produtos adquiridos </img> </a></li>
-		<li><a href="link4.htm"> <img src="img/userset.png"> Dados pessoais </img> </a> </li>
-		<li><a href="link5.htm"> <img src="img/quemsomos.png">  Quem somos nós </img></a></li>
-	</ul>
+<!-- Comment on the block -->
+<div class="background_comment_block" align="center" ng-show="open_comment_block">
+	<!-- Div write comments -->
+	<div  class="write_comment align_comment_block">
+		<table>
+			<tr>
+				<td align="center" width="90px">
+					<img ng-src="{{user.img}}" class="img_comment">
+					<label id="information_product_list">{{user.first_name}}</label>
+					<label id="information_product_list">{{user.last_name}}</label>
+				</td>
+				<td align="center">
+					<li>
+						<textarea cols="55" rows="5"ng-model="comment" ng-click="show_buttons = true">
+						</textarea>
+					</li>
+					<li align="right" ng-show="show_buttons">
+						<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
+							Apagar
+						</button>
+						<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
+						style="background-color:blue;">
+						Enviar
+					</button>
+				</li>
+			</td>
+		</tr>
+	</table>
+	<button ng-click="open_comment_block=false">voltar</button>
 </div>
+<!-- All comments -->
+<div class="write_comment color_comments align_comment_block" style="widht:100%;" 
+ng-repeat="user_comment in list_product_selected.comment">
+<table>
+	<tr>
+		<td align="center" width="90px">
+			<img ng-src="{{user_comment.img}}" class="img_comment">
+			<label id="information_product_list">{{user_comment.first_name}}</label>
+			<label id="information_product_list">{{user_comment.last_name}}</label>
+		</td>
+		<td valign="center" width="80%">
+			<label ng-if="!edit_comment">
+				{{user_comment.comment}}
+			</label>
+		</td>
+		<td>			
+			<li align="right">
+				<button style="background-color:red;" 
+				ng-click="delete_comment(list_product_selected.comment, user_comment)">
+				Apagar
+			</button>
+		</li>
+	</td>
+</tr>
+</table>
 </div>
+<div class="write_comment color_comments align_comment" ng-if=>
 </div>
 </div>
 
+<!-- Menu de opções (esquerda) -->
+<div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+	<div id="profile_picture"> 
+		<img ng-src="{{user.img}}" align=center/> 
+	</div> 
+	<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
+	<ul style="padding: 0;">
+		<li><a href="#"> <img src="img/hom.png" alt="Retorne para página inicial"> </img> Home </a></li>
+		<li><a href="#"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
+		<li><a href="#"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </img> </a></li>
+		<li><a href="#"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </img> </a> </li>
+		<li><a href="#"> <img src="img/quemsomos.png" alt="Sobre nós">  Quem somos nós </img></a></li>
+	</ul>
+</div>
+
 <!-- Menu de configurações (direita) -->
-<div class="menu menu_settings" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
+<div class="menu filter-menu" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
 	<center>
-		<div id="envolve" style="margin-top: 60px;">
-			<div class="left_frame"> Imagem Driving </div>
-			<div class="right_frame"> Imagem Walking </div>
+
+		<div class="icon-space" style="padding-top: 60px;">
+			<div align="center"> Você está: </div>
+			<div class="icon left-icon"> [ICO] Dirigindo</div>
+			<div class="icon right-icon"> [ICO] Caminhando </div>
 		</div>
-		<div class="fspace"> </div>
-		<div class="fspace"> </div>
-		Exibição
-		<div id="envolve">
-			<div class="left_frame" ng-click="change_type_view('list')"> <img src="img/lista.png" alt="Modo de exibição de produtos: lista"> </img> </div>
-			<div class="right_frame"  ng-click="change_type_view('block')"> <img src="img/bloco.png" alt="Modo de exibição de prodtuos: blocos"> </img> </div>
+		Exibir por:
+		<div class="icon-space">
+			<div class="icon left-icon" ng-click="change_type_view('list')"> 
+				<img src="img/lista.png" alt="Modo de exibição de produtos: lista" /> 
+			</div>
+			<div class="icon right-icon"  ng-click="change_type_view('block')"> 
+				<img src="img/bloco.png" alt="Modo de exibição de prodtuos: blocos"/> 
+			</div>
 		</div>
-		<div class="fspace"> </div>
-		<div class="fspace"> </div>
-		Filtro 3
-		<div id="envolve">
-			<div class="left_frame"> Imagem Walking </div>
-			<div class="right_frame"> Imagem Driving </div>
+		Classificar por: 
+		<div class="icon-space">
+			<div class="icon left-icon"> [ICO] Menor Preço </div>
+			<div class="icon right-icon"> [ICO] Menor Distância </div>
 		</div>
 	</center>
 </div>
-<script src="js/vendor/jquery.js"></script>
+<!--<script src="js/vendor/jquery.js"></script>
 <script src="js/foundation.min.js"></script>
 <script>
 $(document).foundation();
-</script>
+</script> -->
 </body>
 </html>
 
