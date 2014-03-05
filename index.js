@@ -58,4 +58,10 @@ function index_ctr($scope, $window){
 		var index = list_comment.indexOf(comment);
 		list_comment.splice(index,1);
 	}
+
+	$scope.comment_block = function(product){
+		$scope.list_product_selected = product;
+		$scope.open_comment_block = true;
+
+	}
 }
