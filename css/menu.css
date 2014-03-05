@@ -1,0 +1,72 @@
+/* Menu pai */
+.menu {
+	font-family: "Verdana", Helvetica;
+	width: 260px; height: 100%; 
+	position: absolute;
+	top: 70px; bottom: 0;
+	text-shadow: 0 1px 0 #000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	font-size: 15px;
+	color: #fff;
+	background-color: #1C1C1C;
+	overflow: auto;
+	z-index: 2;
+}
+
+/* Menu de filtros (direita) */
+.filter-menu{ right: 0; }
+
+/*Menu do perfil (esquerda) */
+.profile-menu{ margin: 0; padding: 0; }
+.profile-menu ul li { list-style-type: none; }
+
+.profile-menu a:link {
+	display: block;
+	padding: 20px;
+	border-bottom: 1px solid #222;
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	background: -webkit-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
+	background: -moz-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
+}
+
+.profile-menu a:hover { background: #336c95; opacity: 3; }
+
+
+.icon {
+	position: relative;
+	width: 100px; height: 100px;
+	cursor: pointer;
+	border-radius: 2px;
+	-webkit-box-shadow: 8px 8px 8px #111;
+	box-shadow: 8px 8px 8px #111; 
+}
+
+.left-icon { margin: 20px 0 0 20px; float: left; }
+.right-icon { margin: 20px 10px 0 0; float: right; }
+
+.icon:hover {
+	background: #336c95;
+	opacity: 3;
+	border-radius: 5px;
+}
+
+.icon:active { border-radius: 10px; }
+
+/* Molde para a foto do usuário */
+#profile_picture {
+	border: 5px solid #fff;
+	width: 64px; height: 64px;
+	margin: 50px 0 10px 90px;
+	border-radius: 50%;
+	-webkit-box-shadow: 5px 5px 5px #111;
+	box-shadow: 5px 5px 5px #111; 
+}
+
+/* Molde para o nome do usuário */
+#username { margin: 0 0 40px 25%; }
+.icon-space { padding-bottom: 150px; }
+
