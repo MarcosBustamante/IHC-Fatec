@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/animation.css">
 		<link rel="stylesheet" type="text/css" href="css/menu.css">
+		<link rel="stylesheet" type="text/css" href="css/button_product.css">
 		<link rel="stylesheet" href="css/foundation.min.css" >
 		<!-- js -->
 		<script src="angular.js"></script>
@@ -94,7 +95,7 @@
 		</div>
 
 		<!-- Tabela de produtos -->
-		<div id="products-view" align="left" ng-switch on="product_view_selected" ng-click="active_menu=[false,false]">
+		<div id="products-view" align="left" ng-switch on="product_view_selected">
 
 			<!--Product in block-->
 			<ul ng-switch-when="block">
@@ -159,15 +160,30 @@
 							<img ng-src="{{image_selected}}" id="image-slid">
 						</div>
 
-						<div style="margin-left: 25%;">
-							<div class="button buttonbar map-button"></div>
-							<div class="button buttonbar like-button"></div>
-							<div class="button buttonbar disapprove-button"></div>
-							<div class="button buttonbar more-button" ng-click="show_more_information = !show_more_information" ></div>
-							({{list_product_selected.comment.length}})
-							<div ng-click="open_comment(list_product_selected)" ng-if="show_comment">Lista</div>
-							<div  class="button buttonbar comment-button" ng-click="open_comment(list_product_selected)" 
-								ng-if="!show_comment"></div>
+						<div style="margin-bottom: 5px;">
+							<div class="btn-product" style="float: left;">
+								<i class="img-config map-button"></i>
+								<label style="padding-right:18px">Mapa</label>
+							</div>
+
+							<div class="btn-product more-information" ng-click="show_more_information = !show_more_information" 
+								style="margin-top:5px;">
+								<label ng-if="!show_more_information">+</label>
+								<label ng-if="show_more_information">-</label>
+							</div>
+
+							<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="!show_comment"
+								style="float: right;">
+								<i class="img-config comment-button"></i>
+								<label style="padding-left:18px">[ {{list_product_selected.comment.length}} ]</label>
+								<label>Chat</label>
+							</div>
+
+							<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="show_comment"
+								style="float: right;">
+								<i class="img-config comment-button"></i>
+								<label style="padding-left:18px">Lista</label>
+							</div>
 						</div>
 				</div>
 

@@ -86,15 +86,10 @@ input[type="submit"] {
 
 /* Barra de botões do produto */
 .buttonbar {}
-	.buttonbar:hover {
-		/*border-radius: 50%;*/
-		border-top: 3px solid;
-		border-bottom: 3px solid;
-	}
-
-.map-button {
-	position: relative; float: left;
-	background-image: url("../img/map.png");
+.buttonbar:hover {
+	/*border-radius: 50%;*/
+	border-top: 3px solid;
+	border-bottom: 3px solid;
 }
 
 .like-button {
@@ -112,11 +107,7 @@ input[type="submit"] {
 	position: relative; float: left;
 	background-image: url("../img/more.png");
 }
-
-.comment-button {
-	margin-left: 3%;
-	background-image: url("../img/chat.png");
-} /* Fim dos botões */
+ /* Fim dos botões */
 
 /* Formatação do placeholder 
 ::-webkit-input-placeholder { font: 12px "Helvetica", arial, sans-serif;}
