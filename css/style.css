@@ -1,11 +1,10 @@
 /* Pré-definições para o documento: fonte, posição e fluxo */
 html , body {
-    position: relative;
     width: 100%;
     height: 100%;
-    font-size: 15px;
+    font-size: 20px;
     font-family: font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Estilo padrão para os campos de texto */
@@ -17,10 +16,11 @@ input[type="text"]{
 	-moz-box-shadow: 1px 1px 2px #333333;
 	-webkit-box-shadow: 1px 1px 2px #333333;
 	border: 1px solid #CFCFCF;
-	height: 25px;
+	height: 31px;
 	vertical-align: middle;
 }
 
+/* Estilo padrão para os botões submit */
 input[type="submit"] {
 	background-color: black;
 	padding: 8px;
@@ -32,7 +32,7 @@ input[type="submit"] {
 /* Barra de navegação e seus itens */
 #navbar {
 	position: absolute;
-	left: 0;
+	left: 0; right: 0;
 	width: 100%;
 	height: 70px;
 	background-color: #2E8B57;
@@ -44,23 +44,28 @@ input[type="submit"] {
 	color: white;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 23px;
+	margin-top: 8px;
+	margin-left: 43%;
+	text-transform: uppercase;
+	display: block;
+}
+
+#navbar-minitext {
+	position: absolute;
+	color: white;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 18px;
 	margin-top: 15px;
-	margin-left: 45%;
+	margin-left: 43%;
 	text-transform: uppercase;
 }
 
 #navbar-searcharea {
-	margin-top: 10px;
-	width: 300px;
-	height: 100px;
+	margin: 8px 0 0 7%;
+	width: 300px; height: 100px;
 }
 
-#navbar-searchbut {
-	
-}
-
-#navbar-bottomspace { height: 10px; } /* Fim dos itens da navbar */
-
+#navbar-topspace { height: 8px; } /* Fim dos itens da navbar */
 
 /* Todos os botões */
 .button { /* Botão pai */
@@ -70,39 +75,40 @@ input[type="submit"] {
 	display: block;
 }
 
+
+.login-button {
+	position: absolute;
+	right: 10%;
+}
+
 .profile-menu-button {
-	position: relative;
-	float: left;
+	position: absolute;
+	left: 1%;
 	background-image: url("../img/menu.png");
   	
 }
 
 .filter-menu-button {
-	position: relative;
-	float: right;
+	position: relative; float: right;
 	background-image: url("../img/settings.png");
 }
 
 .find-button {
-	position: absolute;
-	margin-left: 70px;
-	background-image: url("../img/find.png");
+	position: relative; float: left;
+	background-color: black;
+	width: 32px; height: 32px;
+	background-image: url("../img/findm.png");
 }
 
 /* Barra de botões do produto */
 .buttonbar {}
-	.buttonbar:hover {
-		/*border-radius: 50%;*/
-		border-top: 3px solid;
-		border-bottom: 3px solid;
-	}
-
-.map-button {
-	position: relative; float: left;
-	background-image: url("../img/map.png");
+.buttonbar:hover {
+	/*border-radius: 50%;*/
+	border-top: 3px solid;
+	border-bottom: 3px solid;
 }
 
-.like-button {
+/*.like-button {
 	position: relative; float: left;
 	background-image: url("../img/good.png");
 }
@@ -111,17 +117,13 @@ input[type="submit"] {
 	position: relative; float: left;
 	background-image: url("../img/bad.png");
 
-}
+}*/
 
 .more-button {
 	position: relative; float: left;
 	background-image: url("../img/more.png");
 }
-
-.comment-button {
-	margin-left: 3%;
-	background-image: url("../img/chat.png");
-} /* Fim dos botões */
+ /* Fim dos botões */
 
 /* Formatação do placeholder 
 ::-webkit-input-placeholder { font: 12px "Helvetica", arial, sans-serif;}

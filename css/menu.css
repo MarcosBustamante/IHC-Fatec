@@ -1,9 +1,9 @@
 /* Menu pai */
 .menu {
 	font-family: "Verdana", Helvetica;
-	width: 260px; height: 100%; 
+	width: 250px; height: 100%; 
 	position: absolute;
-	top: 70px; bottom: 0;
+	bottom: 0;
 	text-shadow: 0 1px 0 #000;
 	text-decoration: none;
 	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
@@ -15,10 +15,10 @@
 }
 
 /* Menu de filtros (direita) */
-.filter-menu{ right: 0; }
+.filter-menu{ right: 0; width: 280px; }
 
 /*Menu do perfil (esquerda) */
-.profile-menu{ margin: 0; padding: 0; }
+.profile-menu{ margin: 0; padding: 0; left: 0;}
 .profile-menu ul li { list-style-type: none; }
 
 .profile-menu a:link {
@@ -34,7 +34,6 @@
 }
 
 .profile-menu a:hover { background: #336c95; opacity: 3; }
-
 
 .icon {
 	position: relative;
