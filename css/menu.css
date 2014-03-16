@@ -16,7 +16,7 @@
 }
 
 /* Menu de filtros (direita) */
-.filter-menu{ right: 0; width: 280px; }
+.filter-menu{ margin: 0; padding: 0; right: 0; width: 273px;}
 
 /*Menu do perfil (esquerda) */
 .profile-menu{ margin: 0; padding: 0; left: 0;}
@@ -38,8 +38,10 @@
 
 .icon {
 	position: relative;
-	width: 100px; height: 100px;
-	cursor: pointer;
+	width: 70px; height: 70px;
+	border-width: 2px;
+	border-color: white;
+	background-color: #1C1C1C;
 	border-radius: 2px;
 	-webkit-box-shadow: 8px 8px 8px #111;
 	box-shadow: 8px 8px 8px #111; 
@@ -50,11 +52,9 @@
 
 .icon:hover {
 	background: #336c95;
-	opacity: 3;
-	border-radius: 5px;
 }
 
-.icon:active { border-radius: 10px; }
+.icon:active { border-radius: 6px; }
 
 /* Molde para a foto do usuário */
 #profile_picture {

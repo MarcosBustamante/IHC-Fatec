@@ -66,6 +66,60 @@
 			</div>
 		</div>
 
+		<!-- Menu de opções (esquerda) -->
+		<div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+			<div id="profile_picture"> 
+				<img ng-src="{{user.img}}" align=center> 
+			</div> 
+			<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
+			<ul style="padding: 0;">
+				<li><a href="1.htm"> <img src="img/home.png" alt="Retorne para página inicial"> &nbsp;Home </a></li>
+				<li><a href="2.htm"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
+				<li><a href="3.htm"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
+				<li><a href="4.htm"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
+				<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Sobre nós">  Quem somos nós </a></li>
+			</ul>
+		</div>
+
+		<!-- Menu de configurações (direita) -->
+		<div class="menu filter-menu" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
+			<center>
+				<div class="icon-space" style="padding-top: 60px;">
+					<div align="center"> <strong> Você está: </strong> </div>
+					<div class="icon left-icon">
+						<img src="img/andando.png" alt="Modo de exibição de produtos: lista" />
+						<p style="float: left; font-size: 13px;"> Andando </p> 
+					</div>
+					<div class="icon right-icon">
+						<img src="img/carro.png" alt="Modo de exibição de produtos: lista" />
+						<p style="float: left; font-size: 13px;"> Dirigindo </p> 
+					</div>
+				</div>
+				<strong> Exibir por: </strong>
+				<div class="icon-space">
+					<div class="icon left-icon" ng-click="change_type_view('list')"> 
+						<img src="img/lista.png" alt="Modo de exibição de produtos: lista" />
+						<p style="float: left; font-size: 13px;"> Prod. em Lista </p>  
+					</div>
+					<div class="icon right-icon"  ng-click="change_type_view('block')"> 
+						<img src="img/block.png" alt="Modo de exibição de prodtuos: blocos"/> 
+						<p style="float: left; font-size: 13px; margin-left: 5px;"> Prod. em Blocos </p>
+					</div>
+				</div>
+				<strong> Classificar por: </strong> 
+				<div class="icon-space">
+					<div class="icon left-icon">
+						<img src="img/price.png" alt="Modo de exibição de produtos: lista" />
+						<p style="float: left; font-size: 13px;"> Preço </p>
+					</div>
+					<div class="icon right-icon">
+						<img src="img/distance.png" alt="Modo de exibição de produtos: lista" />
+						<p style="float: left; font-size: 13px;"> Distância </p>
+					</div>
+					</div>
+			</center>
+		</div>
+
 
 		<!-- Comment on the block -->
 		<div class="background-comment-block" align="center" ng-show="open_comment_block">
@@ -128,17 +182,17 @@
 
 		
 		<!-- Tabela de produtos -->
-		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 90%;">
+		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 97%;">
 			<div class="medium-12 large-12 columns">
 			<!--Product in block-->
 				<div class="show-for-small-only">
 					<div id="navbar-minisearcharea">
 						<input type="text" placeholder="Pesquise aqui seu produto" style="margin-right: 0; display: inline; position: relative; float: left; width: 250px; border-radius: 6px;">
-						<div class="button find-button" style="margin-left: 10px; border-radius: 6px;"> </div>
+						<div class="button find-button" style="margin-left: 10px; border-radius: 6px; width:"> </div>
 					</div>
 				</div>
 			<ul style="padding: 0;" ng-switch-when="block">
-				<li class="list-product-block" ng-repeat="product in products" align="center" style="box-shadow: 6px 6px 5px #888888; height: 10%">
+				<li class="list-product-block" ng-repeat="product in products" align="center" style="box-shadow: 6px 6px 5px #888888;">
 					<div>
 						<p align="left">
 							<label id="title-product-block">{{product.name}}</label>
@@ -149,7 +203,7 @@
 								<img class="sobre-img" ng-src="{{product.img[0]}}"/>
 							</div>
 						</p>
-						<!--<p>-->
+						<p>
 							<table width="100%">
 								<tr align="left">
 									<td>
@@ -170,7 +224,7 @@
 									</td>
 								</tr>
 							</table>
-						<!--</p>-->
+						</p>
 							<button>Mapa</button>
 							<button ng-click="comment_block(product);">
 								Comentario ({{product.comment.length}})
@@ -182,12 +236,6 @@
 
 			<!--Product in list - Slid and More information-->
 			<div class="medium-12 large-12 columns">
-				<!--<<div class="show-for-small-only">
-					div id="navbar-minisearcharea">
-						<input type="text" placeholder="Pesquise aqui seu produto" style="margin-right: 0; display: inline; position: relative; float: left; width: 250px; border-radius: 6px;">
-						<div class="button find-button" style="margin-left: 10px; border-radius: 6px; width:"> </div>
-					</div>
-				</div>-->
 			<div style="overflow: auto;"ng-switch-when="list" align="center" style="width:100%;">
 				<div class="medium-6 large-6 columns">
 					<!-- Product slide -->
@@ -347,45 +395,7 @@
 		</div>
 	</div>
 </div>
-		<!-- Menu de opções (esquerda) -->
-		<div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
-			<div id="profile_picture"> 
-				<img ng-src="{{user.img}}" align=center> 
-			</div> 
-			<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
-			<ul style="padding: 0;">
-				<li><a href="1.htm"> <img src="img/hom.png" alt="Retorne para página inicial"> Home </a></li>
-				<li><a href="2.htm"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
-				<li><a href="3.htm"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
-				<li><a href="4.htm"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
-				<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Sobre nós">  Quem somos nós </a></li>
-			</ul>
-		</div>
-
-		<!-- Menu de configurações (direita) -->
-		<div class="menu filter-menu" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
-			<center>
-				<div class="icon-space" style="padding-top: 60px;">
-					<div align="center"> Você está: </div>
-					<div class="icon left-icon"> [ICO] Dirigindo</div>
-					<div class="icon right-icon"> [ICO] Caminhando </div>
-				</div>
-				Exibir por:
-				<div class="icon-space">
-					<div class="icon left-icon" ng-click="change_type_view('list')"> 
-						<img src="img/lista.png" alt="Modo de exibição de produtos: lista" /> 
-					</div>
-					<div class="icon right-icon"  ng-click="change_type_view('block')"> 
-						<img src="img/bloco.png" alt="Modo de exibição de prodtuos: blocos"/> 
-					</div>
-				</div>
-				Classificar por: 
-				<div class="icon-space">
-					<div class="icon left-icon"> [ICO] Menor Preço </div>
-					<div class="icon right-icon"> [ICO] Menor Distância </div>
-				</div>
-			</center>
-		</div>
+		
 	</body>
 	<script type="text/javascript">
 
