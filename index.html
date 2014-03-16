@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html ng-app ng-controller="index_ctr">
 	<head>
-		<title>FastFind - Your desires on a screen</title>
-		<meta name="keywords" content="produtos products produto product venda vendas sell loja shopping pesquisa" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title> FastFind - Your desires on a screen </title>
+		<meta name="keywords" content="produtos products produto product venda vendas sell loja shopping pesquisa">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="css/block_product.css">
-		<link rel="stylesheet" type="text/css" href="css/list_product.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/animation.css">
-		<link rel="stylesheet" type="text/css" href="css/menu.css">
-		<link rel="stylesheet" type="text/css" href="css/button_product.css">
+		<link rel="stylesheet" href="css/block_product.css">
+		<link rel="stylesheet" href="css/list_product.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/animation.css">
+		<link rel="stylesheet" href="css/menu.css">
+		<link rel="stylesheet" href="css/button_product.css">
 		<link rel="stylesheet" href="css/foundation.min.css">
 
 		<!-- js -->
 		<script src="angular.js"></script>
 		<script src="index.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/foundation.min.js"></script>
+		<script src="js/foundation/foundation.js"></script>
+		<script src="js/foundation/foundation.reveal.js"></script>
+		<script>
+				$(document).foundation();
+				$('a.reveal-link').trigger('click');
+				$('a.close-reveal-modal').trigger('click');
+// or directly on the modal
+				$('#myModal').foundation('reveal', 'open');
+				$('#myModal').foundation('reveal', 'close');
+
+		</script>
 		</script>
 	</head>
 
 	<body>
 		<!-- Navbar -->
+		<div id="myModal" class="reveal-modal" data-reveal>
+  			<h2 align="center">Já possui uma conta? Faça seu login</h2>
+  				<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+  				<center><input type="text" placeholder="Usuário ou E-mail"/> <p>
+  				<input type="text" placeholder="Senha"/> <p>
+  				<input type="submit" value="Entrar" style="background: #2E8B57; font-size: 15px;"> 
+  				<h3> Ou cadastre-se aqui </h3> </center>
+  				<a class="close-reveal-modal">x</a>
+		</div>
+		<div class="reveal-modal-bg" style="display: none"></div>
 		<div id="navbar">
 				<div id="navbar-topspace"> </div>
 				<div class="button profile-menu-button" ng-click="active_menu[0] = !active_menu[0]"> </div>
 				<div class="button filter-menu-button" ng-click="active_menu[1] = !active_menu[1]"></div>
 				<div class="show-for-small-only">
-					<div id="navbar-minitext"> FastFind </div>
+					<div id="navbar-minitext"> FastFind</div>
+					<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px; border-radius: 6px; z-index: 5;"/>
 				</div>
+
 				<div class="hide-for-small-only">
+					<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px;" data-reveal-id="myModal" data-reveal/>
 					<div id="navbar-text" align="center"> FastFind </div>
 					<div id="navbar-searcharea">
-						<input type="text" placeholder="Busque seu produto" style="margin-right: 0; display: inline; position: relative; float: left;">
+						<input type="text" placeholder="Pesquise seu produto já!" style="margin-right: 0; display: inline; position: relative; float: left; width: 60%;">
 						<div class="button find-button" style=""> </div>
 					</div>
 			</div>
-				<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px;"/>
 			</div>
 		</div>
 
@@ -102,11 +128,17 @@
 
 		
 		<!-- Tabela de produtos -->
-		<div id="products-view" align="left" ng-switch on="product_view_selected">
-
+		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 90%;">
+			<div class="medium-12 large-12 columns">
 			<!--Product in block-->
-			<ul ng-switch-when="block">
-				<li class="list-product-block" ng-repeat="product in products" align="center">
+				<div class="show-for-small-only">
+					<div id="navbar-minisearcharea">
+						<input type="text" placeholder="Pesquise aqui seu produto" style="margin-right: 0; display: inline; position: relative; float: left; width: 250px; border-radius: 6px;">
+						<div class="button find-button" style="margin-left: 10px; border-radius: 6px;"> </div>
+					</div>
+				</div>
+			<ul style="padding: 0;" ng-switch-when="block">
+				<li class="list-product-block" ng-repeat="product in products" align="center" style="box-shadow: 6px 6px 5px #888888; height: 10%">
 					<div>
 						<p align="left">
 							<label id="title-product-block">{{product.name}}</label>
@@ -114,10 +146,10 @@
 						</p>
 						<p>
 							<div style="height:160px;">
-								<img ng-src="{{product.img[0]}}" id="image-block">
+								<img class="sobre-img" ng-src="{{product.img[0]}}"/>
 							</div>
 						</p>
-						<p>
+						<!--<p>-->
 							<table width="100%">
 								<tr align="left">
 									<td>
@@ -138,22 +170,28 @@
 									</td>
 								</tr>
 							</table>
-						</p>
-						<p>
+						<!--</p>-->
 							<button>Mapa</button>
 							<button ng-click="comment_block(product);">
 								Comentario ({{product.comment.length}})
 							</button>
-						</p>
 					</div>
 				</li>
 			</ul>
+		</div>
 
 			<!--Product in list - Slid and More information-->
-			<div ng-switch-when="list" align="center" style="width:100%;">
-				<div class="align-list">
+			<div class="medium-12 large-12 columns">
+				<!--<<div class="show-for-small-only">
+					div id="navbar-minisearcharea">
+						<input type="text" placeholder="Pesquise aqui seu produto" style="margin-right: 0; display: inline; position: relative; float: left; width: 250px; border-radius: 6px;">
+						<div class="button find-button" style="margin-left: 10px; border-radius: 6px; width:"> </div>
+					</div>
+				</div>-->
+			<div style="overflow: auto;"ng-switch-when="list" align="center" style="width:100%;">
+				<div class="medium-6 large-6 columns">
 					<!-- Product slide -->
-					<div class="hide-for-small-only view-product-list" style="overflow: auto;">
+					<div class="hide-for-small-only view-product-list" style="overflow: auto; box-shadow: 2px 2px 5px #888888; ">
 						<label id="title-product-list">{{list_product_selected.name}}</label><hr>
 
 						<li style="list-style: none;" align="center">
@@ -228,10 +266,11 @@
 			</div>
 
 			<!-- Div with all products -->
-			<div class="view-product-list align-list" ng-if="!show_comment">
-				<div style="overflow: auto;" class = "product-list" ng-repeat="product in products" 
+			<div class="medium-6 large-6 columns">
+			<div style="overflow: auto; box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
+				<div style="border-radius: 4px;" class = "product-list" ng-repeat="product in products" 
 				ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
-				ng-class="{'selected': list_product_selected == product}" >
+				ng-class="{'selected': list_product_selected == product}">
 					<table width="80%">
 						<tr align="center">
 							<td width="20%">
@@ -304,8 +343,10 @@
 					</table>
 				</div>
 			</div>
+			</div>
 		</div>
-
+	</div>
+</div>
 		<!-- Menu de opções (esquerda) -->
 		<div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
 			<div id="profile_picture"> 
@@ -313,11 +354,11 @@
 			</div> 
 			<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
 			<ul style="padding: 0;">
-				<li><a href="#"> <img src="img/hom.png" alt="Retorne para página inicial"> Home </a></li>
-				<li><a href="#"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
-				<li><a href="#"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
-				<li><a href="#"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
-				<li><a href="#"> <img src="img/quemsomos.png" alt="Sobre nós">  Quem somos nós </a></li>
+				<li><a href="1.htm"> <img src="img/hom.png" alt="Retorne para página inicial"> Home </a></li>
+				<li><a href="2.htm"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
+				<li><a href="3.htm"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
+				<li><a href="4.htm"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
+				<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Sobre nós">  Quem somos nós </a></li>
 			</ul>
 		</div>
 
@@ -346,6 +387,10 @@
 			</center>
 		</div>
 	</body>
+	<script type="text/javascript">
+
+		$(document).foundation();
+	</script>
 </html>
 
 <!-- http://www.nganimate.org/angularjs/ng-repeat/3d-rotate para faze as pesquisas -->

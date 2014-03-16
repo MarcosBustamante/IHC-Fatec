@@ -4,6 +4,7 @@
 	width: 250px; height: 100%; 
 	position: absolute;
 	bottom: 0;
+	top: 70px;
 	text-shadow: 0 1px 0 #000;
 	text-decoration: none;
 	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;

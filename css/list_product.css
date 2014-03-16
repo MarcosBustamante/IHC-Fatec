@@ -1,14 +1,18 @@
 #products-view{
-	left: 0; top: 70px; right: 0; bottom: 0;
-	position: fixed;
+	position: absolute;
+	left: 0; right: 0; bottom: 0; top: 70px;
 	padding-top: 20px;
-	padding-left: 10px;
+	padding-right: 30px;
 	background-color: #efe;
+	z-index: 1;
 }
+
+.fix { height: 34em; }
+
 
 /* Slide */
 .view-product-list{
-	top: 20%; bottom: 2%;
+	top: 20%;
 	margin: 20px 15px 30px 15px;
 	padding: 10px 30px 10px 30px;
 	position: relative;
@@ -29,7 +33,7 @@
 }
 
 #title-product-list{
-	padding: 10px 0px 0px 70px;
+	padding: 10px 0px 0px 30px;
 	margin: 10px;
 	font-family: "david";
 	font-size: 40px;
@@ -38,7 +42,7 @@
 #more-information{
 	padding: 10px 10px 0px 10px;
 	margin: 4px;
-	font-family: "Centaur";
+	font-family: "Helvetica Neue", Helvetica, Verdana, arial;
 	font-style: inherit;
 	font-size: 20px;
 }
@@ -69,22 +73,16 @@
 	cursor: pointer;
 }
 
-.slid-circles.selected{
-	background-color: black;
-}
+.slid-circles.selected{ background-color: black; }
 
 .product-list{
 	margin: 10px 0px 10px 0px;
 	cursor: pointer;
 }
 
-.product-list:hover{
-	background-color: #2E8B57;
-}
+.product-list:hover{ background-color: #2E8B57; }
 
-.product-list.selected{
-	background-color: #2E8B57;
-}
+.product-list.selected{ background-color: #2E8B57; }
 
 .write-comment{
 	top: 20%;

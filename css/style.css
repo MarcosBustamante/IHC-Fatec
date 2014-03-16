@@ -4,7 +4,7 @@ html , body {
     height: 100%;
     font-size: 20px;
     font-family: font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* Estilo padrão para os campos de texto */
@@ -47,7 +47,6 @@ input[type="submit"] {
 	margin-top: 8px;
 	margin-left: 43%;
 	text-transform: uppercase;
-	display: block;
 }
 
 #navbar-minitext {
@@ -63,6 +62,11 @@ input[type="submit"] {
 #navbar-searcharea {
 	margin: 8px 0 0 7%;
 	width: 300px; height: 100px;
+}
+
+#navbar-minisearcharea {
+	margin: 8px 0 0 25%;
+	width: 300px; height: 50px;
 }
 
 #navbar-topspace { height: 8px; } /* Fim dos itens da navbar */
@@ -89,7 +93,8 @@ input[type="submit"] {
 }
 
 .filter-menu-button {
-	position: relative; float: right;
+	position: absolute;
+	right: 1%;
 	background-image: url("../img/settings.png");
 }
 
@@ -129,13 +134,15 @@ input[type="submit"] {
 	position: relative; float: left;
 	background-image: url("../img/more.png");
 }
+
+
  /* Fim dos botões */
 
-/* Formatação do placeholder 
-::-webkit-input-placeholder { font: 12px "Helvetica", arial, sans-serif;}
+/* Formatação do placeholder  */
+::-webkit-input-placeholder { font: 15px "Helvetica", arial, sans-serif;}
 
-:-moz-placeholder { font: 12px "Helvetica", arial, sans-serif; }
+:-moz-placeholder { font: 15px "Helvetica", arial, sans-serif; }
 
-::-moz-placeholder { font: 12px "Helvetica", arial, sans-serif; }
+::-moz-placeholder { font: 15px "Helvetica", arial, sans-serif; }
 
-:-ms-input-placeholder { font: 12px "Helvetica", arial, sans-serif; } */
+:-ms-input-placeholder { font: 15px "Helvetica", arial, sans-serif; } 
