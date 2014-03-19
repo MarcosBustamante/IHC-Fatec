@@ -7,7 +7,7 @@
 	z-index: 1;
 }
 
-.fix { height: 34em; }
+.fix { height: 100%; }
 
 
 /* Slide */
@@ -17,12 +17,12 @@
 	padding: 10px 30px 10px 30px;
 	position: relative;
 	background-color: #cec;
-	min-width: 460px;
 }
 
 #image-slid{
 	max-width: 400px;
-	max-height: 400px;	
+	max-height: 400px;
+	width: 80%;	
 }
 
 #view-slid{
@@ -87,9 +87,8 @@
 .write-comment{
 	top: 20%;
 	margin: 20px 15px 0px 15px;
-	padding: 10px 30px 10px 30px;
+	padding: 10px;
 	position: relative;
-	min-width: 460px;
 	background-color:#2E8B57;
 	list-style: none;
 }

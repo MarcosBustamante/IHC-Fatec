@@ -34,6 +34,32 @@
 	background: -moz-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
 }
 
+.profile-menu a:active {
+	display: block;
+	padding: 20px;
+	border-bottom: 1px solid #222;
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	background: -webkit-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
+	background: -moz-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
+
+}
+
+.profile-menu a:visited {
+	display: block;
+	padding: 20px;
+	border-bottom: 1px solid #222;
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	background: -webkit-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
+	background: -moz-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
+
+}
+
 .profile-menu a:hover { background: #336c95; opacity: 3; }
 
 .icon {

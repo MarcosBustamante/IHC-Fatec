@@ -23,29 +23,29 @@
 		<script src="js/foundation/foundation.js"></script>
 		<script src="js/foundation/foundation.reveal.js"></script>
 		<script>
-				$(document).foundation();
 				$('a.reveal-link').trigger('click');
 				$('a.close-reveal-modal').trigger('click');
-// or directly on the modal
 				$('#myModal').foundation('reveal', 'open');
 				$('#myModal').foundation('reveal', 'close');
 
-		</script>
 		</script>
 	</head>
 
 	<body>
 		<!-- Navbar -->
+		<div class="reveal-modal-bg" style="display: none"></div>
 		<div id="myModal" class="reveal-modal" data-reveal>
   			<h2 align="center">Já possui uma conta? Faça seu login</h2>
+  				<img src="img/fico.png" style="float: left;" alt="Entre na sua conta pelo Facebook"/>
+  				<img src="img/gico.png" style="float: left;" alt="Entre na sua conta pelo Google Account"/>
+  				<p>
   				<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
-  				<center><input type="text" placeholder="Usuário ou E-mail"/> <p>
-  				<input type="text" placeholder="Senha"/> <p>
+  				<center><input type="text" style="width: 400px;"placeholder="Usuário ou E-mail"/> <p>
+  				<input type="text" style="width: 400px;" placeholder="Senha"/> <p>
   				<input type="submit" value="Entrar" style="background: #2E8B57; font-size: 15px;"> 
   				<h3> Ou cadastre-se aqui </h3> </center>
-  				<a class="close-reveal-modal">x</a>
+  				<a class="close-reveal-modal">X</a>
 		</div>
-		<div class="reveal-modal-bg" style="display: none"></div>
 		<div id="navbar">
 				<div id="navbar-topspace"> </div>
 				<div class="button profile-menu-button" ng-click="active_menu[0] = !active_menu[0]"> </div>
@@ -60,7 +60,7 @@
 					<div id="navbar-text" align="center"> FastFind </div>
 					<div id="navbar-searcharea">
 						<input type="text" placeholder="Pesquise seu produto já!" style="margin-right: 0; display: inline; position: relative; float: left; width: 60%;">
-						<div class="button find-button" style=""> </div>
+						<div class="button find-button"> </div>
 					</div>
 			</div>
 			</div>
@@ -73,11 +73,11 @@
 			</div> 
 			<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
 			<ul style="padding: 0;">
-				<li><a href="1.htm"> <img src="img/home.png" alt="Retorne para página inicial"> &nbsp;Home </a></li>
+				<li><a href="index.html"> <img src="img/home.png" alt="Retorne para página inicial"> &nbsp;Home </a></li>
 				<li><a href="2.htm"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
 				<li><a href="3.htm"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
 				<li><a href="4.htm"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
-				<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Sobre nós">  Quem somos nós </a></li>
+				<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Conheça informações sobre os desenvolvedores">  Quem somos nós </a></li>
 			</ul>
 		</div>
 
@@ -87,33 +87,33 @@
 				<div class="icon-space" style="padding-top: 60px;">
 					<div align="center"> <strong> Você está: </strong> </div>
 					<div class="icon left-icon">
-						<img src="img/andando.png" alt="Modo de exibição de produtos: lista" />
+						<img src="img/andando.png" alt="Voce está andando?" />
 						<p style="float: left; font-size: 13px;"> Andando </p> 
 					</div>
 					<div class="icon right-icon">
-						<img src="img/carro.png" alt="Modo de exibição de produtos: lista" />
+						<img src="img/carro.png" alt="Você está dirigindo?" />
 						<p style="float: left; font-size: 13px;"> Dirigindo </p> 
 					</div>
 				</div>
 				<strong> Exibir por: </strong>
 				<div class="icon-space">
 					<div class="icon left-icon" ng-click="change_type_view('list')"> 
-						<img src="img/lista.png" alt="Modo de exibição de produtos: lista" />
+						<img src="img/lista.png" alt="Modo de exibição de produtos, produtos em lista" />
 						<p style="float: left; font-size: 13px;"> Prod. em Lista </p>  
 					</div>
 					<div class="icon right-icon"  ng-click="change_type_view('block')"> 
-						<img src="img/block.png" alt="Modo de exibição de prodtuos: blocos"/> 
+						<img src="img/block.png" alt="Modo de exibição de prodtuos, produtos em blocos"/> 
 						<p style="float: left; font-size: 13px; margin-left: 5px;"> Prod. em Blocos </p>
 					</div>
 				</div>
 				<strong> Classificar por: </strong> 
 				<div class="icon-space">
 					<div class="icon left-icon">
-						<img src="img/price.png" alt="Modo de exibição de produtos: lista" />
+						<img src="img/price.png" alt="Classificar produtos por menor preço" />
 						<p style="float: left; font-size: 13px;"> Preço </p>
 					</div>
 					<div class="icon right-icon">
-						<img src="img/distance.png" alt="Modo de exibição de produtos: lista" />
+						<img src="img/distance.png" alt="Classificar produtos por menor distância" />
 						<p style="float: left; font-size: 13px;"> Distância </p>
 					</div>
 					</div>
@@ -182,7 +182,7 @@
 
 		
 		<!-- Tabela de produtos -->
-		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 97%;">
+		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 93%;">
 			<div class="medium-12 large-12 columns">
 			<!--Product in block-->
 				<div class="show-for-small-only">
@@ -192,7 +192,8 @@
 					</div>
 				</div>
 			<ul style="padding: 0;" ng-switch-when="block">
-				<li class="list-product-block" ng-repeat="product in products" align="center" style="box-shadow: 6px 6px 5px #888888;">
+				<li class="list-product-block" ng-repeat="product in products" align="center" style="box-shadow: 6px 6px 5px #888888; height: 7%;"
+				ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
 					<div>
 						<p align="left">
 							<label id="title-product-block">{{product.name}}</label>
@@ -203,7 +204,7 @@
 								<img class="sobre-img" ng-src="{{product.img[0]}}"/>
 							</div>
 						</p>
-						<p>
+						<!--<p>-->
 							<table width="100%">
 								<tr align="left">
 									<td>
@@ -224,7 +225,7 @@
 									</td>
 								</tr>
 							</table>
-						</p>
+						<!--</p>-->
 							<button>Mapa</button>
 							<button ng-click="comment_block(product);">
 								Comentario ({{product.comment.length}})
@@ -235,11 +236,11 @@
 		</div>
 
 			<!--Product in list - Slid and More information-->
-			<div class="medium-12 large-12 columns">
+			<div class="medium-12 large-12 small-12 columns">
 			<div style="overflow: auto;"ng-switch-when="list" align="center" style="width:100%;">
-				<div class="medium-6 large-6 columns">
+				<div class="medium-0 large-6 columns">
 					<!-- Product slide -->
-					<div class="hide-for-small-only view-product-list" style="overflow: auto; box-shadow: 2px 2px 5px #888888; ">
+					<div class="hide-for-small-only hide-for-medium-only view-product-list" style="overflow: auto; box-shadow: 2px 2px 5px #888888; ">
 						<label id="title-product-list">{{list_product_selected.name}}</label><hr>
 
 						<li style="list-style: none;" align="center">
@@ -314,8 +315,8 @@
 			</div>
 
 			<!-- Div with all products -->
-			<div class="medium-6 large-6 columns">
-			<div style="overflow: auto; box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
+			<div class="medium-12 large-6 columns">
+			<div style="box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
 				<div style="border-radius: 4px;" class = "product-list" ng-repeat="product in products" 
 				ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
 				ng-class="{'selected': list_product_selected == product}">
@@ -337,8 +338,8 @@
 			</div>
 
 			<!-- Div write comments -->
-			<div  class="write-comment align-list"  ng-if="show_comment">
-				<table>
+			<div  class="write-comment"  ng-if="show_comment">
+				<table width="100%">
 					<tr>
 						<td align="center" width="90px">
 							<img ng-src="{{user.img}}" class="avatar-comment">
@@ -347,8 +348,7 @@
 						</td>
 						<td align="center">
 							<li>
-								<textarea cols="55" rows="5"ng-model="comment" ng-click="show_buttons = true">
-								</textarea>
+								<textarea rows="5" ng-model="comment" ng-click="show_buttons = true" style="width:100%;"/>
 							</li>
 							<li align="right" ng-show="show_buttons">
 								<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
@@ -398,7 +398,6 @@
 		
 	</body>
 	<script type="text/javascript">
-
 		$(document).foundation();
 	</script>
 </html>
