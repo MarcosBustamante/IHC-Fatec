@@ -19,7 +19,7 @@
 .filter-menu{ margin: 0; padding: 0; right: 0; width: 273px;}
 
 /*Menu do perfil (esquerda) */
-.profile-menu{ margin: 0; padding: 0; left: 0;}
+.profile-menu{ margin: 0; padding: 0;}
 .profile-menu ul li { list-style-type: none; }
 
 .profile-menu a:link {

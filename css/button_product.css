@@ -1,6 +1,5 @@
 .btn-product { /* Botão pai */
 	background-color: rgb(175,194,175);
-	border-radius: 15px;
 	display: inline-block;
     line-height: 37px;
     text-align: center;
@@ -11,7 +10,9 @@
 }
 
 .img-config{
-	width: 37px; height: 37px;
+	width: 30px; height: 30px;
+	margin-top: 3%;
+	padding: 0px 20px 0px 20px;
 	position: relative;
 	background-size: 30px 30px;	
 	background-repeat: no-repeat;

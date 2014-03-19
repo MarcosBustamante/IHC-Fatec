@@ -32,44 +32,47 @@
 	</head>
 
 	<body>
-		<!-- Navbar -->
 		<div class="reveal-modal-bg" style="display: none"></div>
+
+		<!-- Modal with conect to Facebook -->
 		<div id="myModal" class="reveal-modal" data-reveal>
   			<h2 align="center">Já possui uma conta? Faça seu login</h2>
-  				<img src="img/fico.png" style="float: left;" alt="Entre na sua conta pelo Facebook"/>
-  				<img src="img/gico.png" style="float: left;" alt="Entre na sua conta pelo Google Account"/>
-  				<p>
-  				<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
-  				<center><input type="text" style="width: 400px;"placeholder="Usuário ou E-mail"/> <p>
-  				<input type="text" style="width: 400px;" placeholder="Senha"/> <p>
-  				<input type="submit" value="Entrar" style="background: #2E8B57; font-size: 15px;"> 
-  				<h3> Ou cadastre-se aqui </h3> </center>
-  				<a class="close-reveal-modal">X</a>
+			<img src="img/fico.png" style="float: left;" alt="Entre na sua conta pelo Facebook"/>
+			<img src="img/gico.png" style="float: left;" alt="Entre na sua conta pelo Google Account"/>
+			<p>
+			<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+			<center><input type="text" style="width: 400px;"placeholder="Usuário ou E-mail"/> <p>
+			<input type="text" style="width: 400px;" placeholder="Senha"/> <p>
+			<input type="submit" value="Entrar" style="background: #2E8B57; font-size: 15px;"> 
+			<h3> Ou cadastre-se aqui </h3> </center>
+			<a class="close-reveal-modal">X</a>
 		</div>
-		<div id="navbar">
-				<div id="navbar-topspace"> </div>
-				<div class="button profile-menu-button" ng-click="active_menu[0] = !active_menu[0]"> </div>
-				<div class="button filter-menu-button" ng-click="active_menu[1] = !active_menu[1]"></div>
-				<div class="show-for-small-only">
-					<div id="navbar-minitext"> FastFind</div>
-					<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px; border-radius: 6px; z-index: 5;"/>
-				</div>
 
-				<div class="hide-for-small-only">
-					<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px;" data-reveal-id="myModal" data-reveal/>
-					<div id="navbar-text" align="center"> FastFind </div>
-					<div id="navbar-searcharea">
-						<input type="text" placeholder="Pesquise seu produto já!" style="margin-right: 0; display: inline; position: relative; float: left; width: 60%;">
-						<div class="button find-button"> </div>
-					</div>
+		<!-- Navbar -->
+		<div id="navbar">
+			<div id="navbar-topspace"> </div>
+			<div class="button profile-menu-button" ng-click="active_menu[0] = !active_menu[0]"> </div>
+			<div class="button filter-menu-button" ng-click="active_menu[1] = !active_menu[1]"></div>
+			<div class="show-for-small-only">
+				<div id="navbar-minitext"> FastFind</div>
+				<input type="submit" value="ENTRAR" 
+					style="position: absolute; right: 70px; top: 15px; border-radius: 6px; z-index: 5;"/>
 			</div>
+
+			<div class="hide-for-small-only">
+				<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px;" data-reveal-id="myModal" data-reveal/>
+				<div id="navbar-text" align="center"> FastFind </div>
+				<div id="navbar-searcharea">
+					<input type="text" placeholder="Pesquise seu produto já!" style="margin-right: 0; display: inline; position: relative; float: left; width: 60%;" />
+					<div class="button find-button"> </div>
+				</div>
 			</div>
 		</div>
 
 		<!-- Menu de opções (esquerda) -->
 		<div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
 			<div id="profile_picture"> 
-				<img ng-src="{{user.img}}" align=center> 
+				<img ng-src="{{user.img}}" align=center /> 
 			</div> 
 			<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
 			<ul style="padding: 0;">
@@ -77,7 +80,7 @@
 				<li><a href="2.htm"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
 				<li><a href="3.htm"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
 				<li><a href="4.htm"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
-				<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Conheça informações sobre os desenvolvedores">  Quem somos nós </a></li>
+				<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Conheça informações sobre os desenvolvedores"> Quem somos nós </a></li>
 			</ul>
 		</div>
 
@@ -85,7 +88,9 @@
 		<div class="menu filter-menu" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
 			<center>
 				<div class="icon-space" style="padding-top: 60px;">
-					<div align="center"> <strong> Você está: </strong> </div>
+					<div align="center"> 
+						<strong> Você está: </strong> 
+					</div>
 					<div class="icon left-icon">
 						<img src="img/andando.png" alt="Voce está andando?" />
 						<p style="float: left; font-size: 13px;"> Andando </p> 
@@ -116,16 +121,15 @@
 						<img src="img/distance.png" alt="Classificar produtos por menor distância" />
 						<p style="float: left; font-size: 13px;"> Distância </p>
 					</div>
-					</div>
+				</div>
 			</center>
 		</div>
-
 
 		<!-- Comment on the block -->
 		<div class="background-comment-block" align="center" ng-show="open_comment_block">
 			<!-- Div write comments -->
 			<div  class="write-comment align-comment-block">
-				<table>
+				<table width="100%">
 					<tr>
 						<td align="center" width="90px">
 							<img ng-src="{{user.img}}" class="avatar-comment" />
@@ -134,7 +138,7 @@
 						</td>
 						<td align="center">
 							<li>
-								<textarea cols="55" rows="5"ng-model="comment" ng-click="show_buttons = true">
+								<textarea style="width:100%;" rows="5"ng-model="comment" ng-click="show_buttons = true">
 								</textarea>
 							</li>
 							<li align="right" ng-show="show_buttons">
@@ -154,57 +158,58 @@
 
 			<!-- All comments -->
 			<div class="write-comment comment-color align-comment-block" style="widht:100%;" 
-			ng-repeat="user_comment in list_product_selected.comment">
-			<table>
-				<tr>
-					<td align="center" width="90px">
-						<img ng-src="{{user_comment.img}}" class="avatar-comment">
-						<label id="more-information">{{user_comment.first_name}}</label>
-						<label id="more-information">{{user_comment.last_name}}</label>
-					</td>
-					<td valign="center" width="80%">
-						<label ng-if="!edit_comment">
-							{{user_comment.comment}}
-						</label>
-					</td>
-					<td>			
-						<li align="right">
-							<button style="background-color:red;" 
-							ng-click="delete_comment(list_product_selected.comment, user_comment)">
-								Apagar
-							</button>
-						</li>
-					</td>
-				</tr>
-			</table>
+				ng-repeat="user_comment in list_product_selected.comment">
+				<table>
+					<tr>
+						<td align="center" width="90px">
+							<img ng-src="{{user_comment.img}}" class="avatar-comment">
+							<label id="more-information">{{user_comment.first_name}}</label>
+							<label id="more-information">{{user_comment.last_name}}</label>
+						</td>
+						<td valign="center" width="80%">
+							<label ng-if="!edit_comment">
+								{{user_comment.comment}}
+							</label>
+						</td>
+						<td>			
+							<li align="right">
+								<button style="background-color:red;" 
+								ng-click="delete_comment(list_product_selected.comment, user_comment)">
+									Apagar
+								</button>
+							</li>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
-
 		
 		<!-- Tabela de produtos -->
 		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 93%;">
-			<div class="medium-12 large-12 columns">
 			<!--Product in block-->
+			<div class="medium-12 large-12 columns">
 				<div class="show-for-small-only">
 					<div id="navbar-minisearcharea">
-						<input type="text" placeholder="Pesquise aqui seu produto" style="margin-right: 0; display: inline; position: relative; float: left; width: 250px; border-radius: 6px;">
+						<input type="text" placeholder="Pesquise aqui seu produto" style="margin-right: 0; display: inline; position: relative; float: left; width: 250px; border-radius: 6px;" />
 						<div class="button find-button" style="margin-left: 10px; border-radius: 6px; width:"> </div>
 					</div>
 				</div>
-			<ul style="padding: 0;" ng-switch-when="block">
-				<li class="list-product-block" ng-repeat="product in products" align="center" style="box-shadow: 6px 6px 5px #888888; height: 7%;"
-				ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
-					<div>
-						<p align="left">
-							<label id="title-product-block">{{product.name}}</label>
-							<hr style="margin:10px">
-						</p>
-						<p>
-							<div style="height:160px;">
-								<img class="sobre-img" ng-src="{{product.img[0]}}"/>
-							</div>
-						</p>
-						<!--<p>-->
+
+				<!-- Blocks with products -->
+				<ul style="padding: 0;" ng-switch-when="block">
+					<li class="list-product-block" ng-repeat="product in products" align="center" 
+						style="box-shadow: 6px 6px 5px #888888; height: 7%;" 
+						ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+						<div>
+							<p align="left">
+								<label id="title-product-block">{{product.name}}</label>
+								<hr style="margin:10px">
+							</p>
+							<p>
+								<div style="height:160px;">
+									<img class="sobre-img" ng-src="{{product.img[0]}}"/>
+								</div>
+							</p>
 							<table width="100%">
 								<tr align="left">
 									<td>
@@ -224,182 +229,185 @@
 										<b><p id="text-produto-block">{{product.price}}</p></b>
 									</td>
 								</tr>
-							</table>
-						<!--</p>-->
-							<button>Mapa</button>
-							<button ng-click="comment_block(product);">
-								Comentario ({{product.comment.length}})
-							</button>
-					</div>
-				</li>
-			</ul>
-		</div>
-
-			<!--Product in list - Slid and More information-->
-			<div class="medium-12 large-12 small-12 columns">
-			<div style="overflow: auto;"ng-switch-when="list" align="center" style="width:100%;">
-				<div class="medium-0 large-6 columns">
-					<!-- Product slide -->
-					<div class="hide-for-small-only hide-for-medium-only view-product-list" style="overflow: auto; box-shadow: 2px 2px 5px #888888; ">
-						<label id="title-product-list">{{list_product_selected.name}}</label><hr>
-
-						<li style="list-style: none;" align="center">
-							<div ng-repeat="circle in list_product_selected['img']"  class="slid-circles" 
-							ng-class="{'selected': circle != image_selected}"
-							ng-mouseover="change_image_slide(circle)">
-							</div>
-						</li>
-
-						<div id="view-slid" align="center">
-							<img ng-src="{{image_selected}}" id="image-slid">
-						</div>
-
-						<div style="margin-bottom: 5px;">
+							</table> 		
 							<div class="btn-product" style="float: left;">
 								<i class="img-config map-button"></i>
-								<label style="padding-right:18px">Mapa</label>
+								<label style="padding-right:10px">Mapa</label>
 							</div>
-
-							<div class="btn-product more-information" ng-click="show_more_information = !show_more_information" 
-								style="margin-top:5px;">
-								<label ng-if="!show_more_information">+</label>
-								<label ng-if="show_more_information">-</label>
-							</div>
-
-							<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="!show_comment"
+							<div class="btn-product" ng-click="comment_block(product);" ng-if="!show_comment"
 								style="float: right;">
 								<i class="img-config comment-button"></i>
-								<label style="padding-left:18px">[ {{list_product_selected.comment.length}} ]</label>
+								<label style="padding-left:10px">[ {{list_product_selected.comment.length}} ]</label>
 								<label>Chat</label>
 							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 
-							<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="show_comment"
-								style="float: right;">
-								<i class="img-config comment-button"></i>
-								<label style="padding-left:18px">Lista</label>
+			<!--Product in list - Slid and More information-->
+			<div class="medium-12 large-12 small-12 columns" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+				<div style="overflow: auto;"ng-switch-when="list" align="center" style="width:100%;">
+					<div class="medium-6 large-6 columns">
+						<!-- Product slide -->
+						<div class="hide-for-small-only view-product-list" style="overflow: auto; box-shadow: 2px 2px 5px #888888; ">
+							<label id="title-product-list">{{list_product_selected.name}}</label><hr>
+
+							<li style="list-style: none;" align="center">
+								<div ng-repeat="circle in list_product_selected['img']"  class="slid-circles" 
+								ng-class="{'selected': circle != image_selected}"
+								ng-mouseover="change_image_slide(circle)">
+								</div>
+							</li>
+
+							<div id="view-slid" align="center">
+								<img ng-src="{{image_selected}}" id="image-slid" />
+							</div>
+
+							<div style="margin-bottom: 5px;">
+								<div class="btn-product" style="float: left;">
+									<i class="img-config map-button"></i>
+									<label style="padding-right:10px">Mapa</label>
+								</div>
+
+								<div class="btn-product more-information" ng-click="show_more_information = !show_more_information" 
+									style="margin-top:5px;">
+									<label ng-if="!show_more_information">+</label>
+									<label ng-if="show_more_information">-</label>
+								</div>
+
+								<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="!show_comment"
+									style="float: right;">
+									<i class="img-config comment-button"></i>
+									<label style="padding-left:10px">[ {{list_product_selected.comment.length}} ]</label>
+									<label>Chat</label>
+								</div>
+
+								<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="show_comment"
+									style="float: right;">
+									<i class="img-config comment-button"></i>
+									<label style="padding-left:10px">Lista</label>
+								</div>
 							</div>
 						</div>
-				</div>
 
-				<!-- Shop information -->
-				<div class="view-product-list" ng-if="show_more_information" 
-				ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
-					<table width="100%">
-						<tr>
-							<td width="15%" valign="center">
-								<img ng-src="{{list_product_selected.logo}}" class="logo-shop">
-							</td>
-							<td width="90%">
-								<table width="100%">
-									<tr>
-										<td width="65%" valign="center">
-											<label id="more-information">{{list_product_selected.shop}}</label>
+						<!-- Shop information -->
+						<div class="view-product-list" ng-if="show_more_information" 
+							ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+							<table width="100%">
+								<tr>
+									<td width="15%" valign="center">
+										<img ng-src="{{list_product_selected.logo}}" class="logo-shop" />
+									</td>
+									<td width="90%">
+										<table width="100%">
+											<tr>
+												<td width="65%" valign="center">
+													<label id="more-information">{{list_product_selected.shop}}</label>
+												</td>
+												<td  align="center" width="35%">
+													<label id="more-information"><b>{{list_product_selected.price}}</b></label>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<label id="more-information">{{list_product_selected.street}}</label>
+												</td>
+												<td align="center">
+													<label id="more-information">{{list_product_selected.distance}}</label>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<!-- Div with all products -->
+					<div class="medium-6 large-6 columns">
+						<div style="box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
+							<div style="border-radius: 4px;" class = "product-list" ng-repeat="product in products" 
+								ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
+								ng-class="{'selected': list_product_selected == product}">
+								<table width="80%">
+									<tr align="center">
+										<td width="20%">
+											<img ng-src="{{product.img[0]}}" id="image-list" />
 										</td>
-										<td  align="center" width="35%">
-											<b><label id="more-information">{{list_product_selected.price}}<b></label>
+										<td width="50%">
+											<p>{{product.name}}</p>
 										</td>
-									</tr>
-									<tr>
-										<td>
-											<label id="more-information">{{list_product_selected.street}}</label>
-										</td>
-										<td align="center">
-											<label id="more-information">{{list_product_selected.distance}}</label>
+										<td width="20%">
+											<label id="text_distance_price_product"><b>{{product.price}}</b></label>
+											<p>{{product.distance}}</p>
 										</td>
 									</tr>
 								</table>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
+							</div>
+						</div>
 
-			<!-- Div with all products -->
-			<div class="medium-12 large-6 columns">
-			<div style="box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
-				<div style="border-radius: 4px;" class = "product-list" ng-repeat="product in products" 
-				ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
-				ng-class="{'selected': list_product_selected == product}">
-					<table width="80%">
-						<tr align="center">
-							<td width="20%">
-								<img ng-src="{{product.img[0]}}" id="image-list">
-							</td>
-							<td width="50%">
-								<p>{{product.name}}</p>
-							</td>
-							<td width="20%">
-								<label id="text_distance_price_product"><b>{{product.price}}</b></label>
-								<p>{{product.distance}}</p>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
+						<!-- Div write comments -->
+						<div  class="write-comment"  ng-if="show_comment">
+							<table width="100%">
+								<tr>
+									<td align="center" width="90px">
+										<img ng-src="{{user.img}}" class="avatar-comment" />
+										<label id="more-information">{{user.first_name}}</label>
+										<label id="more-information">{{user.last_name}}</label>
+									</td>
+									<td align="center">
+										<li>
+											<textarea rows="5" ng-model="comment" ng-click="show_buttons = true" style="width:100%;"></textarea>
+										</li>
+										<li align="right" ng-show="show_buttons">
+											<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
+												Apagar
+											</button>
+											<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
+											style="background-color:blue;">
+												Enviar
+											</button>
+										</li>
+									</td>
+								</tr>
+							</table>
+						</div>
 
-			<!-- Div write comments -->
-			<div  class="write-comment"  ng-if="show_comment">
-				<table width="100%">
-					<tr>
-						<td align="center" width="90px">
-							<img ng-src="{{user.img}}" class="avatar-comment">
-							<label id="more-information">{{user.first_name}}</label>
-							<label id="more-information">{{user.last_name}}</label>
-						</td>
-						<td align="center">
-							<li>
-								<textarea rows="5" ng-model="comment" ng-click="show_buttons = true" style="width:100%;"/>
-							</li>
-							<li align="right" ng-show="show_buttons">
-								<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
-									Apagar
-								</button>
-								<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
-								style="background-color:blue;">
-									Enviar
-								</button>
-							</li>
-						</td>
-					</tr>
-				</table>
-			</div>
-
-			<!-- All comments -->
-			<div class="align-list" ng-if="show_comment">
-				<div class="write-comment comment-color align-comment" ng-repeat="user in list_product_selected.comment">
-					<table>
-						<tr>
-							<td align="center" width="90px">
-								<img ng-src="{{user.img}}" class="avatar-comment">
-								<label id="more-information">{{user.first_name}}</label>
-								<label id="more-information">{{user.last_name}}</label>
-							</td>
-							<td valign="center" width="80%">
-								<label ng-if="!edit_comment">
-									{{user.comment}}
-								</label>
-							</td>
-							<td>			
-								<li align="right">
-									<button style="background-color:red;" 
-									ng-click="delete_comment(list_product_selected.comment, user)">
-										Apagar
-									</button>
-								</li>
-							</td>
-						</tr>
-					</table>
+						<!-- All comments -->
+						<div ng-if="show_comment">
+							<div class="write-comment comment-color" ng-repeat="user in list_product_selected.comment">
+								<table>
+									<tr>
+										<td align="center" width="90px">
+											<img ng-src="{{user.img}}" class="avatar-comment" />
+											<label id="more-information">{{user.first_name}}</label>
+											<label id="more-information">{{user.last_name}}</label>
+										</td>
+										<td valign="center" width="80%">
+											<label ng-if="!edit_comment">
+												{{user.comment}}
+											</label>
+										</td>
+										<td>			
+											<li align="right">
+												<button style="background-color:red;" 
+												ng-click="delete_comment(list_product_selected.comment, user)">
+													Apagar
+												</button>
+											</li>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
 			</div>
 		</div>
-	</div>
-</div>
-		
 	</body>
+
 	<script type="text/javascript">
 		$(document).foundation();
 	</script>
 </html>
-
-<!-- http://www.nganimate.org/angularjs/ng-repeat/3d-rotate para faze as pesquisas -->
