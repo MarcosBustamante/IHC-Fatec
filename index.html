@@ -128,6 +128,7 @@
 		<!-- Comment on the block -->
 		<div class="background-comment-block" align="center" ng-show="open_comment_block">
 			<!-- Div write comments -->
+			<button ng-click="open_comment_block=false">voltar</button>
 			<div  class="write-comment align-comment-block">
 				<table width="100%">
 					<tr>
@@ -142,18 +143,15 @@
 								</textarea>
 							</li>
 							<li align="right" ng-show="show_buttons">
-								<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
-									Apagar
-								</button>
-								<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
-								style="background-color:blue;">
+								<div class="btn-product comment" ng-click="comment = ''; show_buttons=false;">Apagar</div>
+								<div class="btn-product comment" 
+								ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false">
 									Enviar
-								</button>
+								</div>
 							</li>
 						</td>
 					</tr>
 				</table>
-				<button ng-click="open_comment_block=false">voltar</button>
 			</div>
 
 			<!-- All comments -->
@@ -171,12 +169,11 @@
 								{{user_comment.comment}}
 							</label>
 						</td>
-						<td>			
+						<td valign="top" width="30%">			
 							<li align="right">
-								<button style="background-color:red;" 
-								ng-click="delete_comment(list_product_selected.comment, user_comment)">
-									Apagar
-								</button>
+								<div class="btn-product close" ng-click="delete_comment(list_product_selected.comment, user)">
+									x
+								</div>
 							</li>
 						</td>
 					</tr>
@@ -234,8 +231,7 @@
 								<i class="img-config map-button"></i>
 								<label style="padding-right:10px">Mapa</label>
 							</div>
-							<div class="btn-product" ng-click="comment_block(product);" ng-if="!show_comment"
-								style="float: right;">
+							<div class="btn-product" ng-click="comment_block(product);" style="float: right;">
 								<i class="img-config comment-button"></i>
 								<label style="padding-left:10px">[ {{list_product_selected.comment.length}} ]</label>
 								<label>Chat</label>
@@ -361,13 +357,11 @@
 											<textarea rows="5" ng-model="comment" ng-click="show_buttons = true" style="width:100%;"></textarea>
 										</li>
 										<li align="right" ng-show="show_buttons">
-											<button ng-click="comment = ''; show_buttons=false" style="background-color:red;">
-												Apagar
-											</button>
-											<button ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false" 
-											style="background-color:blue;">
+											<div class="btn-product comment" ng-click="comment = ''; show_buttons=false;">Apagar</div>
+											<div class="btn-product comment" 
+											ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false">
 												Enviar
-											</button>
+											</div>
 										</li>
 									</td>
 								</tr>
@@ -389,12 +383,11 @@
 												{{user.comment}}
 											</label>
 										</td>
-										<td>			
+										<td valign="top" width="30%">			
 											<li align="right">
-												<button style="background-color:red;" 
-												ng-click="delete_comment(list_product_selected.comment, user)">
-													Apagar
-												</button>
+												<div class="btn-product close" ng-click="delete_comment(list_product_selected.comment, user)">
+													x
+												</div>
 											</li>
 										</td>
 									</tr>

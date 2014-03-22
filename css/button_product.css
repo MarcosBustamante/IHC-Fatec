@@ -5,6 +5,19 @@
     text-align: center;
 }
 
+.btn-product.comment{
+	padding: 0 10px 0 10px; 
+}
+
+.btn-product.close{	
+	height: 20px;
+	width: 20px;
+	text-align: center;
+	left: right;
+	line-height: 110%;
+	border-radius: 50%;
+}
+
 .btn-product:hover{
 	background-color: rgb(155,174,155);
 }
