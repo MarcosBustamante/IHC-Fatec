@@ -18,22 +18,22 @@
 		<script src="angular.js"></script>
 		<script src="index.js"></script>
 		<script src="js/jquery.js"></script>
-		<script src="js/vendor/jquery.js"></script>
-		<script src="js/foundation.min.js"></script>
+		<script src="js/vendor/jquery.js"></script>		<script src="js/foundation.min.js"></script>
 		<script src="js/foundation/foundation.js"></script>
 		<script src="js/foundation/foundation.reveal.js"></script>
 		<script>
-				$('a.reveal-link').trigger('click');
-				$('a.close-reveal-modal').trigger('click');
-				$('#myModal').foundation('reveal', 'open');
-				$('#myModal').foundation('reveal', 'close');
-
-		</script>
+ 				$(document).foundation();
+ 				$('a.reveal-link').trigger('click');
+ 				$('a.close-reveal-modal').trigger('click');
+ // or directly on the modal
+ 				$('#myModal').foundation('reveal', 'open');
+ 				$('#myModal').foundation('reveal', 'close');
+ 
+ 		</script>
 	</head>
-
 	<body>
 		<!-- Navbar -->
-		<div class="reveal-modal-bg" style="display: none"></div>
+		<div class="reveal-modal-bg" style="display: none">
 		<div id="myModal" class="reveal-modal" data-reveal>
   			<h2 align="center">Já possui uma conta? Faça seu login</h2>
   				<img src="img/fico.png" style="float: left;" alt="Entre na sua conta pelo Facebook"/>
@@ -44,7 +44,8 @@
   				<input type="text" style="width: 400px;" placeholder="Senha"/> <p>
   				<input type="submit" value="Entrar" style="background: #2E8B57; font-size: 15px;"> 
   				<h3> Ou cadastre-se aqui </h3> </center>
-  				<a class="close-reveal-modal">X</a>
+  				<a class="close-reveal-modal">&#215;</a>
+		</div>
 		</div>
 		<div id="navbar">
 				<div id="navbar-topspace"> </div>
@@ -52,11 +53,11 @@
 				<div class="button filter-menu-button" ng-click="active_menu[1] = !active_menu[1]"></div>
 				<div class="show-for-small-only">
 					<div id="navbar-minitext"> FastFind</div>
-					<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px; border-radius: 6px; z-index: 5;"/>
+					<input type="submit" value="ENTRAR" style="cursor: pointer;position: absolute; right: 70px; top: 15px; border-radius: 6px; z-index: 5;"/>
 				</div>
 
 				<div class="hide-for-small-only">
-					<input type="submit" value="ENTRAR" style="position: absolute; right: 70px; top: 15px;" data-reveal-id="myModal" data-reveal/>
+					<input type="submit" value="ENTRAR" style="cursor: pointer;position: absolute; right: 70px; top: 15px;" data-reveal-id="myModal" data-reveal/>
 					<div id="navbar-text" align="center"> FastFind </div>
 					<div id="navbar-searcharea">
 						<input type="text" placeholder="Pesquise seu produto já!" style="margin-right: 0; display: inline; position: relative; float: left; width: 60%;">
@@ -397,9 +398,6 @@
 </div>
 		
 	</body>
-	<script type="text/javascript">
-		$(document).foundation();
-	</script>
 </html>
 
 <!-- http://www.nganimate.org/angularjs/ng-repeat/3d-rotate para faze as pesquisas -->
