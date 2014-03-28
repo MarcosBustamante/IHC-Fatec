@@ -71,8 +71,17 @@
 .slid-circles.selected{ background-color: black; }
 
 .product-list{
-	margin: 10px 0px 10px 0px;
+	margin: 10px 0;
 	cursor: pointer;
+}
+
+.product-list.zebra {
+	background-color: #fff;
+	border-radius: 4px;
+}
+
+.product-list.zebra:nth-child(odd) {
+	background-color: #f00;
 }
 
 .product-list:hover{ background-color: #2E8B57; }

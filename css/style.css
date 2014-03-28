@@ -61,7 +61,13 @@ input[type="submit"] {
 
 #navbar-searcharea {
 	margin: 8px 0 0 7%;
-	width: 300px; height: 100px;
+	width: 300px;
+}
+
+#navbar-searcharea:after {
+	content: "";
+	clear: both;
+	display: block;
 }
 
 #navbar-minisearcharea {

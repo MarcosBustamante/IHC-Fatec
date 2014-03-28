@@ -3,6 +3,11 @@
 	display: inline-block;
     line-height: 37px;
     text-align: center;
+    cursor: pointer;
+}
+
+.btn-product > label {
+	cursor: pointer;
 }
 
 .btn-product.comment{
