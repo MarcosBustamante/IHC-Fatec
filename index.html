@@ -200,7 +200,7 @@
 								<hr style="margin:10px">
 							</p>
 							<p>
-								<div style="height:160px;">
+								<div class="sobre-img-wrapper">
 									<img class="sobre-img" ng-src="{{product.img[0]}}"/>
 								</div>
 							</p>
@@ -320,7 +320,7 @@
 					<!-- Div with all products -->
 					<div class="medium-6 large-6 columns">
 						<div style="box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
-							<div style="border-radius: 4px;" class = "product-list" ng-repeat="product in products" 
+							<div style="border-radius: 4px;" class = "product-list zebra" ng-repeat="product in products" 
 								ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
 								ng-class="{'selected': list_product_selected == product}">
 								<table width="80%">

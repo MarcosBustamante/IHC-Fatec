@@ -36,9 +36,13 @@
 
 
 /* Zoom nas imagens dos produtos */
+.sobre-img-wrapper {
+	height: 160px;
+}
 .sobre-img {
 	max-width: 200px;
 	max-height: 160px;
+	min-height: 148px;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
