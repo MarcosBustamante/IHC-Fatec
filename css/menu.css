@@ -13,13 +13,14 @@
 	background-color: #1C1C1C;
 	overflow: auto;
 	z-index: 2;
+	padding-bottom: 40px;
 }
 
 /* Menu de filtros (direita) */
-.filter-menu{ margin: 0; padding: 0; right: 0; width: 273px;}
+.filter-menu{ margin: 0 0 2% 0; right: 0; width: 273px;}
 
 /*Menu do perfil (esquerda) */
-.profile-menu{ margin: 0; padding: 0; left: 0;}
+.profile-menu{ margin: 0 0 2% 0; padding: 0;}
 .profile-menu ul li { list-style-type: none; }
 
 .profile-menu a:link {
@@ -63,24 +64,26 @@
 .profile-menu a:hover { background: #336c95; opacity: 3; }
 
 .icon {
+	border-style: outset;
 	position: relative;
+	padding: 9px;
+	margin-left: 100px;
 	width: 70px; height: 70px;
 	border-width: 2px;
 	border-color: white;
 	background-color: #1C1C1C;
-	border-radius: 2px;
-	-webkit-box-shadow: 8px 8px 8px #111;
-	box-shadow: 8px 8px 8px #111; 
+	border-radius: 8px;
+	-webkit-box-shadow: 10px 10px 10px #111;
+	box-shadow: 10px 10px 10px #111; 
 }
 
-.left-icon { margin: 20px 0 0 20px; float: left; }
-.right-icon { margin: 20px 10px 0 0; float: right; }
+.left-icon { margin: 20px 0 0 40px; float: left; }
+.right-icon { margin: 20px 40px 0 0; float: right; }
 
-.icon:hover {
-	background: #336c95;
-}
+.icon:hover { background: #336c95; }
 
-.icon:active { border-radius: 6px; }
+.icon-selected { background: #336c95; }
+.icon:active { border-radius: 10px; }
 
 /* Molde para a foto do usuário */
 #profile_picture {

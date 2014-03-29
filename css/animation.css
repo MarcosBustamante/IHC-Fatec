@@ -14,8 +14,8 @@
 .animate-leave-options.animate-leave-options-active{left: -20%;opacity: 0;}
 
 .animate-enter-settings {left: 100%;opacity: 0;}
-.animate-enter-settings.animate-enter-settings-active {left: 80%;opacity: 1;}
-.animate-leave-settings {left: 80%;opacity: 1;}
+.animate-enter-settings.animate-enter-settings-active {left: 82%;opacity: 1;}
+.animate-leave-settings {left: 82%;opacity: 1;}
 .animate-leave-settings.animate-leave-settings-active{left: 100%;opacity: 0;}
 
 .animate-enter-opacity {opacity: 0;}
