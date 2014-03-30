@@ -78,7 +78,10 @@
 }
 
 .left-icon { margin: 20px 0 0 40px; float: left; }
+.left-pos { float: left; font-size: 13px; margin: 25px 0 0 -3px; }
+.right-pos { float: left; font-size: 13px; margin: 20px 0 0 -3px; }
 .right-icon { margin: 20px 40px 0 0; float: right; }
+.shadow-box { box-shadow: 6px 6px 5px #888888; height: 7%; }
 
 .icon:hover { background: #336c95; }
 

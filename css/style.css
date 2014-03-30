@@ -39,6 +39,19 @@ input[type="submit"] {
 	z-index: 10px;
 }
 
+#navbar-login-but {
+	position: absolute; 
+	right: 70px; 
+	top: 15px; 
+	border-radius: 6px;
+}
+
+#navbar-large-login-but {
+	cursor: pointer; 
+	position: absolute; 
+	right: 70px; 
+	top: 15px;
+}
 #navbar-text {
 	position: absolute;
 	color: white;
@@ -127,16 +140,6 @@ input[type="submit"] {
 	border-bottom: 3px solid;
 }
 
-/*.like-button {
-	position: relative; float: left;
-	background-image: url("../img/good.png");
-}
-
-.disapprove-button {
-	position: relative; float: left;
-	background-image: url("../img/bad.png");
-
-}*/
 
 .more-button {
 	position: relative; float: left;
