@@ -1,7 +1,5 @@
 <div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
-	<div id="profile_picture"> 
-		<img ng-src="{{user.img}}" align=center /> 
-	</div> 
+		<img id="profile_picture" ng-src="{{user.img}}" align="center" />
 	<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
 	<ul style="padding: 0;">
 		<li><a href="index.html"> <img src="img/home.png" alt="Retorne para página inicial"> &nbsp;Home </a></li>

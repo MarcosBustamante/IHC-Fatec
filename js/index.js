@@ -71,9 +71,12 @@ function index_ctr($scope, $window){
 	$scope.comment_block = function(product){
 		$scope.list_product_selected = product;
 		$scope.open_comment_block = true;
+	}
 
-		}
-
+	$scope.close_comment = function(){
+		$scope.open_comment_block=false;
+	}
+	
 	$scope.show_map = function(){		
 		$scope.directionsDisplay = new google.maps.DirectionsRenderer();
 		var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
@@ -96,10 +99,16 @@ function index_ctr($scope, $window){
 			$scope.myPosition = new google.maps.LatLng( aux.lat, aux.lng );
 		}
 
+		var travelMode
+		if ($scope.filter_mode == 'driving')
+			travelMode = google.maps.TravelMode.DRIVING;
+		else
+			travelMode = google.maps.TravelMode.WALKING;
+
 		var request = {
 			origin: $scope.myPosition,
 			destination: "Jardim Santa Inês I, São José dos Campos - SP, Brasil",
-			travelMode: google.maps.TravelMode.DRIVING,
+			travelMode: travelMode,
 		};
 
 		new google.maps.DirectionsService().route(request, function(result, status) {
@@ -118,14 +127,22 @@ function index_ctr($scope, $window){
 	$scope.gps = function(){
 		navigator.geolocation.getCurrentPosition(success, error);
 	}
+
 	$scope.gps()
+
 	function success(pos) {
 	  var crd = pos.coords;
 	  $scope.myPosition = {'lat': crd.latitude, 'lng': crd.longitude};
-	  console.log($scope.myPosition)
 	};
 
 	function error(err) {
 	  $scope.myPosition = null;
 	};
+
+	atualizaUser = function(nameFacebook, imageFacebook){
+		nameFacebook = nameFacebook.split(" ")
+		$scope.user.img = imageFacebook;
+		$scope.user.first_name = nameFacebook[0];
+		$scope.user.last_name = nameFacebook[1];
+	}
 }

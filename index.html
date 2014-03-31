@@ -37,7 +37,7 @@
 		<div class="reveal-modal-bg" style="display: none"></div>
 
 		<!-- Modal para conectar ao Facebook -->
-		<div id="myModal" class="reveal-modal" data-reveal ng-include="'modalConnected.html'">
+		<div id="myModal" class="reveal-modal" data-reveal ng-include="'templates/modalConnected.html'">
 		</div>
 
 		<!-- Navbar -->
@@ -71,13 +71,43 @@
 		<script>
 			// Função assíncrona para startar a API e criar o botão de login
   			window.fbAsyncInit = function() {
-		    FB.init({
-		      appId      : '617435301671280',
-		      status     : true,
-		      cookie     : true,
-		      xfbml      : true
-		    });
-		  };
+			    FB.init({
+			      appId      : '617435301671280',
+			      status     : true,
+			      cookie     : true,
+			      xfbml      : true
+			    });
+
+				FB.Event.subscribe('auth.authResponseChange', function(response) {
+					//Se o usuário estiver logado no facebook e já deu as permissões para seu aplicativo o status será connected
+					if (response.status === 'connected') {
+						// Executa a função usuarioConectado().
+						usuarioConectado();
+					} 
+				});
+			  };
+
+        function usuarioConectado() {
+            // Com a função FB.api, é possível fazer chamadas para o Graph API.
+            // Usando o parâmetro /me , você pode solicitar informações do usuário conectado.
+            FB.api('/me', function(response) {
+                // Usando jQuery, será exibido no paragrafo com id info as informações abaixo, capturdas com o FB.api.
+               /* $('#info').html(
+                    'Nome: '+response.name + 
+                    '<br>username: '+response.username + 
+                    '<br>Link perfil: '+response.link + 
+                    '<br>Email: '+response.email +
+                    '<br>Sexo: '+response.gender +
+                    '<br>ID: '+response.id 
+                );*/
+                // Um exemplo de como você pode recuperar a foto do usuário.
+                
+                imageFacebook = 'https://graph.facebook.com/' + response.id + '/picture';
+                nameFacebook = response.name;
+                atualizaUser(nameFacebook,imageFacebook);
+                //$('#foto').html('<img src="https://graph.facebook.com/'+response.username+'/picture" alt="'+response.name+'" />')
+            });
+        }
 
 		  (function(d){
 		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
