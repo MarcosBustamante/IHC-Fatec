@@ -1,8 +1,9 @@
 function index_ctr($scope, $window){
 	$scope.active_menu = [false,false];
-	$scope.product_view_selected = 'block';
+	$scope.product_view_selected = 'list';
 	$scope.filter_mode = 'driving';
 	$scope.sel_mode = 'dist';
+	$scope.map_is_visible = false;
 	$scope.user = {'img':'img/user.png','first_name':'Camila','last_name':'Silveira'};
 	$scope.products = [{'name':'X-box One 1','img':['imgsTabela/xbox1.jpg','imgsTabela/xbox2.jpg','imgsTabela/xbox3.jpg'],'logo':'imgsTabela/americanas.jpg','distance':'500m','price':'R$ 2.230,00','shop':'Loja do Jão','street':'Rua 1 - 158, Centro','comment':[]},
 					   {'name':'X-box One 2','img':['imgsTabela/xbox2.jpg','imgsTabela/xbox3.jpg','imgsTabela/xbox1.jpg'],'logo':'imgsTabela/americanas.jpg','distance':'500m','price':'R$ 2.930,00','shop':'Loja do Maria','street':'Rua 1 - 158, Centro','comment':[]},
@@ -71,5 +72,60 @@ function index_ctr($scope, $window){
 		$scope.list_product_selected = product;
 		$scope.open_comment_block = true;
 
+		}
+
+	$scope.show_map = function(){		
+		$scope.directionsDisplay = new google.maps.DirectionsRenderer();
+		var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
+
+		var options = {
+			zoom: 7,
+			center: latlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+
+		var map = new google.maps.Map(document.getElementById("mapa"), options);
+
+		$scope.directionsDisplay.setMap(map);
+
+		$scope.gps();
+		if($scope.myPosition == null)
+			$scope.myPosition = "Bahia, BR";
+		else{
+			var aux = $scope.myPosition; 
+			$scope.myPosition = new google.maps.LatLng( aux.lat, aux.lng );
+		}
+
+		var request = {
+			origin: $scope.myPosition,
+			destination: "Jardim Santa Inês I, São José dos Campos - SP, Brasil",
+			travelMode: google.maps.TravelMode.DRIVING,
+		};
+
+		new google.maps.DirectionsService().route(request, function(result, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				$scope.directionsDisplay.setDirections(result);
+			}
+		});
+
+		$scope.map_is_visible = true;
 	}
+
+	$scope.close_map = function(){
+		$scope.map_is_visible = false;
+	};
+
+	$scope.gps = function(){
+		navigator.geolocation.getCurrentPosition(success, error);
+	}
+	$scope.gps()
+	function success(pos) {
+	  var crd = pos.coords;
+	  $scope.myPosition = {'lat': crd.latitude, 'lng': crd.longitude};
+	  console.log($scope.myPosition)
+	};
+
+	function error(err) {
+	  $scope.myPosition = null;
+	};
 }

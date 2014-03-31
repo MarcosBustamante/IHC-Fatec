@@ -13,16 +13,18 @@
 		<link rel="stylesheet" href="css/menu.css">
 		<link rel="stylesheet" href="css/button_product.css">
 		<link rel="stylesheet" href="css/foundation.min.css">
+		<link rel="stylesheet" type="text/css" href="css/map.css">
+
 
 		<!-- js -->
 		<script src="angular.js"></script>
 		<script src="index.js"></script>
-		<script src="js/jquery.js"></script>
 		<script src="js/vendor/jquery.js"></script>		
 		<script src="js/foundation.min.js"></script>
 		<script src="js/foundation/foundation.js"></script>
 		<script src="js/foundation/foundation.dropdown.js"></script>
 		<script src="js/foundation/foundation.reveal.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<!--<script src="http://connect.facebook.net/en_US/all.js"></script>-->
 		<script>
 				$('a.reveal-link').trigger('click');
@@ -52,7 +54,7 @@
 			<div class="button profile-menu-button" ng-click="active_menu[0] = !active_menu[0]"> </div>
 			<div class="button filter-menu-button" ng-click="active_menu[1] = !active_menu[1]"></div>
 			<div class="show-for-small-only">
-				<div id="navbar-minitext"> FastFind</div>
+				<div id="navbar-minitext"> FastFind {{map_is_visible}}</div>
 				<input type="submit" id="navbar-login-but" value="ENTRAR" />
 			</div>
 
@@ -97,17 +99,19 @@
 						<p class="right-pos"> Dirigindo </p> 
 					</div>
 				</div>
+				<br><br>
 				<strong> Exibir por: </strong>
 				<div class="icon-space">
 					<div class="icon left-icon" ng-click="change_type_view('list')" ng-class="{'icon-selected': product_view_selected == 'list'}"> 
 						<img src="img/lista.png" alt="Modo de exibição de produtos, produtos em lista" />
-						<p class="left-pos"> Prod. em Lista </p>  
+						<p class="left-pos"> Lista </p>  
 					</div>
 					<div class="icon right-icon"  ng-click="change_type_view('block')" ng-class="{'icon-selected': product_view_selected == 'block'}"> 
 						<img src="img/block.png" style="margin-top: -3px;" alt="Modo de exibição de prodtuos, produtos em blocos"/> 
-						<p class="right-pos"> Prod. em Blocos </p>
+						<p class="right-pos"> Blocos </p>
 					</div>
 				</div>
+				<br><br><br>
 				<strong> Classificar por: </strong> 
 				<div class="icon-space">
 					<div class="icon left-icon" ng-click="change_mode('price')" ng-class="{'icon-selected': sel_mode == 'price'}"> 
@@ -177,6 +181,15 @@
 				</table>
 			</div>
 		</div>
+
+		<!-- Show Map -->
+		<div class="background-comment-block" align="center" ng-show="map_is_visible">
+			<div class="menu-map">
+				<div class="btn-map" ng-click="close_map()">Voltar</div>
+				<div align="center" class="product-name-map">{{list_product_selected.name}}</div>
+			</div>
+			<div id="mapa" class="map"></div>
+		</div>
 		
 		<!-- Tabela de produtos -->
 		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 93%;">
@@ -225,7 +238,7 @@
 							</table> 		
 							<div class="btn-product" style="float: left;">
 								<i class="img-config map-button"></i>
-								<label style="padding-right:10px">Mapa</label>
+								<label style="padding-right:10px" ng-click="show_map()">Mapa</label>
 							</div>
 							<div class="btn-product" ng-click="comment_block(product);" style="float: right;">
 								<i class="img-config comment-button"></i>
@@ -259,7 +272,7 @@
 							<div style="margin-bottom: 5px;">
 								<div class="btn-product" style="float: left;">
 									<i class="img-config map-button"></i>
-									<label style="padding-right:10px">Mapa</label>
+									<label style="padding-right:10px" ng-click="show_map()">Mapa</label>
 								</div>
 
 								<div class="btn-product more-information" ng-click="show_more_information = !show_more_information" 
@@ -267,7 +280,7 @@
 									<label ng-if="!show_more_information">+</label>
 									<label ng-if="show_more_information">-</label>
 								</div>
-
+								<button ng-click="gps()">tomar que de certo</button>
 								<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="!show_comment"
 									style="float: right;">
 									<i class="img-config comment-button"></i>
@@ -319,19 +332,19 @@
 					<!-- Div with all products -->
 					<div class="medium-6 large-6 columns">
 						<div style="box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
-							<div style="border-radius: 4px;" class = "product-list zebra" ng-repeat="product in products" 
+							<div class = "product-list zebra" ng-repeat="product in products" 
 								ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
 								ng-class="{'selected': list_product_selected == product}">
 								<table width="80%">
 									<tr align="center">
-										<td width="20%">
+										<td width="20%" height="100px">
 											<img ng-src="{{product.img[0]}}" id="image-list" />
 										</td>
 										<td width="50%">
 											<p>{{product.name}}</p>
 										</td>
-										<td width="20%">
-											<label id="text_distance_price_product"><b>{{product.price}}</b></label>
+										<td width="20%" valign="center">
+											<p id="text_distance_price_product"><b>{{product.price}}</b></p>
 											<p>{{product.distance}}</p>
 										</td>
 									</tr>

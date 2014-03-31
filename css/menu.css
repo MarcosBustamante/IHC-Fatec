@@ -64,6 +64,7 @@
 .profile-menu a:hover { background: #336c95; opacity: 3; }
 
 .icon {
+	cursor: pointer;
 	border-style: outset;
 	position: relative;
 	padding: 9px;

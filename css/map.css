@@ -1,0 +1,37 @@
+.map { 
+	top: 60px;
+	bottom: 10px;
+	right: 10px;
+	left: 10px;
+	position: absolute;
+	background-color: white;
+}
+
+.btn-map{
+	cursor: pointer;
+	position: absolute;
+	border: solid 2px #fff	;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+}
+.btn-map:hover{
+	background-color: silver;
+	color: black;
+}
+
+.menu-map{
+	width: 100%;
+	background-color:black;
+	right: 10px; 
+	left:10px;
+	height: 50px;
+}
+
+.product-name-map{
+	padding: 15px 0;
+	font-size: 20px;
+	top: 10px;
+	height: 100%;
+	color: white;
+}
