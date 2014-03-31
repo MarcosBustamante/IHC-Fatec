@@ -1,0 +1,53 @@
+<div class="background-comment-block" align="center" ng-show="open_comment_block">
+	<!-- Div write comments -->
+	<div  class="write-comment align-comment-block">
+		<table width="100%">
+			<tr>
+				<td align="center" width="90px">
+					<img ng-src="{{user.img}}" class="avatar-comment" />
+					<label id="more-information">{{user.first_name}}</label>
+					<label id="more-information">{{user.last_name}}</label>
+				</td>
+				<td align="center">
+					<li>
+						<textarea style="width:90%;" rows="5"ng-model="comment" ng-click="show_buttons = true"></textarea>
+						<button ng-click="open_comment_block=false">voltar</button>
+					</li>
+					<li align="right" ng-show="show_buttons">
+						<div class="btn-product comment" ng-click="comment = ''; show_buttons=false;">Apagar</div>
+						<div class="btn-product comment" 
+						ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false">
+							Enviar
+						</div>
+					</li>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- All comments -->
+	<div class="write-comment comment-color align-comment-block" style="widht:100%;" 
+		ng-repeat="user_comment in list_product_selected.comment">
+		<table>
+			<tr>
+				<td align="center" width="90px">
+					<img ng-src="{{user_comment.img}}" class="avatar-comment">
+					<label id="more-information">{{user_comment.first_name}}</label>
+					<label id="more-information">{{user_comment.last_name}}</label>
+				</td>
+				<td valign="center" width="80%">
+					<label ng-if="!edit_comment">
+						{{user_comment.comment}}
+					</label>
+				</td>
+				<td valign="top" width="30%">			
+					<li align="right">
+						<div class="btn-product close" ng-click="delete_comment(list_product_selected.comment, user)">
+							x
+						</div>
+					</li>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

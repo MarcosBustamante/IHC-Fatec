@@ -1,0 +1,13 @@
+<div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+	<div id="profile_picture"> 
+		<img ng-src="{{user.img}}" align=center /> 
+	</div> 
+	<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
+	<ul style="padding: 0;">
+		<li><a href="index.html"> <img src="img/home.png" alt="Retorne para página inicial"> &nbsp;Home </a></li>
+		<li><a href="2.htm"> <img src="img/listadesejos.png" alt="Acesse sua lista de desejos"> Lista de Desejos</a></li>
+		<li><a href="3.htm"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
+		<li><a href="4.htm"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
+		<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Conheça informações sobre os desenvolvedores"> Quem somos nós </a></li>
+	</ul>
+</div>

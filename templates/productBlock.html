@@ -1,0 +1,55 @@
+<div class="medium-12 large-12 columns">
+	<div class="show-for-small-only">
+		<div id="navbar-minisearcharea">
+			<input type="text" placeholder="Pesquise aqui seu produto" style="margin-right: 0; display: inline; position: relative; float: left; width: 250px; border-radius: 6px;" />
+			<div class="button find-button" style="margin-left: 10px; border-radius: 6px; width:"> </div>
+		</div>
+	</div>
+
+	<!-- Blocks with products -->
+	<ul style="padding: 0;" ng-switch-when="block">
+		<li class="list-product-block shadow-box" ng-repeat="product in products" align="center"  
+			ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+			<div>
+				<p align="left">
+					<label id="title-product-block">{{product.name}}</label>
+					<hr style="margin:10px">
+				</p>
+				<p>
+					<div class="sobre-img-wrapper">
+						<img class="sobre-img" ng-src="{{product.img[0]}}"/>
+					</div>
+				</p>
+				<table width="100%">
+					<tr align="left">
+						<td>
+							<p id="text-produto-block">{{product.shop}}</p>
+						</td>
+						<td>
+							<p id="text-produto-block">{{product.distance}}</p>
+						</td>
+					</tr>
+					<tr align="left">
+						<td colspan="2">
+							<p id="text-produto-block">{{product.street}}</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" height="40">
+							<b><p id="text-produto-block">{{product.price}}</p></b>
+						</td>
+					</tr>
+				</table> 		
+				<div class="btn-product" style="float: left;">
+					<i class="img-config map-button"></i>
+					<label style="padding-right:10px" ng-click="show_map()">Mapa</label>
+				</div>
+				<div class="btn-product" ng-click="comment_block(product);" style="float: right;">
+					<i class="img-config comment-button"></i>
+					<label style="padding-left:10px">[ {{list_product_selected.comment.length}} ]</label>
+					<label>Chat</label>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

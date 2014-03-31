@@ -1,0 +1,154 @@
+<div class="medium-12 large-12 small-12 columns" ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+	<div style="overflow: auto;"ng-switch-when-default align="center" style="width:100%;">
+		<div class="medium-6 large-6 columns">
+			<!-- Product slide -->
+			<div class="hide-for-small-only view-product-list" style="overflow: auto; box-shadow: 2px 2px 5px #888888; ">
+				<label id="title-product-list">{{list_product_selected.name}}</label><hr>
+
+				<li style="list-style: none;" align="center">
+					<div ng-repeat="circle in list_product_selected['img']"  class="slid-circles" 
+					ng-class="{'selected': circle != image_selected}"
+					ng-mouseover="change_image_slide(circle)">
+					</div>
+				</li>
+
+				<div id="view-slid" align="center">
+					<img ng-src="{{image_selected}}" id="image-slid" />
+				</div>
+
+				<div style="margin-bottom: 5px;">
+					<div class="btn-product" style="float: left;">
+						<i class="img-config map-button"></i>
+						<label style="padding-right:10px" ng-click="show_map()">Mapa</label>
+					</div>
+
+					<div class="btn-product more-information" ng-click="show_more_information = !show_more_information" 
+						style="margin-top:5px;">
+						<label ng-if="!show_more_information">+</label>
+						<label ng-if="show_more_information">-</label>
+					</div>
+					<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="!show_comment"
+						style="float: right;">
+						<i class="img-config comment-button"></i>
+						<label style="padding-left:10px">[ {{list_product_selected.comment.length}} ]</label>
+						<label>Chat</label>
+					</div>
+
+					<div class="btn-product" ng-click="open_comment(list_product_selected)" ng-if="show_comment"
+						style="float: right;">
+						<i class="img-config comment-button"></i>
+						<label style="padding-left:10px">Lista</label>
+					</div>
+				</div>
+			</div>
+
+			<!-- Shop information -->
+			<div class="view-product-list" ng-if="show_more_information" 
+				ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
+				<table width="100%">
+					<tr>
+						<td width="15%" valign="center">
+							<img ng-src="{{list_product_selected.logo}}" class="logo-shop" />
+						</td>
+						<td width="90%">
+							<table width="100%">
+								<tr>
+									<td width="65%" valign="center">
+										<label id="more-information">{{list_product_selected.shop}}</label>
+									</td>
+									<td  align="center" width="35%">
+										<label id="more-information"><b>{{list_product_selected.price}}</b></label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label id="more-information">{{list_product_selected.street}}</label>
+									</td>
+									<td align="center">
+										<label id="more-information">{{list_product_selected.distance}}</label>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- Div with all products -->
+		<div class="medium-6 large-6 columns">
+			<div style="box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
+				<div class = "product-list zebra" ng-repeat="product in products" 
+					ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
+					ng-class="{'selected': list_product_selected == product}">
+					<table width="80%">
+						<tr align="center">
+							<td width="20%" height="100px">
+								<img ng-src="{{product.img[0]}}" id="image-list" />
+							</td>
+							<td width="50%">
+								<p>{{product.name}}</p>
+							</td>
+							<td width="20%" valign="center">
+								<p id="text_distance_price_product"><b>{{product.price}}</b></p>
+								<p>{{product.distance}}</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<!-- Div write comments -->
+			<div  class="write-comment"  ng-if="show_comment">
+				<table width="100%">
+					<tr>
+						<td align="center" width="90px">
+							<img ng-src="{{user.img}}" class="avatar-comment" />
+							<label id="more-information">{{user.first_name}}</label>
+							<label id="more-information">{{user.last_name}}</label>
+						</td>
+						<td align="center">
+							<li>
+								<textarea rows="5" ng-model="comment" ng-click="show_buttons = true" style="width:100%;"></textarea>
+							</li>
+							<li align="right" ng-show="show_buttons">
+								<div class="btn-product comment" ng-click="comment = ''; show_buttons=false;">Apagar</div>
+								<div class="btn-product comment" 
+								ng-click="save_comment(comment, list_product_selected); comment=''; show_buttons=false">
+									Enviar
+								</div>
+							</li>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<!-- All comments -->
+			<div ng-if="show_comment">
+				<div class="write-comment comment-color" ng-repeat="user in list_product_selected.comment">
+					<table>
+						<tr>
+							<td align="center" width="90px">
+								<img ng-src="{{user.img}}" class="avatar-comment" />
+								<label id="more-information">{{user.first_name}}</label>
+								<label id="more-information">{{user.last_name}}</label>
+							</td>
+							<td valign="center" width="80%">
+								<label ng-if="!edit_comment">
+									{{user.comment}}
+								</label>
+							</td>
+							<td valign="top" width="30%">			
+								<li align="right">
+									<div class="btn-product close" ng-click="delete_comment(list_product_selected.comment, user)">
+										x
+									</div>
+								</li>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
