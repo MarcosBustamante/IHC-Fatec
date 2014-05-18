@@ -78,7 +78,7 @@
 		<!-- Div with all products -->
 		<div class="medium-6 large-6 columns">
 			<div style="box-shadow: 2px 2px 5px #888888;"  class="view-product-list fix" ng-if="!show_comment" >
-				<div class = "product-list zebra" ng-repeat="product in products" 
+				<div class = "product-list zebra" ng-repeat="product in products | orderBy:sel_mode:true" 
 					ng-click="selected_new_product(product)" ng-mouseover="houver_new_product(product)"
 					ng-class="{'selected': list_product_selected == product}">
 					<table width="80%">

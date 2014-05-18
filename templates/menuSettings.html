@@ -1,5 +1,6 @@
 <div class="menu filter-menu" ng-if="active_menu[1]" ng-animate="{enter: 'animate-enter-settings', leave: 'animate-leave-settings'}">
 	<center>
+		<button ng-click="init_Speech()">Ativar Speech</button>
 		<div class="icon-space" style="padding-top: 60px;">
 			<div align="center"> 
 				<strong> Você está: </strong> 
@@ -18,11 +19,11 @@
 		<div class="icon-space">
 			<div class="icon left-icon" ng-click="change_type_view('list')" ng-class="{'icon-selected': product_view_selected == 'list'}"> 
 				<img src="img/lista.png" alt="Modo de exibição de produtos, produtos em lista" />
-				<p class="left-pos"> Prod. em Lista </p>  
+				<p class="left-pos"> Lista </p>  
 			</div>
 			<div class="icon right-icon"  ng-click="change_type_view('block')" ng-class="{'icon-selected': product_view_selected == 'block'}"> 
 				<img src="img/block.png" style="margin-top: -3px;" alt="Modo de exibição de prodtuos, produtos em blocos"/> 
-				<p class="right-pos"> Prod. em Blocos </p>
+				<p class="right-pos"> Blocos </p>
 			</div>
 		</div>
 		<br><br><br>
@@ -32,7 +33,7 @@
 				<img src="img/price.png" alt="Classificar produtos por menor preço" />
 				<p class="left-pos"> Preço </p>
 			</div>
-			<div class="icon right-icon"  ng-click="change_mode('dist')" ng-class="{'icon-selected': sel_mode == 'dist'}">
+			<div class="icon right-icon"  ng-click="change_mode('distance')" ng-class="{'icon-selected': sel_mode == 'distance'}">
 				<img src="img/distance.png" alt="Classificar produtos por menor distância" />
 				<p class="right-pos"> Distância </p>
 			</div>

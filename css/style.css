@@ -72,11 +72,18 @@ input[type="submit"] {
 	text-transform: uppercase;
 }
 
-#navbar-searcharea {
+#navbar-search-area {
 	margin: 8px 0 0 7%;
 	width: 300px;
 }
 
+#navbar-search-area-input{
+	margin-right: 0; 
+	display: inline; 
+	position: relative; 
+	float: left; 
+	Swidth: 60%;
+}
 #navbar-searcharea:after {
 	content: "";
 	clear: both;
