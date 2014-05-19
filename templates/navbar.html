@@ -2,15 +2,16 @@
 <div class="button profile-menu-button" ng-click="active_menu[0] = !active_menu[0]"> </div>
 <div class="button filter-menu-button" ng-click="active_menu[1] = !active_menu[1]"></div>
 <div class="show-for-small-only">
-	<div id="navbar-minitext"> FastFind</div>
+	<div id="navbar-minitext"> FastFind - {{speech_message}}</div>
 	<input type="submit" id="navbar-login-but" value="ENTRAR" />
 </div>
 
 <div class="hide-for-small-only">
 	<input type="submit" id="navbar-large-login-but" value="ENTRAR" data-reveal-id="myModal" data-reveal/>
-	<div id="navbar-text" align="center"> FastFind </div>
-	<div id="navbar-searcharea">
-		<input type="text" placeholder="Pesquise seu produto já!" style="margin-right: 0; display: inline; position: relative; float: left; width: 60%;" />
+	<div id="navbar-text" align="center"> FastFind - {{speech_message}} </div>
+	<div id="navbar-search-area">
+		<input type="text" placeholder="Pesquise seu produto já!" style="navbar-search-area-input" ng-model="search"/>
 		<div class="button find-button"> </div>
 	</div>
 </div>
+	

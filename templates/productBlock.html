@@ -8,7 +8,7 @@
 
 	<!-- Blocks with products -->
 	<ul style="padding: 0;" ng-switch-when="block">
-		<li class="list-product-block shadow-box" ng-repeat="product in products" align="center"  
+		<li class="list-product-block shadow-box" ng-repeat="product in products | orderBy:sel_mode:true" align="center"  
 			ng-animate="{enter: 'animate-enter-opacity', leave: 'animate-leave-opacity'}">
 			<div>
 				<p align="left">
