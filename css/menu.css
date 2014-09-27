@@ -17,13 +17,49 @@
 }
 
 /* Menu de filtros (direita) */
-.filter-menu{ margin: 0 0 2% 0; right: 0; width: 273px;}
+#filter-menu{
+	font-family: "Verdana", Helvetica;
+	width: 250px; height: 100%; 
+	position: absolute;
+	bottom: 0;
+	top: 70px;
+	text-shadow: 0 1px 0 #000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	font-size: 15px;
+	color: #fff;
+	background-color: #1C1C1C;
+	overflow: auto;
+	z-index: 2;
+	padding-bottom: 40px; 
+	margin: 0 0 2% 0; right: 0; width: 273px;
+}
+
 
 /*Menu do perfil (esquerda) */
-.profile-menu{ margin: 0 0 2% 0; padding: 0;}
-.profile-menu ul li { list-style-type: none; }
+#profile-menu{
+	font-family: "Verdana", Helvetica;
+	width: 250px; height: 100%; 
+	position: absolute;
+	bottom: 0;
+	top: 70px;
+	text-shadow: 0 1px 0 #000;
+	text-decoration: none;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	font-size: 15px;
+	color: #fff;
+	background-color: #1C1C1C;
+	overflow: auto;
+	z-index: 2;
+	padding-bottom: 40px; 
+	margin: 0 0 2% 0;
+ 	padding: 0;
+ }
 
-.profile-menu a:link {
+#profile-menu ul li { list-style-type: none; }
+#profile-menu.hide { left: -250px; }
+
+#profile-menu a:link {
 	display: block;
 	padding: 20px;
 	border-bottom: 1px solid #222;
@@ -35,7 +71,7 @@
 	background: -moz-linear-gradient(rgba(255,255,255,.02) 0%, rgba(0,0,0,.1) 100%);
 }
 
-.profile-menu a:active {
+#profile-menu a:active {
 	display: block;
 	padding: 20px;
 	border-bottom: 1px solid #222;
@@ -48,7 +84,7 @@
 
 }
 
-.profile-menu a:visited {
+#profile-menu a:visited {
 	display: block;
 	padding: 20px;
 	border-bottom: 1px solid #222;
@@ -61,7 +97,10 @@
 
 }
 
-.profile-menu a:hover { background: #336c95; opacity: 3; }
+#profile-menu a:hover { background: #336c95; opacity: 3; }
+
+
+
 
 .icon {
 	cursor: pointer;
@@ -102,4 +141,3 @@
 /* Molde para o nome do usuário */
 #username { margin: 0 0 40px 25%; }
 .icon-space { padding-bottom: 150px; }
-

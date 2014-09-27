@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html ng-app="FastFindApp">
 	<head>
@@ -5,28 +6,28 @@
 		<meta name="keywords" content="produtos products produto product venda vendas sell loja shopping pesquisa">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
-		<!-- CSS -->
+
 		<link rel="stylesheet" href="css/block_product.css">
 		<link rel="stylesheet" href="css/list_product.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/animation.css">
 		<link rel="stylesheet" href="css/menu.css">
 		<link rel="stylesheet" href="css/button_product.css">
-		<link rel="stylesheet" href="css/foundation.min.css">
 		<link rel="stylesheet" type="text/css" href="css/map.css">
-
-		<!--Bustamante viada1m-->
-		<!-- js -->
+		<link rel="stylesheet" href="css/foundation.min.css">
+		<script src="js/vendor/jquery.js"></script>
 		<script src="js/angular.js"></script>
-		<script src="js/speech.js"></script>
 		<script src="js/index.js"></script>
-		<script src="js/vendor/jquery.js"></script>		
+		<script src="js/jquery-1.10.2.min.js"></script>
+ 		<script src="js/jquery.mobile-1.4.2.min.js"></script>
+		<!--<script src="js/jquery-2.1.1.min.js"> </script>-->
+		
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<!--<script src="http://connect.facebook.net/en_US/all.js"></script>-->
 		<script src="js/foundation.min.js"></script>
 		<script src="js/foundation/foundation.js"></script>
 		<script src="js/foundation/foundation.dropdown.js"></script>
 		<script src="js/foundation/foundation.reveal.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-		<!--<script src="http://connect.facebook.net/en_US/all.js"></script>-->
 		<script>
 				$('a.reveal-link').trigger('click');
 				$('a.close-reveal-modal').trigger('click');
@@ -35,6 +36,7 @@
  		</script>
 	</head>
 	<body ng-controller="intexCtrl">
+		<div data-role="page" id="pageone">
 		<div class="reveal-modal-bg" style="display: none"></div>
 
 		<!-- Modal para conectar ao Facebook -->
@@ -57,20 +59,47 @@
 		<div ng-include="'templates/map.html'"></div>
 		
 		<!-- Tabela de produtos -->
-		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 93%;">
+		<div id="products-view" align="center" ng-switch on="product_view_selected" style="overflow: auto; height: 93%">
 			<!--Product in block-->
 			<div ng-include="'templates/productBlock.html'"></div>
 
 			<!--Product in list - Slid and More information-->
 			<div ng-include="'templates/productList.html'"></div>
 		</div>
+		</div>
 	</body>
+    <script>
+    		var controle = 0;
+    		$(document).on("pagecreate","#pageone",function(){
+  				$("#myModal").on("taphold",function(){
+    				$('#myModal').foundation('reveal', 'close');
+  					});
+  			});                     
+			
+			$(document).on("pagecreate","#pageone",function(){
+  				$("body").on("swipeleft",function(){
+  					$("#profile-menu").fadeOut();
+  					$("#btn_direito").click();
+   					 
+  				});                       
+			});
+
+			$(document).on("pagecreate","#pageone",function(){
+  				$("body").on("swiperight",function(){
+    				$("#filter-menu").fadeOut();
+    				$("#btn_esquerdo").click();
+  				});                       
+			});
+
+
+
+
+	</script>
 	<script type="text/javascript">
 		$(document).foundation();
 	</script>
 	<div id="fb-root"></div>
 		<script>
-			// Função assíncrona para startar a API e criar o botão de login
   			window.fbAsyncInit = function() {
 			    FB.init({
 			      appId      : '617435301671280',
@@ -91,18 +120,7 @@
         function usuarioConectado() {
             // Com a função FB.api, é possível fazer chamadas para o Graph API.
             // Usando o parâmetro /me , você pode solicitar informações do usuário conectado.
-            FB.api('/me', function(response) {
-                // Usando jQuery, será exibido no paragrafo com id info as informações abaixo, capturdas com o FB.api.
-               /* $('#info').html(
-                    'Nome: '+response.name + 
-                    '<br>username: '+response.username + 
-                    '<br>Link perfil: '+response.link + 
-                    '<br>Email: '+response.email +
-                    '<br>Sexo: '+response.gender +
-                    '<br>ID: '+response.id 
-                );*/
-                // Um exemplo de como você pode recuperar a foto do usuário.
-                
+            FB.api('/me', function(response) { 
                 imageFacebook = 'https://graph.facebook.com/' + response.id + '/picture';
                 nameFacebook = response.name;
                 atualizaUser(nameFacebook,imageFacebook);

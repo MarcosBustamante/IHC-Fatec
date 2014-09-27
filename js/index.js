@@ -1,7 +1,8 @@
 app = angular.module('FastFindApp', [] )
 
 app.controller('intexCtrl', function($scope, $window){
-
+	$scope.controle_esq = 0;
+	$scope.controle_dir = 0;
 	$scope.active_menu = [false,false];
 	$scope.product_view_selected = 'list';
 	$scope.filter_mode = 'driving';
@@ -21,6 +22,16 @@ app.controller('intexCtrl', function($scope, $window){
 	
 	$scope.list_product_selected = $scope.products[0];
 	$scope.image_selected = $scope.list_product_selected['img'][0];
+
+	$scope.vai_na_fe = function(index){
+		if($scope.active_menu[index] || $scope.active_menu[(index+1)%2]){
+			$scope.active_menu= [false,false];
+			return;
+		}
+		if(!$scope.active_menu[index] && !$scope.active_menu[(index+1)%2]){
+			$scope.active_menu[index] = !$scope.active_menu[index];
+		}
+	}
 
 	$scope.change_filter = function(filter){ 
 		$scope.filter_mode = filter; 
@@ -216,9 +227,9 @@ app.controller('intexCtrl', function($scope, $window){
 	    if(final_transcript){
 	    	$scope.speech_message = 'Comandos: '+ final_transcript;
 	    	if(final_transcript.indexOf('config') != -1)
-				$scope.active_menu[1] = !$scope.active_menu[1];
+				$scope.vai_na_fe(1);
 	    	if(final_transcript.indexOf('menu') != -1)
-	    		$scope.active_menu[0] = !$scope.active_menu[0];
+	    		$scope.vai_na_fe(0);
 	    	if(final_transcript.indexOf('and') != -1 && $scope.active_menu[1]) 
 	    		$scope.filter_mode = 'walking';
 	    	if(final_transcript.indexOf('dir') != -1 && $scope.active_menu[1]) 
@@ -230,7 +241,7 @@ app.controller('intexCtrl', function($scope, $window){
 	    	if(final_transcript.indexOf('pre') != -1 && $scope.active_menu[1]) 
 	    		$scope.sel_mode = 'price';
 	    	if(final_transcript.indexOf('dist') != -1 && $scope.active_menu[1]) 
-	    		$scope.sel_mode = 'dist';
+	    		$scope.sel_mode = 'distance';
 	    	if( !$scope.active_menu[0] && !$scope.active_menu[1]) 
 	    		$scope.search = final_transcript;
 	    }

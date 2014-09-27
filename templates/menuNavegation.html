@@ -1,4 +1,6 @@
-<div class="menu profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+<div id="profile-menu" ng-if="active_menu[0]" ng-animate="{enter: 'animate-enter-options', leave: 'animate-leave-options'}">
+
+<!--<div class="menu profile-menu">-->
 		<img id="profile_picture" ng-src="{{user.img}}" align="center" />
 	<p id="username">{{user.first_name}}&nbsp;{{user.last_name}}</p>
 	<ul style="padding: 0;">
@@ -7,5 +9,7 @@
 		<li><a href="3.htm"> <img src="img/menucomprados.png" alt="Acesse os produtos já adquiridos">  Produtos adquiridos </a></li>
 		<li><a href="4.htm"> <img src="img/userset.png" alt="Configure seus dados"> Dados pessoais </a> </li>
 		<li><a href="5.htm"> <img src="img/quemsomos.png" alt="Conheça informações sobre os desenvolvedores"> Quem somos nós </a></li>
+		<li> <input type="button"  class = "button radius tiny" value="Ativar Speech" style="width: 100%; border:none" ng-click="init_Speech()"> </li>
 	</ul>
-</div>
+
+</div
